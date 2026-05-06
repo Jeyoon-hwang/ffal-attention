@@ -1,0 +1,161 @@
+{
+  "zone_id": "central_plains",
+  "zone_name": "중원 (Central Plains)",
+  "description": "평화로운 산맥과 초원 — 모든 무인의 시작점",
+  "size": {
+    "width": 500,
+    "height": 500,
+    "depth": 500
+  },
+  "terrain": {
+    "type": "grassland_mountain",
+    "grass_density": 0.7,
+    "water": 0.1,
+    "rock": 0.15,
+    "forest": 0.05
+  },
+  "environment": {
+    "weather": "clear",
+    "time_of_day": "afternoon",
+    "ambient_light": 1.2,
+    "fog_distance": 200
+  },
+  "spawn_points": {
+    "player_start": {"x": 250, "y": 0, "z": 250},
+    "camps": [
+      {"id": "camp_1", "x": 100, "y": 0, "z": 100, "type": "merchant", "npc_count": 3},
+      {"id": "camp_2", "x": 400, "y": 0, "z": 400, "type": "monastery", "npc_count": 5}
+    ],
+    "enemy_spawns": [
+      {"id": "goblin_1", "x": 150, "y": 0, "z": 150, "type": "goblin_warrior", "count": 3},
+      {"id": "goblin_2", "x": 350, "y": 0, "z": 150, "type": "goblin_scout", "count": 2}
+    ]
+  },
+  "dungeons": [
+    {
+      "dungeon_id": "tutorial_cave",
+      "dungeon_name": "시작 동굴 (Tutorial Cave)",
+      "entrance": {"x": 250, "y": 0, "z": 100},
+      "floors": 1,
+      "rooms_per_floor": 5,
+      "difficulty": 1,
+      "recommended_level": 1,
+      "boss_floor": 1,
+      "boss_name": "숙련된 검술사 (Skilled Swordmaster)",
+      "boss_ai_level": 2,
+      "boss_hp": 80,
+      "rewards": {
+        "experience": 500,
+        "gold": 200,
+        "items": ["basic_sword", "health_potion_3"]
+      }
+    },
+    {
+      "dungeon_id": "wild_crypt",
+      "dungeon_name": "야생 지하실 (Wild Crypt)",
+      "entrance": {"x": 100, "y": 0, "z": 300},
+      "floors": 3,
+      "rooms_per_floor": 8,
+      "difficulty": 2,
+      "recommended_level": 5,
+      "boss_floor": 3,
+      "boss_name": "고대 유령 기사 (Ancient Phantom Knight)",
+      "boss_ai_level": 3,
+      "boss_hp": 150,
+      "rewards": {
+        "experience": 1200,
+        "gold": 500,
+        "items": ["sword_of_sharpness", "health_potion_5", "mana_potion_3"]
+      }
+    },
+    {
+      "dungeon_id": "temple_ruin",
+      "dungeon_name": "오래된 신전 (Temple Ruin)",
+      "entrance": {"x": 400, "y": 0, "z": 200},
+      "floors": 5,
+      "rooms_per_floor": 10,
+      "difficulty": 3,
+      "recommended_level": 10,
+      "boss_floor": 5,
+      "boss_name": "신전 수호자 (Temple Guardian)",
+      "boss_ai_level": 3,
+      "boss_hp": 200,
+      "rewards": {
+        "experience": 2000,
+        "gold": 1000,
+        "items": ["temple_sword", "mithril_armor", "health_potion_10"]
+      }
+    },
+    {
+      "dungeon_id": "dragon_cave",
+      "dungeon_name": "드래곤 동굴 (Dragon Cave)",
+      "entrance": {"x": 450, "y": 0, "z": 450},
+      "floors": 10,
+      "rooms_per_floor": 12,
+      "difficulty": 5,
+      "recommended_level": 20,
+      "boss_floor": 10,
+      "boss_name": "푸른 드래곤 (Azure Dragon) — 최종 보스",
+      "boss_ai_level": 4,
+      "boss_hp": 500,
+      "boss_phases": 2,
+      "rewards": {
+        "experience": 5000,
+        "gold": 3000,
+        "items": ["dragon_scale_armor", "legendary_sword", "health_potion_20"]
+      }
+    }
+  ],
+  "npc_locations": {
+    "npc_1": {
+      "name": "은사 (Master Yunseo)",
+      "role": "mentor",
+      "location": {"x": 250, "y": 0, "z": 250},
+      "dialogue": "자, 이제 무술을 배울 준비가 되었는가?",
+      "quests_given": ["tutorial_learn_martial_art", "defeat_first_enemy"]
+    },
+    "npc_2": {
+      "name": "상인 (Merchant Gho)",
+      "role": "merchant",
+      "location": {"x": 100, "y": 0, "z": 100},
+      "dialogue": "희귀한 무술서와 장비를 팝니다.",
+      "shop_items": ["martial_art_scroll_1", "health_potion", "iron_sword"]
+    },
+    "npc_3": {
+      "name": "수행자 (Monk Hyun)",
+      "role": "quest_giver",
+      "location": {"x": 400, "y": 0, "z": 400},
+      "dialogue": "수행을 위해 몬스터를 처치하고 오시오.",
+      "quests_given": ["hunting_quest_1", "hunting_quest_2"]
+    }
+  },
+  "quests": [
+    {
+      "quest_id": "tutorial_learn_martial_art",
+      "quest_name": "첫 무술 배우기 (Learn Your First Martial Art)",
+      "giver": "은사",
+      "type": "tutorial",
+      "description": "은사에게 첫 무술을 배우자",
+      "requirements": {"learn_martial_art_count": 1},
+      "rewards": {"experience": 100, "gold": 50}
+    },
+    {
+      "quest_id": "defeat_first_enemy",
+      "quest_name": "첫 적 격파 (Defeat Your First Enemy)",
+      "giver": "은사",
+      "type": "combat",
+      "description": "시작 동굴에서 적 3마리를 격파하자",
+      "requirements": {"enemy_defeat_count": 3},
+      "rewards": {"experience": 200, "gold": 100}
+    },
+    {
+      "quest_id": "hunting_quest_1",
+      "quest_name": "사냥 퀘스트: 고블린 (Hunting: Goblins)",
+      "giver": "수행자",
+      "type": "hunting",
+      "description": "고블린 5마리를 격파하자",
+      "requirements": {"enemy_defeat_count": 5, "enemy_type": "goblin"},
+      "rewards": {"experience": 300, "gold": 150}
+    }
+  ]
+}

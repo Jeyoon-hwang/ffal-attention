@@ -1,0 +1,1406 @@
+{
+  "equipment_0000": {
+    "id": "equipment_0000",
+    "name": "Common Sword 1",
+    "type": "sword",
+    "rarity": "common",
+    "level_requirement": 5,
+    "stats": {
+      "str": 1,
+      "dex": 1,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0001": {
+    "id": "equipment_0001",
+    "name": "Common Sword 2",
+    "type": "sword",
+    "rarity": "common",
+    "level_requirement": 7,
+    "stats": {
+      "str": 2,
+      "dex": 2,
+      "vit": 2
+    },
+    "special_effect": null
+  },
+  "equipment_0002": {
+    "id": "equipment_0002",
+    "name": "Common Sword 3",
+    "type": "sword",
+    "rarity": "common",
+    "level_requirement": 9,
+    "stats": {
+      "str": 3,
+      "dex": 1,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0003": {
+    "id": "equipment_0003",
+    "name": "Common Sword 4",
+    "type": "sword",
+    "rarity": "common",
+    "level_requirement": 11,
+    "stats": {
+      "str": 1,
+      "dex": 2,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0004": {
+    "id": "equipment_0004",
+    "name": "Common Shield 1",
+    "type": "shield",
+    "rarity": "common",
+    "level_requirement": 5,
+    "stats": {
+      "str": 1,
+      "dex": 1,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0005": {
+    "id": "equipment_0005",
+    "name": "Common Shield 2",
+    "type": "shield",
+    "rarity": "common",
+    "level_requirement": 7,
+    "stats": {
+      "str": 2,
+      "dex": 2,
+      "vit": 2
+    },
+    "special_effect": null
+  },
+  "equipment_0006": {
+    "id": "equipment_0006",
+    "name": "Common Shield 3",
+    "type": "shield",
+    "rarity": "common",
+    "level_requirement": 9,
+    "stats": {
+      "str": 3,
+      "dex": 1,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0007": {
+    "id": "equipment_0007",
+    "name": "Common Shield 4",
+    "type": "shield",
+    "rarity": "common",
+    "level_requirement": 11,
+    "stats": {
+      "str": 1,
+      "dex": 2,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0008": {
+    "id": "equipment_0008",
+    "name": "Common Armor 1",
+    "type": "armor",
+    "rarity": "common",
+    "level_requirement": 5,
+    "stats": {
+      "str": 1,
+      "dex": 1,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0009": {
+    "id": "equipment_0009",
+    "name": "Common Armor 2",
+    "type": "armor",
+    "rarity": "common",
+    "level_requirement": 7,
+    "stats": {
+      "str": 2,
+      "dex": 2,
+      "vit": 2
+    },
+    "special_effect": null
+  },
+  "equipment_0010": {
+    "id": "equipment_0010",
+    "name": "Common Armor 3",
+    "type": "armor",
+    "rarity": "common",
+    "level_requirement": 9,
+    "stats": {
+      "str": 3,
+      "dex": 1,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0011": {
+    "id": "equipment_0011",
+    "name": "Common Armor 4",
+    "type": "armor",
+    "rarity": "common",
+    "level_requirement": 11,
+    "stats": {
+      "str": 1,
+      "dex": 2,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0012": {
+    "id": "equipment_0012",
+    "name": "Common Gauntlets 1",
+    "type": "gauntlets",
+    "rarity": "common",
+    "level_requirement": 5,
+    "stats": {
+      "str": 1,
+      "dex": 1,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0013": {
+    "id": "equipment_0013",
+    "name": "Common Gauntlets 2",
+    "type": "gauntlets",
+    "rarity": "common",
+    "level_requirement": 7,
+    "stats": {
+      "str": 2,
+      "dex": 2,
+      "vit": 2
+    },
+    "special_effect": null
+  },
+  "equipment_0014": {
+    "id": "equipment_0014",
+    "name": "Common Gauntlets 3",
+    "type": "gauntlets",
+    "rarity": "common",
+    "level_requirement": 9,
+    "stats": {
+      "str": 3,
+      "dex": 1,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0015": {
+    "id": "equipment_0015",
+    "name": "Common Gauntlets 4",
+    "type": "gauntlets",
+    "rarity": "common",
+    "level_requirement": 11,
+    "stats": {
+      "str": 1,
+      "dex": 2,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0016": {
+    "id": "equipment_0016",
+    "name": "Common Boots 1",
+    "type": "boots",
+    "rarity": "common",
+    "level_requirement": 5,
+    "stats": {
+      "str": 1,
+      "dex": 1,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0017": {
+    "id": "equipment_0017",
+    "name": "Common Boots 2",
+    "type": "boots",
+    "rarity": "common",
+    "level_requirement": 7,
+    "stats": {
+      "str": 2,
+      "dex": 2,
+      "vit": 2
+    },
+    "special_effect": null
+  },
+  "equipment_0018": {
+    "id": "equipment_0018",
+    "name": "Common Boots 3",
+    "type": "boots",
+    "rarity": "common",
+    "level_requirement": 9,
+    "stats": {
+      "str": 3,
+      "dex": 1,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0019": {
+    "id": "equipment_0019",
+    "name": "Common Boots 4",
+    "type": "boots",
+    "rarity": "common",
+    "level_requirement": 11,
+    "stats": {
+      "str": 1,
+      "dex": 2,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0020": {
+    "id": "equipment_0020",
+    "name": "Common Helmet 1",
+    "type": "helmet",
+    "rarity": "common",
+    "level_requirement": 5,
+    "stats": {
+      "str": 1,
+      "dex": 1,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0021": {
+    "id": "equipment_0021",
+    "name": "Common Helmet 2",
+    "type": "helmet",
+    "rarity": "common",
+    "level_requirement": 7,
+    "stats": {
+      "str": 2,
+      "dex": 2,
+      "vit": 2
+    },
+    "special_effect": null
+  },
+  "equipment_0022": {
+    "id": "equipment_0022",
+    "name": "Common Helmet 3",
+    "type": "helmet",
+    "rarity": "common",
+    "level_requirement": 9,
+    "stats": {
+      "str": 3,
+      "dex": 1,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0023": {
+    "id": "equipment_0023",
+    "name": "Common Helmet 4",
+    "type": "helmet",
+    "rarity": "common",
+    "level_requirement": 11,
+    "stats": {
+      "str": 1,
+      "dex": 2,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0024": {
+    "id": "equipment_0024",
+    "name": "Common Ring 1",
+    "type": "ring",
+    "rarity": "common",
+    "level_requirement": 5,
+    "stats": {
+      "str": 1,
+      "dex": 1,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0025": {
+    "id": "equipment_0025",
+    "name": "Common Ring 2",
+    "type": "ring",
+    "rarity": "common",
+    "level_requirement": 7,
+    "stats": {
+      "str": 2,
+      "dex": 2,
+      "vit": 2
+    },
+    "special_effect": null
+  },
+  "equipment_0026": {
+    "id": "equipment_0026",
+    "name": "Common Ring 3",
+    "type": "ring",
+    "rarity": "common",
+    "level_requirement": 9,
+    "stats": {
+      "str": 3,
+      "dex": 1,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0027": {
+    "id": "equipment_0027",
+    "name": "Common Ring 4",
+    "type": "ring",
+    "rarity": "common",
+    "level_requirement": 11,
+    "stats": {
+      "str": 1,
+      "dex": 2,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0028": {
+    "id": "equipment_0028",
+    "name": "Common Amulet 1",
+    "type": "amulet",
+    "rarity": "common",
+    "level_requirement": 5,
+    "stats": {
+      "str": 1,
+      "dex": 1,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0029": {
+    "id": "equipment_0029",
+    "name": "Common Amulet 2",
+    "type": "amulet",
+    "rarity": "common",
+    "level_requirement": 7,
+    "stats": {
+      "str": 2,
+      "dex": 2,
+      "vit": 2
+    },
+    "special_effect": null
+  },
+  "equipment_0030": {
+    "id": "equipment_0030",
+    "name": "Common Amulet 3",
+    "type": "amulet",
+    "rarity": "common",
+    "level_requirement": 9,
+    "stats": {
+      "str": 3,
+      "dex": 1,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0031": {
+    "id": "equipment_0031",
+    "name": "Common Amulet 4",
+    "type": "amulet",
+    "rarity": "common",
+    "level_requirement": 11,
+    "stats": {
+      "str": 1,
+      "dex": 2,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0032": {
+    "id": "equipment_0032",
+    "name": "Common Cloak 1",
+    "type": "cloak",
+    "rarity": "common",
+    "level_requirement": 5,
+    "stats": {
+      "str": 1,
+      "dex": 1,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0033": {
+    "id": "equipment_0033",
+    "name": "Common Cloak 2",
+    "type": "cloak",
+    "rarity": "common",
+    "level_requirement": 7,
+    "stats": {
+      "str": 2,
+      "dex": 2,
+      "vit": 2
+    },
+    "special_effect": null
+  },
+  "equipment_0034": {
+    "id": "equipment_0034",
+    "name": "Common Cloak 3",
+    "type": "cloak",
+    "rarity": "common",
+    "level_requirement": 9,
+    "stats": {
+      "str": 3,
+      "dex": 1,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0035": {
+    "id": "equipment_0035",
+    "name": "Common Cloak 4",
+    "type": "cloak",
+    "rarity": "common",
+    "level_requirement": 11,
+    "stats": {
+      "str": 1,
+      "dex": 2,
+      "vit": 1
+    },
+    "special_effect": null
+  },
+  "equipment_0036": {
+    "id": "equipment_0036",
+    "name": "Uncommon Sword 1",
+    "type": "sword",
+    "rarity": "uncommon",
+    "level_requirement": 10,
+    "stats": {
+      "str": 3,
+      "dex": 2,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0037": {
+    "id": "equipment_0037",
+    "name": "Uncommon Sword 2",
+    "type": "sword",
+    "rarity": "uncommon",
+    "level_requirement": 12,
+    "stats": {
+      "str": 4,
+      "dex": 3,
+      "vit": 4
+    },
+    "special_effect": null
+  },
+  "equipment_0038": {
+    "id": "equipment_0038",
+    "name": "Uncommon Sword 3",
+    "type": "sword",
+    "rarity": "uncommon",
+    "level_requirement": 14,
+    "stats": {
+      "str": 5,
+      "dex": 2,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0039": {
+    "id": "equipment_0039",
+    "name": "Uncommon Sword 4",
+    "type": "sword",
+    "rarity": "uncommon",
+    "level_requirement": 16,
+    "stats": {
+      "str": 3,
+      "dex": 3,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0040": {
+    "id": "equipment_0040",
+    "name": "Uncommon Shield 1",
+    "type": "shield",
+    "rarity": "uncommon",
+    "level_requirement": 10,
+    "stats": {
+      "str": 3,
+      "dex": 2,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0041": {
+    "id": "equipment_0041",
+    "name": "Uncommon Shield 2",
+    "type": "shield",
+    "rarity": "uncommon",
+    "level_requirement": 12,
+    "stats": {
+      "str": 4,
+      "dex": 3,
+      "vit": 4
+    },
+    "special_effect": null
+  },
+  "equipment_0042": {
+    "id": "equipment_0042",
+    "name": "Uncommon Shield 3",
+    "type": "shield",
+    "rarity": "uncommon",
+    "level_requirement": 14,
+    "stats": {
+      "str": 5,
+      "dex": 2,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0043": {
+    "id": "equipment_0043",
+    "name": "Uncommon Shield 4",
+    "type": "shield",
+    "rarity": "uncommon",
+    "level_requirement": 16,
+    "stats": {
+      "str": 3,
+      "dex": 3,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0044": {
+    "id": "equipment_0044",
+    "name": "Uncommon Armor 1",
+    "type": "armor",
+    "rarity": "uncommon",
+    "level_requirement": 10,
+    "stats": {
+      "str": 3,
+      "dex": 2,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0045": {
+    "id": "equipment_0045",
+    "name": "Uncommon Armor 2",
+    "type": "armor",
+    "rarity": "uncommon",
+    "level_requirement": 12,
+    "stats": {
+      "str": 4,
+      "dex": 3,
+      "vit": 4
+    },
+    "special_effect": null
+  },
+  "equipment_0046": {
+    "id": "equipment_0046",
+    "name": "Uncommon Armor 3",
+    "type": "armor",
+    "rarity": "uncommon",
+    "level_requirement": 14,
+    "stats": {
+      "str": 5,
+      "dex": 2,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0047": {
+    "id": "equipment_0047",
+    "name": "Uncommon Armor 4",
+    "type": "armor",
+    "rarity": "uncommon",
+    "level_requirement": 16,
+    "stats": {
+      "str": 3,
+      "dex": 3,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0048": {
+    "id": "equipment_0048",
+    "name": "Uncommon Gauntlets 1",
+    "type": "gauntlets",
+    "rarity": "uncommon",
+    "level_requirement": 10,
+    "stats": {
+      "str": 3,
+      "dex": 2,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0049": {
+    "id": "equipment_0049",
+    "name": "Uncommon Gauntlets 2",
+    "type": "gauntlets",
+    "rarity": "uncommon",
+    "level_requirement": 12,
+    "stats": {
+      "str": 4,
+      "dex": 3,
+      "vit": 4
+    },
+    "special_effect": null
+  },
+  "equipment_0050": {
+    "id": "equipment_0050",
+    "name": "Uncommon Gauntlets 3",
+    "type": "gauntlets",
+    "rarity": "uncommon",
+    "level_requirement": 14,
+    "stats": {
+      "str": 5,
+      "dex": 2,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0051": {
+    "id": "equipment_0051",
+    "name": "Uncommon Gauntlets 4",
+    "type": "gauntlets",
+    "rarity": "uncommon",
+    "level_requirement": 16,
+    "stats": {
+      "str": 3,
+      "dex": 3,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0052": {
+    "id": "equipment_0052",
+    "name": "Uncommon Boots 1",
+    "type": "boots",
+    "rarity": "uncommon",
+    "level_requirement": 10,
+    "stats": {
+      "str": 3,
+      "dex": 2,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0053": {
+    "id": "equipment_0053",
+    "name": "Uncommon Boots 2",
+    "type": "boots",
+    "rarity": "uncommon",
+    "level_requirement": 12,
+    "stats": {
+      "str": 4,
+      "dex": 3,
+      "vit": 4
+    },
+    "special_effect": null
+  },
+  "equipment_0054": {
+    "id": "equipment_0054",
+    "name": "Uncommon Boots 3",
+    "type": "boots",
+    "rarity": "uncommon",
+    "level_requirement": 14,
+    "stats": {
+      "str": 5,
+      "dex": 2,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0055": {
+    "id": "equipment_0055",
+    "name": "Uncommon Boots 4",
+    "type": "boots",
+    "rarity": "uncommon",
+    "level_requirement": 16,
+    "stats": {
+      "str": 3,
+      "dex": 3,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0056": {
+    "id": "equipment_0056",
+    "name": "Uncommon Helmet 1",
+    "type": "helmet",
+    "rarity": "uncommon",
+    "level_requirement": 10,
+    "stats": {
+      "str": 3,
+      "dex": 2,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0057": {
+    "id": "equipment_0057",
+    "name": "Uncommon Helmet 2",
+    "type": "helmet",
+    "rarity": "uncommon",
+    "level_requirement": 12,
+    "stats": {
+      "str": 4,
+      "dex": 3,
+      "vit": 4
+    },
+    "special_effect": null
+  },
+  "equipment_0058": {
+    "id": "equipment_0058",
+    "name": "Uncommon Helmet 3",
+    "type": "helmet",
+    "rarity": "uncommon",
+    "level_requirement": 14,
+    "stats": {
+      "str": 5,
+      "dex": 2,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0059": {
+    "id": "equipment_0059",
+    "name": "Uncommon Helmet 4",
+    "type": "helmet",
+    "rarity": "uncommon",
+    "level_requirement": 16,
+    "stats": {
+      "str": 3,
+      "dex": 3,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0060": {
+    "id": "equipment_0060",
+    "name": "Uncommon Ring 1",
+    "type": "ring",
+    "rarity": "uncommon",
+    "level_requirement": 10,
+    "stats": {
+      "str": 3,
+      "dex": 2,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0061": {
+    "id": "equipment_0061",
+    "name": "Uncommon Ring 2",
+    "type": "ring",
+    "rarity": "uncommon",
+    "level_requirement": 12,
+    "stats": {
+      "str": 4,
+      "dex": 3,
+      "vit": 4
+    },
+    "special_effect": null
+  },
+  "equipment_0062": {
+    "id": "equipment_0062",
+    "name": "Uncommon Ring 3",
+    "type": "ring",
+    "rarity": "uncommon",
+    "level_requirement": 14,
+    "stats": {
+      "str": 5,
+      "dex": 2,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0063": {
+    "id": "equipment_0063",
+    "name": "Uncommon Ring 4",
+    "type": "ring",
+    "rarity": "uncommon",
+    "level_requirement": 16,
+    "stats": {
+      "str": 3,
+      "dex": 3,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0064": {
+    "id": "equipment_0064",
+    "name": "Uncommon Amulet 1",
+    "type": "amulet",
+    "rarity": "uncommon",
+    "level_requirement": 10,
+    "stats": {
+      "str": 3,
+      "dex": 2,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0065": {
+    "id": "equipment_0065",
+    "name": "Uncommon Amulet 2",
+    "type": "amulet",
+    "rarity": "uncommon",
+    "level_requirement": 12,
+    "stats": {
+      "str": 4,
+      "dex": 3,
+      "vit": 4
+    },
+    "special_effect": null
+  },
+  "equipment_0066": {
+    "id": "equipment_0066",
+    "name": "Uncommon Amulet 3",
+    "type": "amulet",
+    "rarity": "uncommon",
+    "level_requirement": 14,
+    "stats": {
+      "str": 5,
+      "dex": 2,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0067": {
+    "id": "equipment_0067",
+    "name": "Uncommon Amulet 4",
+    "type": "amulet",
+    "rarity": "uncommon",
+    "level_requirement": 16,
+    "stats": {
+      "str": 3,
+      "dex": 3,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0068": {
+    "id": "equipment_0068",
+    "name": "Uncommon Cloak 1",
+    "type": "cloak",
+    "rarity": "uncommon",
+    "level_requirement": 10,
+    "stats": {
+      "str": 3,
+      "dex": 2,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0069": {
+    "id": "equipment_0069",
+    "name": "Uncommon Cloak 2",
+    "type": "cloak",
+    "rarity": "uncommon",
+    "level_requirement": 12,
+    "stats": {
+      "str": 4,
+      "dex": 3,
+      "vit": 4
+    },
+    "special_effect": null
+  },
+  "equipment_0070": {
+    "id": "equipment_0070",
+    "name": "Uncommon Cloak 3",
+    "type": "cloak",
+    "rarity": "uncommon",
+    "level_requirement": 14,
+    "stats": {
+      "str": 5,
+      "dex": 2,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0071": {
+    "id": "equipment_0071",
+    "name": "Uncommon Cloak 4",
+    "type": "cloak",
+    "rarity": "uncommon",
+    "level_requirement": 16,
+    "stats": {
+      "str": 3,
+      "dex": 3,
+      "vit": 3
+    },
+    "special_effect": null
+  },
+  "equipment_0072": {
+    "id": "equipment_0072",
+    "name": "Rare Sword 1",
+    "type": "sword",
+    "rarity": "rare",
+    "level_requirement": 15,
+    "stats": {
+      "str": 5,
+      "dex": 3,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0073": {
+    "id": "equipment_0073",
+    "name": "Rare Sword 2",
+    "type": "sword",
+    "rarity": "rare",
+    "level_requirement": 17,
+    "stats": {
+      "str": 6,
+      "dex": 4,
+      "vit": 6
+    },
+    "special_effect": null
+  },
+  "equipment_0074": {
+    "id": "equipment_0074",
+    "name": "Rare Sword 3",
+    "type": "sword",
+    "rarity": "rare",
+    "level_requirement": 19,
+    "stats": {
+      "str": 7,
+      "dex": 3,
+      "vit": 7
+    },
+    "special_effect": null
+  },
+  "equipment_0075": {
+    "id": "equipment_0075",
+    "name": "Rare Sword 4",
+    "type": "sword",
+    "rarity": "rare",
+    "level_requirement": 21,
+    "stats": {
+      "str": 5,
+      "dex": 4,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0076": {
+    "id": "equipment_0076",
+    "name": "Rare Shield 1",
+    "type": "shield",
+    "rarity": "rare",
+    "level_requirement": 15,
+    "stats": {
+      "str": 5,
+      "dex": 3,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0077": {
+    "id": "equipment_0077",
+    "name": "Rare Shield 2",
+    "type": "shield",
+    "rarity": "rare",
+    "level_requirement": 17,
+    "stats": {
+      "str": 6,
+      "dex": 4,
+      "vit": 6
+    },
+    "special_effect": null
+  },
+  "equipment_0078": {
+    "id": "equipment_0078",
+    "name": "Rare Shield 3",
+    "type": "shield",
+    "rarity": "rare",
+    "level_requirement": 19,
+    "stats": {
+      "str": 7,
+      "dex": 3,
+      "vit": 7
+    },
+    "special_effect": null
+  },
+  "equipment_0079": {
+    "id": "equipment_0079",
+    "name": "Rare Shield 4",
+    "type": "shield",
+    "rarity": "rare",
+    "level_requirement": 21,
+    "stats": {
+      "str": 5,
+      "dex": 4,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0080": {
+    "id": "equipment_0080",
+    "name": "Rare Armor 1",
+    "type": "armor",
+    "rarity": "rare",
+    "level_requirement": 15,
+    "stats": {
+      "str": 5,
+      "dex": 3,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0081": {
+    "id": "equipment_0081",
+    "name": "Rare Armor 2",
+    "type": "armor",
+    "rarity": "rare",
+    "level_requirement": 17,
+    "stats": {
+      "str": 6,
+      "dex": 4,
+      "vit": 6
+    },
+    "special_effect": null
+  },
+  "equipment_0082": {
+    "id": "equipment_0082",
+    "name": "Rare Armor 3",
+    "type": "armor",
+    "rarity": "rare",
+    "level_requirement": 19,
+    "stats": {
+      "str": 7,
+      "dex": 3,
+      "vit": 7
+    },
+    "special_effect": null
+  },
+  "equipment_0083": {
+    "id": "equipment_0083",
+    "name": "Rare Armor 4",
+    "type": "armor",
+    "rarity": "rare",
+    "level_requirement": 21,
+    "stats": {
+      "str": 5,
+      "dex": 4,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0084": {
+    "id": "equipment_0084",
+    "name": "Rare Gauntlets 1",
+    "type": "gauntlets",
+    "rarity": "rare",
+    "level_requirement": 15,
+    "stats": {
+      "str": 5,
+      "dex": 3,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0085": {
+    "id": "equipment_0085",
+    "name": "Rare Gauntlets 2",
+    "type": "gauntlets",
+    "rarity": "rare",
+    "level_requirement": 17,
+    "stats": {
+      "str": 6,
+      "dex": 4,
+      "vit": 6
+    },
+    "special_effect": null
+  },
+  "equipment_0086": {
+    "id": "equipment_0086",
+    "name": "Rare Gauntlets 3",
+    "type": "gauntlets",
+    "rarity": "rare",
+    "level_requirement": 19,
+    "stats": {
+      "str": 7,
+      "dex": 3,
+      "vit": 7
+    },
+    "special_effect": null
+  },
+  "equipment_0087": {
+    "id": "equipment_0087",
+    "name": "Rare Gauntlets 4",
+    "type": "gauntlets",
+    "rarity": "rare",
+    "level_requirement": 21,
+    "stats": {
+      "str": 5,
+      "dex": 4,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0088": {
+    "id": "equipment_0088",
+    "name": "Rare Boots 1",
+    "type": "boots",
+    "rarity": "rare",
+    "level_requirement": 15,
+    "stats": {
+      "str": 5,
+      "dex": 3,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0089": {
+    "id": "equipment_0089",
+    "name": "Rare Boots 2",
+    "type": "boots",
+    "rarity": "rare",
+    "level_requirement": 17,
+    "stats": {
+      "str": 6,
+      "dex": 4,
+      "vit": 6
+    },
+    "special_effect": null
+  },
+  "equipment_0090": {
+    "id": "equipment_0090",
+    "name": "Rare Boots 3",
+    "type": "boots",
+    "rarity": "rare",
+    "level_requirement": 19,
+    "stats": {
+      "str": 7,
+      "dex": 3,
+      "vit": 7
+    },
+    "special_effect": null
+  },
+  "equipment_0091": {
+    "id": "equipment_0091",
+    "name": "Rare Boots 4",
+    "type": "boots",
+    "rarity": "rare",
+    "level_requirement": 21,
+    "stats": {
+      "str": 5,
+      "dex": 4,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0092": {
+    "id": "equipment_0092",
+    "name": "Rare Helmet 1",
+    "type": "helmet",
+    "rarity": "rare",
+    "level_requirement": 15,
+    "stats": {
+      "str": 5,
+      "dex": 3,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0093": {
+    "id": "equipment_0093",
+    "name": "Rare Helmet 2",
+    "type": "helmet",
+    "rarity": "rare",
+    "level_requirement": 17,
+    "stats": {
+      "str": 6,
+      "dex": 4,
+      "vit": 6
+    },
+    "special_effect": null
+  },
+  "equipment_0094": {
+    "id": "equipment_0094",
+    "name": "Rare Helmet 3",
+    "type": "helmet",
+    "rarity": "rare",
+    "level_requirement": 19,
+    "stats": {
+      "str": 7,
+      "dex": 3,
+      "vit": 7
+    },
+    "special_effect": null
+  },
+  "equipment_0095": {
+    "id": "equipment_0095",
+    "name": "Rare Helmet 4",
+    "type": "helmet",
+    "rarity": "rare",
+    "level_requirement": 21,
+    "stats": {
+      "str": 5,
+      "dex": 4,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0096": {
+    "id": "equipment_0096",
+    "name": "Rare Ring 1",
+    "type": "ring",
+    "rarity": "rare",
+    "level_requirement": 15,
+    "stats": {
+      "str": 5,
+      "dex": 3,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0097": {
+    "id": "equipment_0097",
+    "name": "Rare Ring 2",
+    "type": "ring",
+    "rarity": "rare",
+    "level_requirement": 17,
+    "stats": {
+      "str": 6,
+      "dex": 4,
+      "vit": 6
+    },
+    "special_effect": null
+  },
+  "equipment_0098": {
+    "id": "equipment_0098",
+    "name": "Rare Ring 3",
+    "type": "ring",
+    "rarity": "rare",
+    "level_requirement": 19,
+    "stats": {
+      "str": 7,
+      "dex": 3,
+      "vit": 7
+    },
+    "special_effect": null
+  },
+  "equipment_0099": {
+    "id": "equipment_0099",
+    "name": "Rare Ring 4",
+    "type": "ring",
+    "rarity": "rare",
+    "level_requirement": 21,
+    "stats": {
+      "str": 5,
+      "dex": 4,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0100": {
+    "id": "equipment_0100",
+    "name": "Rare Amulet 1",
+    "type": "amulet",
+    "rarity": "rare",
+    "level_requirement": 15,
+    "stats": {
+      "str": 5,
+      "dex": 3,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0101": {
+    "id": "equipment_0101",
+    "name": "Rare Amulet 2",
+    "type": "amulet",
+    "rarity": "rare",
+    "level_requirement": 17,
+    "stats": {
+      "str": 6,
+      "dex": 4,
+      "vit": 6
+    },
+    "special_effect": null
+  },
+  "equipment_0102": {
+    "id": "equipment_0102",
+    "name": "Rare Amulet 3",
+    "type": "amulet",
+    "rarity": "rare",
+    "level_requirement": 19,
+    "stats": {
+      "str": 7,
+      "dex": 3,
+      "vit": 7
+    },
+    "special_effect": null
+  },
+  "equipment_0103": {
+    "id": "equipment_0103",
+    "name": "Rare Amulet 4",
+    "type": "amulet",
+    "rarity": "rare",
+    "level_requirement": 21,
+    "stats": {
+      "str": 5,
+      "dex": 4,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0104": {
+    "id": "equipment_0104",
+    "name": "Rare Cloak 1",
+    "type": "cloak",
+    "rarity": "rare",
+    "level_requirement": 15,
+    "stats": {
+      "str": 5,
+      "dex": 3,
+      "vit": 5
+    },
+    "special_effect": null
+  },
+  "equipment_0105": {
+    "id": "equipment_0105",
+    "name": "Rare Cloak 2",
+    "type": "cloak",
+    "rarity": "rare",
+    "level_requirement": 17,
+    "stats": {
+      "str": 6,
+      "dex": 4,
+      "vit": 6
+    },
+    "special_effect": null
+  },
+  "equipment_0106": {
+    "id": "equipment_0106",
+    "name": "Rare Cloak 3",
+    "type": "cloak",
+    "rarity": "rare",
+    "level_requirement": 19,
+    "stats": {
+      "str": 7,
+      "dex": 3,
+      "vit": 7
+    },
+    "special_effect": null
+  },
+  "equipment_0107": {
+    "id": "equipment_0107",
+    "name": "Rare Cloak 4",
+    "type": "cloak",
+    "rarity": "rare",
+    "level_requirement": 21,
+    "stats": {
+      "str": 5,
+      "dex": 4,
+      "vit": 5
+    },
+    "special_effect": null
+  }
+}

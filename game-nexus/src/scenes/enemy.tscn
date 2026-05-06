@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq8jcppq7w8ag"]
+
+[ext_resource type="Script" id="1" path="res://src/scripts/enemy.gd"]
+
+[sub_resource type="CapsuleMesh" id="1"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="2"]
+radius = 0.4
+height = 1.8
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1")
+collision_layer = 1
+collision_mask = 1
+groups = ["enemies"]
+
+# 적 바디
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("1")
+
+# 콜리전
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("2")
+
+# 공격 범위 (Area3D)
+[node name="AttackArea" type="Area3D" parent="."]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq9xvxb8bx4k8"]
+
+[ext_resource type="Script" path="res://engine/game_manager.gd"]
+[ext_resource type="Script" path="res://engine/martial_art_engine.gd"]
+[ext_resource type="Script" path="res://engine/player_combat.gd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8s3n"]
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="NEXUS" type="Node3D"]
+script = ExtResource("game_manager.gd")
+
+[node name="GameEnvironment" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameEnvironment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.866025, 0.5, -0.5, 0.433013, -0.75, 0, 10, 0)
+energy_multiplier = 2.0
+
+[node name="Ground" type="MeshInstance3D" parent="GameEnvironment"]
+mesh = BoxMesh.new()
+transform = Transform3D(50, 1, 50, 0, 0, 0)
+material_override = StandardMaterial3D.new()
+
+[node name="Player" type="Node3D" parent="."]
+script = ExtResource("player_combat.gd")
+
+[node name="MartialArtEngine" type="Node3D" parent="."]
+script = ExtResource("martial_art_engine.gd")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="StatusPanel" type="Panel" parent="UI"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 400.0
+offset_bottom = 200.0
+theme_override_styles/panel = PreloadExt("res://ui/default_panel_style.tres")
+
+[node name="StatusText" type="Label" parent="UI/StatusPanel"]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+text = "NEXUS 무술 창조 게임
+기울 준비 중...
+"
+autowrap_enabled = true
+
+[connection signal="tree_entered" from="." to="." method="test_full_game"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1j4y4pndk8s7bp"]
+
+[ext_resource type="Script" path="res://engine/martial_art_engine.gd"]
+[ext_resource type="Script" path="res://engine/player_combat.gd"]
+[ext_resource type="Script" path="res://engine/enemy_ai.gd"]
+[ext_resource type="Script" path="res://engine/test_integration.gd"]
+
+[node name="TestScene" type="Node"]
+script = ExtResource("test_integration.gd")
+
+[node name="MartialArtEngine" type="Node" parent="."]
+script = ExtResource("martial_art_engine.gd")
+
+[node name="PlayerCombat" type="Node" parent="."]
+script = ExtResource("player_combat.gd")
+
+[node name="EnemyAI" type="Node" parent="."]
+script = ExtResource("enemy_ai.gd")

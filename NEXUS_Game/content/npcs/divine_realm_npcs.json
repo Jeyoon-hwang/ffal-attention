@@ -1,0 +1,212 @@
+[
+  {
+    "npc_id": "divine_realm_npc_001",
+    "npc_name": "NPC_divine_realm_1",
+    "zone_id": "divine_realm",
+    "type": "guard",
+    "level": 26,
+    "position": {
+      "x": 130,
+      "y": 0,
+      "z": 125
+    },
+    "dialogue": "안녕하세요. 저는 divine_realm 지역의 NPC입니다.",
+    "quests_offered": [
+      "divine_realm_quest_1"
+    ],
+    "inventory": [
+      "divine_weapon",
+      "immortal_potion",
+      "holy_grail"
+    ]
+  },
+  {
+    "npc_id": "divine_realm_npc_002",
+    "npc_name": "NPC_divine_realm_2",
+    "zone_id": "divine_realm",
+    "type": "scholar",
+    "level": 27,
+    "position": {
+      "x": 160,
+      "y": 0,
+      "z": 150
+    },
+    "dialogue": "안녕하세요. 저는 divine_realm 지역의 NPC입니다.",
+    "quests_offered": [
+      "divine_realm_quest_2"
+    ],
+    "inventory": [
+      "divine_weapon",
+      "immortal_potion",
+      "holy_grail"
+    ]
+  },
+  {
+    "npc_id": "divine_realm_npc_003",
+    "npc_name": "NPC_divine_realm_3",
+    "zone_id": "divine_realm",
+    "type": "priest",
+    "level": 28,
+    "position": {
+      "x": 190,
+      "y": 0,
+      "z": 175
+    },
+    "dialogue": "안녕하세요. 저는 divine_realm 지역의 NPC입니다.",
+    "quests_offered": [
+      "divine_realm_quest_3"
+    ],
+    "inventory": [
+      "divine_weapon",
+      "immortal_potion",
+      "holy_grail"
+    ]
+  },
+  {
+    "npc_id": "divine_realm_npc_004",
+    "npc_name": "NPC_divine_realm_4",
+    "zone_id": "divine_realm",
+    "type": "blacksmith",
+    "level": 29,
+    "position": {
+      "x": 220,
+      "y": 0,
+      "z": 200
+    },
+    "dialogue": "안녕하세요. 저는 divine_realm 지역의 NPC입니다.",
+    "quests_offered": [
+      "divine_realm_quest_4"
+    ],
+    "inventory": [
+      "divine_weapon",
+      "immortal_potion",
+      "holy_grail"
+    ]
+  },
+  {
+    "npc_id": "divine_realm_npc_005",
+    "npc_name": "NPC_divine_realm_5",
+    "zone_id": "divine_realm",
+    "type": "hunter",
+    "level": 25,
+    "position": {
+      "x": 250,
+      "y": 0,
+      "z": 225
+    },
+    "dialogue": "안녕하세요. 저는 divine_realm 지역의 NPC입니다.",
+    "quests_offered": [
+      "divine_realm_quest_5"
+    ],
+    "inventory": [
+      "divine_weapon",
+      "immortal_potion",
+      "holy_grail"
+    ]
+  },
+  {
+    "npc_id": "divine_realm_npc_006",
+    "npc_name": "NPC_divine_realm_6",
+    "zone_id": "divine_realm",
+    "type": "bard",
+    "level": 26,
+    "position": {
+      "x": 280,
+      "y": 0,
+      "z": 250
+    },
+    "dialogue": "안녕하세요. 저는 divine_realm 지역의 NPC입니다.",
+    "quests_offered": [
+      "divine_realm_quest_6"
+    ],
+    "inventory": [
+      "divine_weapon",
+      "immortal_potion",
+      "holy_grail"
+    ]
+  },
+  {
+    "npc_id": "divine_realm_npc_007",
+    "npc_name": "NPC_divine_realm_7",
+    "zone_id": "divine_realm",
+    "type": "thief",
+    "level": 27,
+    "position": {
+      "x": 310,
+      "y": 0,
+      "z": 275
+    },
+    "dialogue": "안녕하세요. 저는 divine_realm 지역의 NPC입니다.",
+    "quests_offered": [
+      "divine_realm_quest_7"
+    ],
+    "inventory": [
+      "divine_weapon",
+      "immortal_potion",
+      "holy_grail"
+    ]
+  },
+  {
+    "npc_id": "divine_realm_npc_008",
+    "npc_name": "NPC_divine_realm_8",
+    "zone_id": "divine_realm",
+    "type": "wizard",
+    "level": 28,
+    "position": {
+      "x": 340,
+      "y": 0,
+      "z": 300
+    },
+    "dialogue": "안녕하세요. 저는 divine_realm 지역의 NPC입니다.",
+    "quests_offered": [
+      "divine_realm_quest_8"
+    ],
+    "inventory": [
+      "divine_weapon",
+      "immortal_potion",
+      "holy_grail"
+    ]
+  },
+  {
+    "npc_id": "divine_realm_npc_009",
+    "npc_name": "NPC_divine_realm_9",
+    "zone_id": "divine_realm",
+    "type": "warrior",
+    "level": 29,
+    "position": {
+      "x": 370,
+      "y": 0,
+      "z": 325
+    },
+    "dialogue": "안녕하세요. 저는 divine_realm 지역의 NPC입니다.",
+    "quests_offered": [
+      "divine_realm_quest_9"
+    ],
+    "inventory": [
+      "divine_weapon",
+      "immortal_potion",
+      "holy_grail"
+    ]
+  },
+  {
+    "npc_id": "divine_realm_npc_010",
+    "npc_name": "NPC_divine_realm_10",
+    "zone_id": "divine_realm",
+    "type": "merchant",
+    "level": 25,
+    "position": {
+      "x": 100,
+      "y": 0,
+      "z": 350
+    },
+    "dialogue": "안녕하세요. 저는 divine_realm 지역의 NPC입니다.",
+    "quests_offered": [
+      "divine_realm_quest_10"
+    ],
+    "inventory": [
+      "divine_weapon",
+      "immortal_potion",
+      "holy_grail"
+    ]
+  }
+]

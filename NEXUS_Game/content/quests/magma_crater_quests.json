@@ -1,0 +1,1552 @@
+[
+  {
+    "quest_id": "magma_crater_quest_001",
+    "quest_name": "Magma Crater 퀘스트 1",
+    "zone_id": "magma_crater",
+    "type": "collect",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_002",
+    "description": "'magma_crater' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 6
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 310,
+      "gold": 155,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_002",
+    "quest_name": "Magma Crater 퀘스트 2",
+    "zone_id": "magma_crater",
+    "type": "escort",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_003",
+    "description": "'magma_crater' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 7
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 320,
+      "gold": 160,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_003",
+    "quest_name": "Magma Crater 퀘스트 3",
+    "zone_id": "magma_crater",
+    "type": "investigate",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_004",
+    "description": "'magma_crater' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 8
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 330,
+      "gold": 165,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_004",
+    "quest_name": "Magma Crater 퀘스트 4",
+    "zone_id": "magma_crater",
+    "type": "protect",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_005",
+    "description": "'magma_crater' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 9
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 340,
+      "gold": 170,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_005",
+    "quest_name": "Magma Crater 퀘스트 5",
+    "zone_id": "magma_crater",
+    "type": "hunt",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_006",
+    "description": "'magma_crater' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 10
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 350,
+      "gold": 175,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_006",
+    "quest_name": "Magma Crater 퀘스트 6",
+    "zone_id": "magma_crater",
+    "type": "collect",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_007",
+    "description": "'magma_crater' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 11
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 360,
+      "gold": 180,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_007",
+    "quest_name": "Magma Crater 퀘스트 7",
+    "zone_id": "magma_crater",
+    "type": "escort",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_008",
+    "description": "'magma_crater' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 12
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 370,
+      "gold": 185,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_008",
+    "quest_name": "Magma Crater 퀘스트 8",
+    "zone_id": "magma_crater",
+    "type": "investigate",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_009",
+    "description": "'magma_crater' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 13
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 380,
+      "gold": 190,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_009",
+    "quest_name": "Magma Crater 퀘스트 9",
+    "zone_id": "magma_crater",
+    "type": "protect",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_010",
+    "description": "'magma_crater' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 14
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 390,
+      "gold": 195,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_010",
+    "quest_name": "Magma Crater 퀘스트 10",
+    "zone_id": "magma_crater",
+    "type": "hunt",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_011",
+    "description": "'magma_crater' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 5
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 400,
+      "gold": 200,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_011",
+    "quest_name": "Magma Crater 퀘스트 11",
+    "zone_id": "magma_crater",
+    "type": "collect",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_012",
+    "description": "'magma_crater' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 6
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 410,
+      "gold": 205,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_012",
+    "quest_name": "Magma Crater 퀘스트 12",
+    "zone_id": "magma_crater",
+    "type": "escort",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_013",
+    "description": "'magma_crater' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 7
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 420,
+      "gold": 210,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_013",
+    "quest_name": "Magma Crater 퀘스트 13",
+    "zone_id": "magma_crater",
+    "type": "investigate",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_014",
+    "description": "'magma_crater' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 8
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 430,
+      "gold": 215,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_014",
+    "quest_name": "Magma Crater 퀘스트 14",
+    "zone_id": "magma_crater",
+    "type": "protect",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_015",
+    "description": "'magma_crater' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 9
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 440,
+      "gold": 220,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_015",
+    "quest_name": "Magma Crater 퀘스트 15",
+    "zone_id": "magma_crater",
+    "type": "hunt",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_016",
+    "description": "'magma_crater' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 10
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 450,
+      "gold": 225,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_016",
+    "quest_name": "Magma Crater 퀘스트 16",
+    "zone_id": "magma_crater",
+    "type": "collect",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_017",
+    "description": "'magma_crater' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 11
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 460,
+      "gold": 230,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_017",
+    "quest_name": "Magma Crater 퀘스트 17",
+    "zone_id": "magma_crater",
+    "type": "escort",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_018",
+    "description": "'magma_crater' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 12
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 470,
+      "gold": 235,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_018",
+    "quest_name": "Magma Crater 퀘스트 18",
+    "zone_id": "magma_crater",
+    "type": "investigate",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_019",
+    "description": "'magma_crater' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 13
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 480,
+      "gold": 240,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_019",
+    "quest_name": "Magma Crater 퀘스트 19",
+    "zone_id": "magma_crater",
+    "type": "protect",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_020",
+    "description": "'magma_crater' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 14
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 490,
+      "gold": 245,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_020",
+    "quest_name": "Magma Crater 퀘스트 20",
+    "zone_id": "magma_crater",
+    "type": "hunt",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_001",
+    "description": "'magma_crater' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 5
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 500,
+      "gold": 250,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_021",
+    "quest_name": "Magma Crater 퀘스트 21",
+    "zone_id": "magma_crater",
+    "type": "collect",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_002",
+    "description": "'magma_crater' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 6
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 510,
+      "gold": 255,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_022",
+    "quest_name": "Magma Crater 퀘스트 22",
+    "zone_id": "magma_crater",
+    "type": "escort",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_003",
+    "description": "'magma_crater' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 7
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 520,
+      "gold": 260,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_023",
+    "quest_name": "Magma Crater 퀘스트 23",
+    "zone_id": "magma_crater",
+    "type": "investigate",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_004",
+    "description": "'magma_crater' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 8
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 530,
+      "gold": 265,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_024",
+    "quest_name": "Magma Crater 퀘스트 24",
+    "zone_id": "magma_crater",
+    "type": "protect",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_005",
+    "description": "'magma_crater' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 9
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 540,
+      "gold": 270,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_025",
+    "quest_name": "Magma Crater 퀘스트 25",
+    "zone_id": "magma_crater",
+    "type": "hunt",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_006",
+    "description": "'magma_crater' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 10
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 550,
+      "gold": 275,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_026",
+    "quest_name": "Magma Crater 퀘스트 26",
+    "zone_id": "magma_crater",
+    "type": "collect",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_007",
+    "description": "'magma_crater' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 11
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 560,
+      "gold": 280,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_027",
+    "quest_name": "Magma Crater 퀘스트 27",
+    "zone_id": "magma_crater",
+    "type": "escort",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_008",
+    "description": "'magma_crater' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 12
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 570,
+      "gold": 285,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_028",
+    "quest_name": "Magma Crater 퀘스트 28",
+    "zone_id": "magma_crater",
+    "type": "investigate",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_009",
+    "description": "'magma_crater' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 13
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 580,
+      "gold": 290,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_029",
+    "quest_name": "Magma Crater 퀘스트 29",
+    "zone_id": "magma_crater",
+    "type": "protect",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_010",
+    "description": "'magma_crater' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 14
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 590,
+      "gold": 295,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_030",
+    "quest_name": "Magma Crater 퀘스트 30",
+    "zone_id": "magma_crater",
+    "type": "hunt",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_011",
+    "description": "'magma_crater' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 5
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 600,
+      "gold": 300,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_031",
+    "quest_name": "Magma Crater 퀘스트 31",
+    "zone_id": "magma_crater",
+    "type": "collect",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_012",
+    "description": "'magma_crater' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 6
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 610,
+      "gold": 305,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_032",
+    "quest_name": "Magma Crater 퀘스트 32",
+    "zone_id": "magma_crater",
+    "type": "escort",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_013",
+    "description": "'magma_crater' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 7
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 620,
+      "gold": 310,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_033",
+    "quest_name": "Magma Crater 퀘스트 33",
+    "zone_id": "magma_crater",
+    "type": "investigate",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_014",
+    "description": "'magma_crater' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 8
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 630,
+      "gold": 315,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_034",
+    "quest_name": "Magma Crater 퀘스트 34",
+    "zone_id": "magma_crater",
+    "type": "protect",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_015",
+    "description": "'magma_crater' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 9
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 640,
+      "gold": 320,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_035",
+    "quest_name": "Magma Crater 퀘스트 35",
+    "zone_id": "magma_crater",
+    "type": "hunt",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_016",
+    "description": "'magma_crater' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 10
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 650,
+      "gold": 325,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_036",
+    "quest_name": "Magma Crater 퀘스트 36",
+    "zone_id": "magma_crater",
+    "type": "collect",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_017",
+    "description": "'magma_crater' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 11
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 660,
+      "gold": 330,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_037",
+    "quest_name": "Magma Crater 퀘스트 37",
+    "zone_id": "magma_crater",
+    "type": "escort",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_018",
+    "description": "'magma_crater' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 12
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 670,
+      "gold": 335,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_038",
+    "quest_name": "Magma Crater 퀘스트 38",
+    "zone_id": "magma_crater",
+    "type": "investigate",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_019",
+    "description": "'magma_crater' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 13
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 680,
+      "gold": 340,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_039",
+    "quest_name": "Magma Crater 퀘스트 39",
+    "zone_id": "magma_crater",
+    "type": "protect",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_020",
+    "description": "'magma_crater' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 14
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 690,
+      "gold": 345,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_040",
+    "quest_name": "Magma Crater 퀘스트 40",
+    "zone_id": "magma_crater",
+    "type": "hunt",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_001",
+    "description": "'magma_crater' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 5
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 700,
+      "gold": 350,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_041",
+    "quest_name": "Magma Crater 퀘스트 41",
+    "zone_id": "magma_crater",
+    "type": "collect",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_002",
+    "description": "'magma_crater' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 6
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 710,
+      "gold": 355,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_042",
+    "quest_name": "Magma Crater 퀘스트 42",
+    "zone_id": "magma_crater",
+    "type": "escort",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_003",
+    "description": "'magma_crater' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 7
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 720,
+      "gold": 360,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_043",
+    "quest_name": "Magma Crater 퀘스트 43",
+    "zone_id": "magma_crater",
+    "type": "investigate",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_004",
+    "description": "'magma_crater' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 8
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 730,
+      "gold": 365,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_044",
+    "quest_name": "Magma Crater 퀘스트 44",
+    "zone_id": "magma_crater",
+    "type": "protect",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_005",
+    "description": "'magma_crater' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 9
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 740,
+      "gold": 370,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_045",
+    "quest_name": "Magma Crater 퀘스트 45",
+    "zone_id": "magma_crater",
+    "type": "hunt",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_006",
+    "description": "'magma_crater' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 10
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 750,
+      "gold": 375,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_046",
+    "quest_name": "Magma Crater 퀘스트 46",
+    "zone_id": "magma_crater",
+    "type": "collect",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_007",
+    "description": "'magma_crater' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 11
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 760,
+      "gold": 380,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_047",
+    "quest_name": "Magma Crater 퀘스트 47",
+    "zone_id": "magma_crater",
+    "type": "escort",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_008",
+    "description": "'magma_crater' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 12
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 770,
+      "gold": 385,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_048",
+    "quest_name": "Magma Crater 퀘스트 48",
+    "zone_id": "magma_crater",
+    "type": "investigate",
+    "level": 15,
+    "giver_npc": "magma_crater_npc_009",
+    "description": "'magma_crater' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 13
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 780,
+      "gold": 390,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_049",
+    "quest_name": "Magma Crater 퀘스트 49",
+    "zone_id": "magma_crater",
+    "type": "protect",
+    "level": 16,
+    "giver_npc": "magma_crater_npc_010",
+    "description": "'magma_crater' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 14
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 790,
+      "gold": 395,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "magma_crater_quest_050",
+    "quest_name": "Magma Crater 퀘스트 50",
+    "zone_id": "magma_crater",
+    "type": "hunt",
+    "level": 17,
+    "giver_npc": "magma_crater_npc_011",
+    "description": "'magma_crater' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 5
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 800,
+      "gold": 400,
+      "items": [
+        "steel_sword",
+        "health_potion_8",
+        "mana_potion_5"
+      ],
+      "status_effect": "none"
+    }
+  }
+]

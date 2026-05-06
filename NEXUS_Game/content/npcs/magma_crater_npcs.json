@@ -1,0 +1,422 @@
+[
+  {
+    "npc_id": "magma_crater_npc_001",
+    "npc_name": "NPC_magma_crater_1",
+    "zone_id": "magma_crater",
+    "type": "guard",
+    "level": 16,
+    "position": {
+      "x": 130,
+      "y": 0,
+      "z": 125
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_1"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_002",
+    "npc_name": "NPC_magma_crater_2",
+    "zone_id": "magma_crater",
+    "type": "scholar",
+    "level": 17,
+    "position": {
+      "x": 160,
+      "y": 0,
+      "z": 150
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_2"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_003",
+    "npc_name": "NPC_magma_crater_3",
+    "zone_id": "magma_crater",
+    "type": "priest",
+    "level": 18,
+    "position": {
+      "x": 190,
+      "y": 0,
+      "z": 175
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_3"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_004",
+    "npc_name": "NPC_magma_crater_4",
+    "zone_id": "magma_crater",
+    "type": "blacksmith",
+    "level": 19,
+    "position": {
+      "x": 220,
+      "y": 0,
+      "z": 200
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_4"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_005",
+    "npc_name": "NPC_magma_crater_5",
+    "zone_id": "magma_crater",
+    "type": "hunter",
+    "level": 15,
+    "position": {
+      "x": 250,
+      "y": 0,
+      "z": 225
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_5"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_006",
+    "npc_name": "NPC_magma_crater_6",
+    "zone_id": "magma_crater",
+    "type": "bard",
+    "level": 16,
+    "position": {
+      "x": 280,
+      "y": 0,
+      "z": 250
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_6"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_007",
+    "npc_name": "NPC_magma_crater_7",
+    "zone_id": "magma_crater",
+    "type": "thief",
+    "level": 17,
+    "position": {
+      "x": 310,
+      "y": 0,
+      "z": 275
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_7"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_008",
+    "npc_name": "NPC_magma_crater_8",
+    "zone_id": "magma_crater",
+    "type": "wizard",
+    "level": 18,
+    "position": {
+      "x": 340,
+      "y": 0,
+      "z": 300
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_8"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_009",
+    "npc_name": "NPC_magma_crater_9",
+    "zone_id": "magma_crater",
+    "type": "warrior",
+    "level": 19,
+    "position": {
+      "x": 370,
+      "y": 0,
+      "z": 325
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_9"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_010",
+    "npc_name": "NPC_magma_crater_10",
+    "zone_id": "magma_crater",
+    "type": "merchant",
+    "level": 15,
+    "position": {
+      "x": 100,
+      "y": 0,
+      "z": 350
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_10"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_011",
+    "npc_name": "NPC_magma_crater_11",
+    "zone_id": "magma_crater",
+    "type": "guard",
+    "level": 16,
+    "position": {
+      "x": 130,
+      "y": 0,
+      "z": 375
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_11"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_012",
+    "npc_name": "NPC_magma_crater_12",
+    "zone_id": "magma_crater",
+    "type": "scholar",
+    "level": 17,
+    "position": {
+      "x": 160,
+      "y": 0,
+      "z": 100
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_12"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_013",
+    "npc_name": "NPC_magma_crater_13",
+    "zone_id": "magma_crater",
+    "type": "priest",
+    "level": 18,
+    "position": {
+      "x": 190,
+      "y": 0,
+      "z": 125
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_13"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_014",
+    "npc_name": "NPC_magma_crater_14",
+    "zone_id": "magma_crater",
+    "type": "blacksmith",
+    "level": 19,
+    "position": {
+      "x": 220,
+      "y": 0,
+      "z": 150
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_14"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_015",
+    "npc_name": "NPC_magma_crater_15",
+    "zone_id": "magma_crater",
+    "type": "hunter",
+    "level": 15,
+    "position": {
+      "x": 250,
+      "y": 0,
+      "z": 175
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_15"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_016",
+    "npc_name": "NPC_magma_crater_16",
+    "zone_id": "magma_crater",
+    "type": "bard",
+    "level": 16,
+    "position": {
+      "x": 280,
+      "y": 0,
+      "z": 200
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_16"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_017",
+    "npc_name": "NPC_magma_crater_17",
+    "zone_id": "magma_crater",
+    "type": "thief",
+    "level": 17,
+    "position": {
+      "x": 310,
+      "y": 0,
+      "z": 225
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_17"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_018",
+    "npc_name": "NPC_magma_crater_18",
+    "zone_id": "magma_crater",
+    "type": "wizard",
+    "level": 18,
+    "position": {
+      "x": 340,
+      "y": 0,
+      "z": 250
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_18"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_019",
+    "npc_name": "NPC_magma_crater_19",
+    "zone_id": "magma_crater",
+    "type": "warrior",
+    "level": 19,
+    "position": {
+      "x": 370,
+      "y": 0,
+      "z": 275
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_19"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  },
+  {
+    "npc_id": "magma_crater_npc_020",
+    "npc_name": "NPC_magma_crater_20",
+    "zone_id": "magma_crater",
+    "type": "merchant",
+    "level": 15,
+    "position": {
+      "x": 100,
+      "y": 0,
+      "z": 300
+    },
+    "dialogue": "안녕하세요. 저는 magma_crater 지역의 NPC입니다.",
+    "quests_offered": [
+      "magma_crater_quest_20"
+    ],
+    "inventory": [
+      "steel_sword",
+      "health_potion_8",
+      "mana_potion_5"
+    ]
+  }
+]

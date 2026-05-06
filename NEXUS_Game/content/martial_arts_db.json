@@ -1,0 +1,787 @@
+{
+  "martial_art_0000": {
+    "id": "martial_art_0000",
+    "name": "Slash (기본)",
+    "base": "slash",
+    "modifiers": [],
+    "damage": 10,
+    "cooldown": 1.0,
+    "mp_cost": 5
+  },
+  "martial_art_0001": {
+    "id": "martial_art_0001",
+    "name": "Thrust (기본)",
+    "base": "thrust",
+    "modifiers": [],
+    "damage": 10,
+    "cooldown": 1.0,
+    "mp_cost": 5
+  },
+  "martial_art_0002": {
+    "id": "martial_art_0002",
+    "name": "Smash (기본)",
+    "base": "smash",
+    "modifiers": [],
+    "damage": 10,
+    "cooldown": 1.0,
+    "mp_cost": 5
+  },
+  "martial_art_0003": {
+    "id": "martial_art_0003",
+    "name": "Wave (기본)",
+    "base": "wave",
+    "modifiers": [],
+    "damage": 10,
+    "cooldown": 1.0,
+    "mp_cost": 5
+  },
+  "martial_art_0004": {
+    "id": "martial_art_0004",
+    "name": "Special (기본)",
+    "base": "special",
+    "modifiers": [],
+    "damage": 10,
+    "cooldown": 1.0,
+    "mp_cost": 5
+  },
+  "martial_art_0005": {
+    "id": "martial_art_0005",
+    "name": "Slash Quick",
+    "base": "slash",
+    "modifiers": [
+      "quick"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0006": {
+    "id": "martial_art_0006",
+    "name": "Slash Heavy",
+    "base": "slash",
+    "modifiers": [
+      "heavy"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0007": {
+    "id": "martial_art_0007",
+    "name": "Slash Wide",
+    "base": "slash",
+    "modifiers": [
+      "wide"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0008": {
+    "id": "martial_art_0008",
+    "name": "Slash Precise",
+    "base": "slash",
+    "modifiers": [
+      "precise"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0009": {
+    "id": "martial_art_0009",
+    "name": "Slash Pierce",
+    "base": "slash",
+    "modifiers": [
+      "pierce"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0010": {
+    "id": "martial_art_0010",
+    "name": "Slash Chain",
+    "base": "slash",
+    "modifiers": [
+      "chain"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0011": {
+    "id": "martial_art_0011",
+    "name": "Slash Drain",
+    "base": "slash",
+    "modifiers": [
+      "drain"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0012": {
+    "id": "martial_art_0012",
+    "name": "Slash Poison",
+    "base": "slash",
+    "modifiers": [
+      "poison"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0013": {
+    "id": "martial_art_0013",
+    "name": "Thrust Quick",
+    "base": "thrust",
+    "modifiers": [
+      "quick"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0014": {
+    "id": "martial_art_0014",
+    "name": "Thrust Heavy",
+    "base": "thrust",
+    "modifiers": [
+      "heavy"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0015": {
+    "id": "martial_art_0015",
+    "name": "Thrust Wide",
+    "base": "thrust",
+    "modifiers": [
+      "wide"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0016": {
+    "id": "martial_art_0016",
+    "name": "Thrust Precise",
+    "base": "thrust",
+    "modifiers": [
+      "precise"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0017": {
+    "id": "martial_art_0017",
+    "name": "Thrust Pierce",
+    "base": "thrust",
+    "modifiers": [
+      "pierce"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0018": {
+    "id": "martial_art_0018",
+    "name": "Thrust Chain",
+    "base": "thrust",
+    "modifiers": [
+      "chain"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0019": {
+    "id": "martial_art_0019",
+    "name": "Thrust Drain",
+    "base": "thrust",
+    "modifiers": [
+      "drain"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0020": {
+    "id": "martial_art_0020",
+    "name": "Thrust Poison",
+    "base": "thrust",
+    "modifiers": [
+      "poison"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0021": {
+    "id": "martial_art_0021",
+    "name": "Smash Quick",
+    "base": "smash",
+    "modifiers": [
+      "quick"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0022": {
+    "id": "martial_art_0022",
+    "name": "Smash Heavy",
+    "base": "smash",
+    "modifiers": [
+      "heavy"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0023": {
+    "id": "martial_art_0023",
+    "name": "Smash Wide",
+    "base": "smash",
+    "modifiers": [
+      "wide"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0024": {
+    "id": "martial_art_0024",
+    "name": "Smash Precise",
+    "base": "smash",
+    "modifiers": [
+      "precise"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0025": {
+    "id": "martial_art_0025",
+    "name": "Smash Pierce",
+    "base": "smash",
+    "modifiers": [
+      "pierce"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0026": {
+    "id": "martial_art_0026",
+    "name": "Smash Chain",
+    "base": "smash",
+    "modifiers": [
+      "chain"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0027": {
+    "id": "martial_art_0027",
+    "name": "Smash Drain",
+    "base": "smash",
+    "modifiers": [
+      "drain"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0028": {
+    "id": "martial_art_0028",
+    "name": "Smash Poison",
+    "base": "smash",
+    "modifiers": [
+      "poison"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0029": {
+    "id": "martial_art_0029",
+    "name": "Wave Quick",
+    "base": "wave",
+    "modifiers": [
+      "quick"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0030": {
+    "id": "martial_art_0030",
+    "name": "Wave Heavy",
+    "base": "wave",
+    "modifiers": [
+      "heavy"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0031": {
+    "id": "martial_art_0031",
+    "name": "Wave Wide",
+    "base": "wave",
+    "modifiers": [
+      "wide"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0032": {
+    "id": "martial_art_0032",
+    "name": "Wave Precise",
+    "base": "wave",
+    "modifiers": [
+      "precise"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0033": {
+    "id": "martial_art_0033",
+    "name": "Wave Pierce",
+    "base": "wave",
+    "modifiers": [
+      "pierce"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0034": {
+    "id": "martial_art_0034",
+    "name": "Wave Chain",
+    "base": "wave",
+    "modifiers": [
+      "chain"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0035": {
+    "id": "martial_art_0035",
+    "name": "Wave Drain",
+    "base": "wave",
+    "modifiers": [
+      "drain"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0036": {
+    "id": "martial_art_0036",
+    "name": "Wave Poison",
+    "base": "wave",
+    "modifiers": [
+      "poison"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0037": {
+    "id": "martial_art_0037",
+    "name": "Special Quick",
+    "base": "special",
+    "modifiers": [
+      "quick"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0038": {
+    "id": "martial_art_0038",
+    "name": "Special Heavy",
+    "base": "special",
+    "modifiers": [
+      "heavy"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0039": {
+    "id": "martial_art_0039",
+    "name": "Special Wide",
+    "base": "special",
+    "modifiers": [
+      "wide"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0040": {
+    "id": "martial_art_0040",
+    "name": "Special Precise",
+    "base": "special",
+    "modifiers": [
+      "precise"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0041": {
+    "id": "martial_art_0041",
+    "name": "Special Pierce",
+    "base": "special",
+    "modifiers": [
+      "pierce"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0042": {
+    "id": "martial_art_0042",
+    "name": "Special Chain",
+    "base": "special",
+    "modifiers": [
+      "chain"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0043": {
+    "id": "martial_art_0043",
+    "name": "Special Drain",
+    "base": "special",
+    "modifiers": [
+      "drain"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0044": {
+    "id": "martial_art_0044",
+    "name": "Special Poison",
+    "base": "special",
+    "modifiers": [
+      "poison"
+    ],
+    "damage": 15,
+    "cooldown": 1.5,
+    "mp_cost": 10
+  },
+  "martial_art_0045": {
+    "id": "martial_art_0045",
+    "name": "Slash Quick Heavy",
+    "base": "slash",
+    "modifiers": [
+      "quick",
+      "heavy"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0046": {
+    "id": "martial_art_0046",
+    "name": "Slash Heavy Wide",
+    "base": "slash",
+    "modifiers": [
+      "heavy",
+      "wide"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0047": {
+    "id": "martial_art_0047",
+    "name": "Slash Wide Precise",
+    "base": "slash",
+    "modifiers": [
+      "wide",
+      "precise"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0048": {
+    "id": "martial_art_0048",
+    "name": "Slash Precise Pierce",
+    "base": "slash",
+    "modifiers": [
+      "precise",
+      "pierce"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0049": {
+    "id": "martial_art_0049",
+    "name": "Slash Pierce Chain",
+    "base": "slash",
+    "modifiers": [
+      "pierce",
+      "chain"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0050": {
+    "id": "martial_art_0050",
+    "name": "Thrust Quick Heavy",
+    "base": "thrust",
+    "modifiers": [
+      "quick",
+      "heavy"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0051": {
+    "id": "martial_art_0051",
+    "name": "Thrust Heavy Wide",
+    "base": "thrust",
+    "modifiers": [
+      "heavy",
+      "wide"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0052": {
+    "id": "martial_art_0052",
+    "name": "Thrust Wide Precise",
+    "base": "thrust",
+    "modifiers": [
+      "wide",
+      "precise"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0053": {
+    "id": "martial_art_0053",
+    "name": "Thrust Precise Pierce",
+    "base": "thrust",
+    "modifiers": [
+      "precise",
+      "pierce"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0054": {
+    "id": "martial_art_0054",
+    "name": "Thrust Pierce Chain",
+    "base": "thrust",
+    "modifiers": [
+      "pierce",
+      "chain"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0055": {
+    "id": "martial_art_0055",
+    "name": "Smash Quick Heavy",
+    "base": "smash",
+    "modifiers": [
+      "quick",
+      "heavy"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0056": {
+    "id": "martial_art_0056",
+    "name": "Smash Heavy Wide",
+    "base": "smash",
+    "modifiers": [
+      "heavy",
+      "wide"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0057": {
+    "id": "martial_art_0057",
+    "name": "Smash Wide Precise",
+    "base": "smash",
+    "modifiers": [
+      "wide",
+      "precise"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0058": {
+    "id": "martial_art_0058",
+    "name": "Smash Precise Pierce",
+    "base": "smash",
+    "modifiers": [
+      "precise",
+      "pierce"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0059": {
+    "id": "martial_art_0059",
+    "name": "Smash Pierce Chain",
+    "base": "smash",
+    "modifiers": [
+      "pierce",
+      "chain"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0060": {
+    "id": "martial_art_0060",
+    "name": "Wave Quick Heavy",
+    "base": "wave",
+    "modifiers": [
+      "quick",
+      "heavy"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0061": {
+    "id": "martial_art_0061",
+    "name": "Wave Heavy Wide",
+    "base": "wave",
+    "modifiers": [
+      "heavy",
+      "wide"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0062": {
+    "id": "martial_art_0062",
+    "name": "Wave Wide Precise",
+    "base": "wave",
+    "modifiers": [
+      "wide",
+      "precise"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0063": {
+    "id": "martial_art_0063",
+    "name": "Wave Precise Pierce",
+    "base": "wave",
+    "modifiers": [
+      "precise",
+      "pierce"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0064": {
+    "id": "martial_art_0064",
+    "name": "Wave Pierce Chain",
+    "base": "wave",
+    "modifiers": [
+      "pierce",
+      "chain"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0065": {
+    "id": "martial_art_0065",
+    "name": "Special Quick Heavy",
+    "base": "special",
+    "modifiers": [
+      "quick",
+      "heavy"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0066": {
+    "id": "martial_art_0066",
+    "name": "Special Heavy Wide",
+    "base": "special",
+    "modifiers": [
+      "heavy",
+      "wide"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0067": {
+    "id": "martial_art_0067",
+    "name": "Special Wide Precise",
+    "base": "special",
+    "modifiers": [
+      "wide",
+      "precise"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0068": {
+    "id": "martial_art_0068",
+    "name": "Special Precise Pierce",
+    "base": "special",
+    "modifiers": [
+      "precise",
+      "pierce"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  },
+  "martial_art_0069": {
+    "id": "martial_art_0069",
+    "name": "Special Pierce Chain",
+    "base": "special",
+    "modifiers": [
+      "pierce",
+      "chain"
+    ],
+    "damage": 20,
+    "cooldown": 2.0,
+    "mp_cost": 15
+  }
+}

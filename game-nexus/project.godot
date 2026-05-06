@@ -1,0 +1,17 @@
+[gd_project]
+config_version=5
+name="NEXUS - 무협"
+version="0.1.0"
+description="3D 동양 판타지 액션 무협 게임"
+
+[application]
+config/name="NEXUS"
+run/main_scene="res://src/scenes/main.tscn"
+config/features=PackedStringArray("4.0", "3d")
+
+[input]
+ui_spin={"deadzone": 0.5}
+ui_dash={"deadzone": 0.5}
+
+[rendering]
+renderer/rendering_method="forward_plus"

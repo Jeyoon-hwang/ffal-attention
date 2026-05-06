@@ -1,0 +1,622 @@
+[
+  {
+    "quest_id": "divine_realm_quest_001",
+    "quest_name": "Divine Realm 퀘스트 1",
+    "zone_id": "divine_realm",
+    "type": "collect",
+    "level": 26,
+    "giver_npc": "divine_realm_npc_002",
+    "description": "'divine_realm' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 6
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 510,
+      "gold": 255,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_002",
+    "quest_name": "Divine Realm 퀘스트 2",
+    "zone_id": "divine_realm",
+    "type": "escort",
+    "level": 27,
+    "giver_npc": "divine_realm_npc_003",
+    "description": "'divine_realm' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 7
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 520,
+      "gold": 260,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_003",
+    "quest_name": "Divine Realm 퀘스트 3",
+    "zone_id": "divine_realm",
+    "type": "investigate",
+    "level": 25,
+    "giver_npc": "divine_realm_npc_004",
+    "description": "'divine_realm' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 8
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 530,
+      "gold": 265,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_004",
+    "quest_name": "Divine Realm 퀘스트 4",
+    "zone_id": "divine_realm",
+    "type": "protect",
+    "level": 26,
+    "giver_npc": "divine_realm_npc_005",
+    "description": "'divine_realm' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 9
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 540,
+      "gold": 270,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_005",
+    "quest_name": "Divine Realm 퀘스트 5",
+    "zone_id": "divine_realm",
+    "type": "hunt",
+    "level": 27,
+    "giver_npc": "divine_realm_npc_006",
+    "description": "'divine_realm' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 10
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 550,
+      "gold": 275,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_006",
+    "quest_name": "Divine Realm 퀘스트 6",
+    "zone_id": "divine_realm",
+    "type": "collect",
+    "level": 25,
+    "giver_npc": "divine_realm_npc_007",
+    "description": "'divine_realm' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 11
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 560,
+      "gold": 280,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_007",
+    "quest_name": "Divine Realm 퀘스트 7",
+    "zone_id": "divine_realm",
+    "type": "escort",
+    "level": 26,
+    "giver_npc": "divine_realm_npc_008",
+    "description": "'divine_realm' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 12
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 570,
+      "gold": 285,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_008",
+    "quest_name": "Divine Realm 퀘스트 8",
+    "zone_id": "divine_realm",
+    "type": "investigate",
+    "level": 27,
+    "giver_npc": "divine_realm_npc_009",
+    "description": "'divine_realm' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 13
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 580,
+      "gold": 290,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_009",
+    "quest_name": "Divine Realm 퀘스트 9",
+    "zone_id": "divine_realm",
+    "type": "protect",
+    "level": 25,
+    "giver_npc": "divine_realm_npc_010",
+    "description": "'divine_realm' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 14
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 590,
+      "gold": 295,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_010",
+    "quest_name": "Divine Realm 퀘스트 10",
+    "zone_id": "divine_realm",
+    "type": "hunt",
+    "level": 26,
+    "giver_npc": "divine_realm_npc_011",
+    "description": "'divine_realm' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 5
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 600,
+      "gold": 300,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_011",
+    "quest_name": "Divine Realm 퀘스트 11",
+    "zone_id": "divine_realm",
+    "type": "collect",
+    "level": 27,
+    "giver_npc": "divine_realm_npc_012",
+    "description": "'divine_realm' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 6
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 610,
+      "gold": 305,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_012",
+    "quest_name": "Divine Realm 퀘스트 12",
+    "zone_id": "divine_realm",
+    "type": "escort",
+    "level": 25,
+    "giver_npc": "divine_realm_npc_013",
+    "description": "'divine_realm' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 7
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 620,
+      "gold": 310,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_013",
+    "quest_name": "Divine Realm 퀘스트 13",
+    "zone_id": "divine_realm",
+    "type": "investigate",
+    "level": 26,
+    "giver_npc": "divine_realm_npc_014",
+    "description": "'divine_realm' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 8
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 630,
+      "gold": 315,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_014",
+    "quest_name": "Divine Realm 퀘스트 14",
+    "zone_id": "divine_realm",
+    "type": "protect",
+    "level": 27,
+    "giver_npc": "divine_realm_npc_015",
+    "description": "'divine_realm' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 9
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 640,
+      "gold": 320,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_015",
+    "quest_name": "Divine Realm 퀘스트 15",
+    "zone_id": "divine_realm",
+    "type": "hunt",
+    "level": 25,
+    "giver_npc": "divine_realm_npc_016",
+    "description": "'divine_realm' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 10
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 650,
+      "gold": 325,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_016",
+    "quest_name": "Divine Realm 퀘스트 16",
+    "zone_id": "divine_realm",
+    "type": "collect",
+    "level": 26,
+    "giver_npc": "divine_realm_npc_017",
+    "description": "'divine_realm' 지역에서 'collect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 11
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 4
+      }
+    ],
+    "reward": {
+      "experience": 660,
+      "gold": 330,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_017",
+    "quest_name": "Divine Realm 퀘스트 17",
+    "zone_id": "divine_realm",
+    "type": "escort",
+    "level": 27,
+    "giver_npc": "divine_realm_npc_018",
+    "description": "'divine_realm' 지역에서 'escort' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 12
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 5
+      }
+    ],
+    "reward": {
+      "experience": 670,
+      "gold": 335,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_018",
+    "quest_name": "Divine Realm 퀘스트 18",
+    "zone_id": "divine_realm",
+    "type": "investigate",
+    "level": 25,
+    "giver_npc": "divine_realm_npc_019",
+    "description": "'divine_realm' 지역에서 'investigate' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 13
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 6
+      }
+    ],
+    "reward": {
+      "experience": 680,
+      "gold": 340,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_019",
+    "quest_name": "Divine Realm 퀘스트 19",
+    "zone_id": "divine_realm",
+    "type": "protect",
+    "level": 26,
+    "giver_npc": "divine_realm_npc_020",
+    "description": "'divine_realm' 지역에서 'protect' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 14
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 7
+      }
+    ],
+    "reward": {
+      "experience": 690,
+      "gold": 345,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  },
+  {
+    "quest_id": "divine_realm_quest_020",
+    "quest_name": "Divine Realm 퀘스트 20",
+    "zone_id": "divine_realm",
+    "type": "hunt",
+    "level": 27,
+    "giver_npc": "divine_realm_npc_001",
+    "description": "'divine_realm' 지역에서 'hunt' 타입의 퀘스트를 완료하세요.",
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "enemies",
+        "count": 5
+      },
+      {
+        "type": "collect",
+        "target": "items",
+        "count": 3
+      }
+    ],
+    "reward": {
+      "experience": 700,
+      "gold": 350,
+      "items": [
+        "divine_weapon",
+        "immortal_potion",
+        "holy_grail"
+      ],
+      "status_effect": "none"
+    }
+  }
+]

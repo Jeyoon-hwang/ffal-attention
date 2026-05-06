@@ -1,0 +1,141 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfg7djgh3gjd"]
+
+[ext_resource type="Script" id="1" path="res://src/scripts/game_manager.gd"]
+[ext_resource type="Script" id="2" path="res://src/scripts/ui_manager.gd"]
+[ext_resource type="PackedScene" id="3" uid="uid://bimrqc7yhs3bk" path="res://src/scenes/player.tscn"]
+
+[node name="Main" type="Node3D"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1")
+
+[node name="UIManager" type="CanvasLayer" parent="."]
+script = ExtResource("2")
+
+[node name="Player" parent="." instance=ExtResource("3")]
+position = Vector3(0, 1, 5)
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Ground" type="CSGBox3D" parent="Environment"]
+size = Vector3(200, 1, 200)
+position = Vector3(0, -0.5, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+position = Vector3(30, 40, 20)
+rotation = Vector3(-0.5, 0.6, 0)
+shadow_enabled = true
+energy_multiplier = 1.5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Environment"]
+position = Vector3(0, 30, 0)
+energy_multiplier = 0.3
+omni_range = 150.0
+
+[node name="Dojang" type="CSGBox3D" parent="Environment"]
+position = Vector3(0, 5, 15)
+size = Vector3(20, 10, 15)
+
+[node name="Inn" type="CSGBox3D" parent="Environment"]
+position = Vector3(25, 4, 0)
+size = Vector3(15, 8, 15)
+
+[node name="Shop" type="CSGBox3D" parent="Environment"]
+position = Vector3(-25, 4, 0)
+size = Vector3(15, 8, 15)
+
+[node name="Library" type="CSGBox3D" parent="Environment"]
+position = Vector3(20, 6, 20)
+size = Vector3(12, 12, 12)
+
+[node name="Meditation" type="CSGBox3D" parent="Environment"]
+position = Vector3(20, 3, -20)
+size = Vector3(12, 6, 12)
+
+[node name="TrainingGround" type="CSGBox3D" parent="Environment"]
+position = Vector3(0, -0.05, -30)
+size = Vector3(40, 0.1, 40)
+
+[node name="BossArena" type="Node3D" parent="Environment"]
+position = Vector3(0, 0, -80)
+
+[node name="BossFloor" type="CSGBox3D" parent="Environment/BossArena"]
+position = Vector3(0, 0.5, 0)
+size = Vector3(30, 0.2, 30)
+
+[node name="WallNorth" type="CSGBox3D" parent="Environment/BossArena"]
+position = Vector3(0, 1.5, -16)
+size = Vector3(30, 3, 1)
+
+[node name="WallEast" type="CSGBox3D" parent="Environment/BossArena"]
+position = Vector3(16, 1.5, 0)
+size = Vector3(1, 3, 30)
+
+[node name="WallWest" type="CSGBox3D" parent="Environment/BossArena"]
+position = Vector3(-16, 1.5, 0)
+size = Vector3(1, 3, 30)
+
+[node name="Tree1" type="CSGBox3D" parent="Environment"]
+position = Vector3(-60, 4, 60)
+size = Vector3(4, 12, 4)
+
+[node name="Tree2" type="CSGBox3D" parent="Environment"]
+position = Vector3(60, 4, 60)
+size = Vector3(4, 12, 4)
+
+[node name="Tree3" type="CSGBox3D" parent="Environment"]
+position = Vector3(-60, 4, -60)
+size = Vector3(4, 12, 4)
+
+[node name="Tree4" type="CSGBox3D" parent="Environment"]
+position = Vector3(60, 4, -60)
+size = Vector3(4, 12, 4)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 2, 0)
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="SpawnPoint1" type="Node3D" parent="SpawnPoints"]
+position = Vector3(-10, 0.5, -20)
+
+[node name="SpawnPoint2" type="Node3D" parent="SpawnPoints"]
+position = Vector3(10, 0.5, -40)
+
+[node name="SpawnPoint3" type="Node3D" parent="SpawnPoints"]
+position = Vector3(20, 0.5, -30)
+
+[node name="SpawnPoint4" type="Node3D" parent="SpawnPoints"]
+position = Vector3(-20, 0.5, -30)
+
+[node name="SpawnPoint5" type="Node3D" parent="SpawnPoints"]
+position = Vector3(0, 0.5, -30)
+
+[node name="SpawnPoint6" type="Node3D" parent="SpawnPoints"]
+position = Vector3(15, 0.5, -15)
+
+[node name="SpawnPoint7" type="Node3D" parent="SpawnPoints"]
+position = Vector3(-15, 0.5, -15)
+
+[node name="SpawnPoint8" type="Node3D" parent="SpawnPoints"]
+position = Vector3(25, 0.5, -45)
+
+[node name="SpawnPoint9" type="Node3D" parent="SpawnPoints"]
+position = Vector3(-25, 0.5, -45)
+
+[node name="SpawnPoint10" type="Node3D" parent="SpawnPoints"]
+position = Vector3(0, 0.5, -50)
+
+[node name="DungeonEntrances" type="Node3D" parent="."]
+
+[node name="DungeonN" type="Node3D" parent="DungeonEntrances"]
+position = Vector3(0, 0, 100)
+
+[node name="DungeonE" type="Node3D" parent="DungeonEntrances"]
+position = Vector3(100, 0, 0)
+
+[node name="DungeonW" type="Node3D" parent="DungeonEntrances"]
+position = Vector3(-100, 0, 0)
+
+[node name="BossSpawnPoint" type="Node3D" parent="."]
+position = Vector3(0, 1, -80)

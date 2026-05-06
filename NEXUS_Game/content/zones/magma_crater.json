@@ -1,0 +1,515 @@
+{
+  "zone_id": "magma_crater",
+  "zone_name": "마그마 분화 (Magma Crater)",
+  "description": "끓어오르는 용암 분화 — 극한의 화력 지역",
+  "size": {
+    "width": 500,
+    "height": 500,
+    "depth": 500
+  },
+  "terrain": {
+    "type": "volcanic",
+    "lava": 0.3,
+    "ash": 0.3,
+    "rock": 0.3,
+    "crystal": 0.1
+  },
+  "environment": {
+    "weather": "volcanic_haze",
+    "time_of_day": "night",
+    "ambient_light": 1.8,
+    "fog_distance": 100,
+    "temperature": 800
+  },
+  "color_theme": "red_orange",
+  "tier": 3,
+  "difficulty": 4,
+  "dungeons": [
+    {
+      "dungeon_id": "magma_crater_dungeon_01",
+      "dungeon_name": "Magma Crater 던전 1",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 80,
+        "y": 0,
+        "z": 90
+      },
+      "floors": 3,
+      "rooms_per_floor": 6,
+      "difficulty": 5,
+      "recommended_level": 16,
+      "boss_floor": 3,
+      "boss_name": "던전 보스 1 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 310,
+      "rewards": {
+        "experience": 1250,
+        "gold": 430,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_02",
+      "dungeon_name": "Magma Crater 던전 2",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 110,
+        "y": 0,
+        "z": 130
+      },
+      "floors": 4,
+      "rooms_per_floor": 7,
+      "difficulty": 6,
+      "recommended_level": 17,
+      "boss_floor": 4,
+      "boss_name": "던전 보스 2 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 320,
+      "rewards": {
+        "experience": 1300,
+        "gold": 460,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_03",
+      "dungeon_name": "Magma Crater 던전 3",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 140,
+        "y": 0,
+        "z": 170
+      },
+      "floors": 5,
+      "rooms_per_floor": 8,
+      "difficulty": 4,
+      "recommended_level": 15,
+      "boss_floor": 5,
+      "boss_name": "던전 보스 3 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 330,
+      "rewards": {
+        "experience": 1350,
+        "gold": 490,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_04",
+      "dungeon_name": "Magma Crater 던전 4",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 170,
+        "y": 0,
+        "z": 210
+      },
+      "floors": 6,
+      "rooms_per_floor": 9,
+      "difficulty": 5,
+      "recommended_level": 16,
+      "boss_floor": 6,
+      "boss_name": "던전 보스 4 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 340,
+      "rewards": {
+        "experience": 1400,
+        "gold": 520,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_05",
+      "dungeon_name": "Magma Crater 던전 5",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 200,
+        "y": 0,
+        "z": 250
+      },
+      "floors": 2,
+      "rooms_per_floor": 10,
+      "difficulty": 6,
+      "recommended_level": 17,
+      "boss_floor": 2,
+      "boss_name": "던전 보스 5 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 350,
+      "rewards": {
+        "experience": 1450,
+        "gold": 550,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_06",
+      "dungeon_name": "Magma Crater 던전 6",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 230,
+        "y": 0,
+        "z": 290
+      },
+      "floors": 3,
+      "rooms_per_floor": 5,
+      "difficulty": 4,
+      "recommended_level": 15,
+      "boss_floor": 3,
+      "boss_name": "던전 보스 6 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 360,
+      "rewards": {
+        "experience": 1500,
+        "gold": 580,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_07",
+      "dungeon_name": "Magma Crater 던전 7",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 260,
+        "y": 0,
+        "z": 330
+      },
+      "floors": 4,
+      "rooms_per_floor": 6,
+      "difficulty": 5,
+      "recommended_level": 16,
+      "boss_floor": 4,
+      "boss_name": "던전 보스 7 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 370,
+      "rewards": {
+        "experience": 1550,
+        "gold": 610,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_08",
+      "dungeon_name": "Magma Crater 던전 8",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 290,
+        "y": 0,
+        "z": 370
+      },
+      "floors": 5,
+      "rooms_per_floor": 7,
+      "difficulty": 6,
+      "recommended_level": 17,
+      "boss_floor": 5,
+      "boss_name": "던전 보스 8 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 380,
+      "rewards": {
+        "experience": 1600,
+        "gold": 640,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_09",
+      "dungeon_name": "Magma Crater 던전 9",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 320,
+        "y": 0,
+        "z": 410
+      },
+      "floors": 6,
+      "rooms_per_floor": 8,
+      "difficulty": 4,
+      "recommended_level": 15,
+      "boss_floor": 6,
+      "boss_name": "던전 보스 9 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 390,
+      "rewards": {
+        "experience": 1650,
+        "gold": 670,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_10",
+      "dungeon_name": "Magma Crater 던전 10",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 350,
+        "y": 0,
+        "z": 50
+      },
+      "floors": 2,
+      "rooms_per_floor": 9,
+      "difficulty": 5,
+      "recommended_level": 16,
+      "boss_floor": 2,
+      "boss_name": "던전 보스 10 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 400,
+      "rewards": {
+        "experience": 1700,
+        "gold": 700,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_11",
+      "dungeon_name": "Magma Crater 던전 11",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 380,
+        "y": 0,
+        "z": 90
+      },
+      "floors": 3,
+      "rooms_per_floor": 10,
+      "difficulty": 6,
+      "recommended_level": 17,
+      "boss_floor": 3,
+      "boss_name": "던전 보스 11 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 410,
+      "rewards": {
+        "experience": 1750,
+        "gold": 730,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_12",
+      "dungeon_name": "Magma Crater 던전 12",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 410,
+        "y": 0,
+        "z": 130
+      },
+      "floors": 4,
+      "rooms_per_floor": 5,
+      "difficulty": 4,
+      "recommended_level": 15,
+      "boss_floor": 4,
+      "boss_name": "던전 보스 12 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 420,
+      "rewards": {
+        "experience": 1800,
+        "gold": 760,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_13",
+      "dungeon_name": "Magma Crater 던전 13",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 440,
+        "y": 0,
+        "z": 170
+      },
+      "floors": 5,
+      "rooms_per_floor": 6,
+      "difficulty": 5,
+      "recommended_level": 16,
+      "boss_floor": 5,
+      "boss_name": "던전 보스 13 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 430,
+      "rewards": {
+        "experience": 1850,
+        "gold": 790,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_14",
+      "dungeon_name": "Magma Crater 던전 14",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 70,
+        "y": 0,
+        "z": 210
+      },
+      "floors": 6,
+      "rooms_per_floor": 7,
+      "difficulty": 6,
+      "recommended_level": 17,
+      "boss_floor": 6,
+      "boss_name": "던전 보스 14 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 440,
+      "rewards": {
+        "experience": 1900,
+        "gold": 820,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_15",
+      "dungeon_name": "Magma Crater 던전 15",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 100,
+        "y": 0,
+        "z": 250
+      },
+      "floors": 2,
+      "rooms_per_floor": 8,
+      "difficulty": 4,
+      "recommended_level": 15,
+      "boss_floor": 2,
+      "boss_name": "던전 보스 15 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 450,
+      "rewards": {
+        "experience": 1950,
+        "gold": 850,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_16",
+      "dungeon_name": "Magma Crater 던전 16",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 130,
+        "y": 0,
+        "z": 290
+      },
+      "floors": 3,
+      "rooms_per_floor": 9,
+      "difficulty": 5,
+      "recommended_level": 16,
+      "boss_floor": 3,
+      "boss_name": "던전 보스 16 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 460,
+      "rewards": {
+        "experience": 2000,
+        "gold": 880,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_17",
+      "dungeon_name": "Magma Crater 던전 17",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 160,
+        "y": 0,
+        "z": 330
+      },
+      "floors": 4,
+      "rooms_per_floor": 10,
+      "difficulty": 6,
+      "recommended_level": 17,
+      "boss_floor": 4,
+      "boss_name": "던전 보스 17 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 470,
+      "rewards": {
+        "experience": 2050,
+        "gold": 910,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "magma_crater_dungeon_18",
+      "dungeon_name": "Magma Crater 던전 18",
+      "zone_id": "magma_crater",
+      "entrance": {
+        "x": 190,
+        "y": 0,
+        "z": 370
+      },
+      "floors": 5,
+      "rooms_per_floor": 5,
+      "difficulty": 4,
+      "recommended_level": 15,
+      "boss_floor": 5,
+      "boss_name": "던전 보스 18 - Magma Crater",
+      "boss_ai_level": 4,
+      "boss_hp": 480,
+      "rewards": {
+        "experience": 2100,
+        "gold": 940,
+        "items": [
+          "steel_sword",
+          "health_potion_8",
+          "mana_potion_5"
+        ]
+      }
+    }
+  ]
+}

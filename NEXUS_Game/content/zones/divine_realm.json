@@ -1,0 +1,299 @@
+{
+  "zone_id": "divine_realm",
+  "zone_name": "신의 영역 (Divine Realm)",
+  "description": "초월의 경지 — 운명이 바뀌는 곳",
+  "size": {
+    "width": 500,
+    "height": 500,
+    "depth": 500
+  },
+  "terrain": {
+    "type": "celestial",
+    "cloud": 0.4,
+    "crystal": 0.3,
+    "light": 0.2,
+    "void": 0.1
+  },
+  "environment": {
+    "weather": "celestial",
+    "time_of_day": "timeless",
+    "ambient_light": 2.5,
+    "fog_distance": 300,
+    "divine_aura": 1.0
+  },
+  "color_theme": "gold_white",
+  "tier": 5,
+  "difficulty": 5,
+  "dungeons": [
+    {
+      "dungeon_id": "divine_realm_dungeon_01",
+      "dungeon_name": "Divine Realm 던전 1",
+      "zone_id": "divine_realm",
+      "entrance": {
+        "x": 80,
+        "y": 0,
+        "z": 90
+      },
+      "floors": 3,
+      "rooms_per_floor": 6,
+      "difficulty": 6,
+      "recommended_level": 26,
+      "boss_floor": 3,
+      "boss_name": "던전 보스 1 - Divine Realm",
+      "boss_ai_level": 4,
+      "boss_hp": 360,
+      "rewards": {
+        "experience": 1550,
+        "gold": 530,
+        "items": [
+          "divine_weapon",
+          "immortal_potion",
+          "holy_grail"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "divine_realm_dungeon_02",
+      "dungeon_name": "Divine Realm 던전 2",
+      "zone_id": "divine_realm",
+      "entrance": {
+        "x": 110,
+        "y": 0,
+        "z": 130
+      },
+      "floors": 4,
+      "rooms_per_floor": 7,
+      "difficulty": 7,
+      "recommended_level": 27,
+      "boss_floor": 4,
+      "boss_name": "던전 보스 2 - Divine Realm",
+      "boss_ai_level": 4,
+      "boss_hp": 370,
+      "rewards": {
+        "experience": 1600,
+        "gold": 560,
+        "items": [
+          "divine_weapon",
+          "immortal_potion",
+          "holy_grail"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "divine_realm_dungeon_03",
+      "dungeon_name": "Divine Realm 던전 3",
+      "zone_id": "divine_realm",
+      "entrance": {
+        "x": 140,
+        "y": 0,
+        "z": 170
+      },
+      "floors": 5,
+      "rooms_per_floor": 8,
+      "difficulty": 5,
+      "recommended_level": 25,
+      "boss_floor": 5,
+      "boss_name": "던전 보스 3 - Divine Realm",
+      "boss_ai_level": 4,
+      "boss_hp": 380,
+      "rewards": {
+        "experience": 1650,
+        "gold": 590,
+        "items": [
+          "divine_weapon",
+          "immortal_potion",
+          "holy_grail"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "divine_realm_dungeon_04",
+      "dungeon_name": "Divine Realm 던전 4",
+      "zone_id": "divine_realm",
+      "entrance": {
+        "x": 170,
+        "y": 0,
+        "z": 210
+      },
+      "floors": 6,
+      "rooms_per_floor": 9,
+      "difficulty": 6,
+      "recommended_level": 26,
+      "boss_floor": 6,
+      "boss_name": "던전 보스 4 - Divine Realm",
+      "boss_ai_level": 4,
+      "boss_hp": 390,
+      "rewards": {
+        "experience": 1700,
+        "gold": 620,
+        "items": [
+          "divine_weapon",
+          "immortal_potion",
+          "holy_grail"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "divine_realm_dungeon_05",
+      "dungeon_name": "Divine Realm 던전 5",
+      "zone_id": "divine_realm",
+      "entrance": {
+        "x": 200,
+        "y": 0,
+        "z": 250
+      },
+      "floors": 2,
+      "rooms_per_floor": 10,
+      "difficulty": 7,
+      "recommended_level": 27,
+      "boss_floor": 2,
+      "boss_name": "던전 보스 5 - Divine Realm",
+      "boss_ai_level": 4,
+      "boss_hp": 400,
+      "rewards": {
+        "experience": 1750,
+        "gold": 650,
+        "items": [
+          "divine_weapon",
+          "immortal_potion",
+          "holy_grail"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "divine_realm_dungeon_06",
+      "dungeon_name": "Divine Realm 던전 6",
+      "zone_id": "divine_realm",
+      "entrance": {
+        "x": 230,
+        "y": 0,
+        "z": 290
+      },
+      "floors": 3,
+      "rooms_per_floor": 5,
+      "difficulty": 5,
+      "recommended_level": 25,
+      "boss_floor": 3,
+      "boss_name": "던전 보스 6 - Divine Realm",
+      "boss_ai_level": 4,
+      "boss_hp": 410,
+      "rewards": {
+        "experience": 1800,
+        "gold": 680,
+        "items": [
+          "divine_weapon",
+          "immortal_potion",
+          "holy_grail"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "divine_realm_dungeon_07",
+      "dungeon_name": "Divine Realm 던전 7",
+      "zone_id": "divine_realm",
+      "entrance": {
+        "x": 260,
+        "y": 0,
+        "z": 330
+      },
+      "floors": 4,
+      "rooms_per_floor": 6,
+      "difficulty": 6,
+      "recommended_level": 26,
+      "boss_floor": 4,
+      "boss_name": "던전 보스 7 - Divine Realm",
+      "boss_ai_level": 4,
+      "boss_hp": 420,
+      "rewards": {
+        "experience": 1850,
+        "gold": 710,
+        "items": [
+          "divine_weapon",
+          "immortal_potion",
+          "holy_grail"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "divine_realm_dungeon_08",
+      "dungeon_name": "Divine Realm 던전 8",
+      "zone_id": "divine_realm",
+      "entrance": {
+        "x": 290,
+        "y": 0,
+        "z": 370
+      },
+      "floors": 5,
+      "rooms_per_floor": 7,
+      "difficulty": 7,
+      "recommended_level": 27,
+      "boss_floor": 5,
+      "boss_name": "던전 보스 8 - Divine Realm",
+      "boss_ai_level": 4,
+      "boss_hp": 430,
+      "rewards": {
+        "experience": 1900,
+        "gold": 740,
+        "items": [
+          "divine_weapon",
+          "immortal_potion",
+          "holy_grail"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "divine_realm_dungeon_09",
+      "dungeon_name": "Divine Realm 던전 9",
+      "zone_id": "divine_realm",
+      "entrance": {
+        "x": 320,
+        "y": 0,
+        "z": 410
+      },
+      "floors": 6,
+      "rooms_per_floor": 8,
+      "difficulty": 5,
+      "recommended_level": 25,
+      "boss_floor": 6,
+      "boss_name": "던전 보스 9 - Divine Realm",
+      "boss_ai_level": 4,
+      "boss_hp": 440,
+      "rewards": {
+        "experience": 1950,
+        "gold": 770,
+        "items": [
+          "divine_weapon",
+          "immortal_potion",
+          "holy_grail"
+        ]
+      }
+    },
+    {
+      "dungeon_id": "divine_realm_dungeon_10",
+      "dungeon_name": "Divine Realm 던전 10",
+      "zone_id": "divine_realm",
+      "entrance": {
+        "x": 350,
+        "y": 0,
+        "z": 50
+      },
+      "floors": 2,
+      "rooms_per_floor": 9,
+      "difficulty": 6,
+      "recommended_level": 26,
+      "boss_floor": 2,
+      "boss_name": "던전 보스 10 - Divine Realm",
+      "boss_ai_level": 4,
+      "boss_hp": 450,
+      "rewards": {
+        "experience": 2000,
+        "gold": 800,
+        "items": [
+          "divine_weapon",
+          "immortal_potion",
+          "holy_grail"
+        ]
+      }
+    }
+  ]
+}

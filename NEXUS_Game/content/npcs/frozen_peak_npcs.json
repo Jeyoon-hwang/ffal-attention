@@ -1,0 +1,317 @@
+[
+  {
+    "npc_id": "frozen_peak_npc_001",
+    "npc_name": "NPC_frozen_peak_1",
+    "zone_id": "frozen_peak",
+    "type": "guard",
+    "level": 11,
+    "position": {
+      "x": 130,
+      "y": 0,
+      "z": 125
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_1"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_002",
+    "npc_name": "NPC_frozen_peak_2",
+    "zone_id": "frozen_peak",
+    "type": "scholar",
+    "level": 12,
+    "position": {
+      "x": 160,
+      "y": 0,
+      "z": 150
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_2"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_003",
+    "npc_name": "NPC_frozen_peak_3",
+    "zone_id": "frozen_peak",
+    "type": "priest",
+    "level": 13,
+    "position": {
+      "x": 190,
+      "y": 0,
+      "z": 175
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_3"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_004",
+    "npc_name": "NPC_frozen_peak_4",
+    "zone_id": "frozen_peak",
+    "type": "blacksmith",
+    "level": 14,
+    "position": {
+      "x": 220,
+      "y": 0,
+      "z": 200
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_4"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_005",
+    "npc_name": "NPC_frozen_peak_5",
+    "zone_id": "frozen_peak",
+    "type": "hunter",
+    "level": 10,
+    "position": {
+      "x": 250,
+      "y": 0,
+      "z": 225
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_5"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_006",
+    "npc_name": "NPC_frozen_peak_6",
+    "zone_id": "frozen_peak",
+    "type": "bard",
+    "level": 11,
+    "position": {
+      "x": 280,
+      "y": 0,
+      "z": 250
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_6"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_007",
+    "npc_name": "NPC_frozen_peak_7",
+    "zone_id": "frozen_peak",
+    "type": "thief",
+    "level": 12,
+    "position": {
+      "x": 310,
+      "y": 0,
+      "z": 275
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_7"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_008",
+    "npc_name": "NPC_frozen_peak_8",
+    "zone_id": "frozen_peak",
+    "type": "wizard",
+    "level": 13,
+    "position": {
+      "x": 340,
+      "y": 0,
+      "z": 300
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_8"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_009",
+    "npc_name": "NPC_frozen_peak_9",
+    "zone_id": "frozen_peak",
+    "type": "warrior",
+    "level": 14,
+    "position": {
+      "x": 370,
+      "y": 0,
+      "z": 325
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_9"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_010",
+    "npc_name": "NPC_frozen_peak_10",
+    "zone_id": "frozen_peak",
+    "type": "merchant",
+    "level": 10,
+    "position": {
+      "x": 100,
+      "y": 0,
+      "z": 350
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_10"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_011",
+    "npc_name": "NPC_frozen_peak_11",
+    "zone_id": "frozen_peak",
+    "type": "guard",
+    "level": 11,
+    "position": {
+      "x": 130,
+      "y": 0,
+      "z": 375
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_11"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_012",
+    "npc_name": "NPC_frozen_peak_12",
+    "zone_id": "frozen_peak",
+    "type": "scholar",
+    "level": 12,
+    "position": {
+      "x": 160,
+      "y": 0,
+      "z": 100
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_12"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_013",
+    "npc_name": "NPC_frozen_peak_13",
+    "zone_id": "frozen_peak",
+    "type": "priest",
+    "level": 13,
+    "position": {
+      "x": 190,
+      "y": 0,
+      "z": 125
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_13"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_014",
+    "npc_name": "NPC_frozen_peak_14",
+    "zone_id": "frozen_peak",
+    "type": "blacksmith",
+    "level": 14,
+    "position": {
+      "x": 220,
+      "y": 0,
+      "z": 150
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_14"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  },
+  {
+    "npc_id": "frozen_peak_npc_015",
+    "npc_name": "NPC_frozen_peak_15",
+    "zone_id": "frozen_peak",
+    "type": "hunter",
+    "level": 10,
+    "position": {
+      "x": 250,
+      "y": 0,
+      "z": 175
+    },
+    "dialogue": "안녕하세요. 저는 frozen_peak 지역의 NPC입니다.",
+    "quests_offered": [
+      "frozen_peak_quest_15"
+    ],
+    "inventory": [
+      "iron_sword",
+      "health_potion_5",
+      "mana_potion_3"
+    ]
+  }
+]
