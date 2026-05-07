@@ -1,0 +1,179 @@
+[gd_scene load_steps=4 format=3 uid="uid://fro7wnjd2k1h"]
+
+[ext_resource type="Script" id="1" path="res://src/scripts/game_manager.gd"]
+[ext_resource type="Script" id="2" path="res://src/scripts/ui_manager.gd"]
+[ext_resource type="PackedScene" id="3" uid="uid://bimrqc7yhs3bk" path="res://src/scenes/player.tscn"]
+
+[node name="FrozenLands" type="Node3D"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1")
+
+[node name="UIManager" type="CanvasLayer" parent="."]
+script = ExtResource("2")
+
+[node name="Player" parent="." instance=ExtResource("3")]
+position = Vector3(0, 1, 5)
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Ground" type="CSGBox3D" parent="Environment"]
+size = Vector3(200, 1, 200)
+position = Vector3(0, -0.5, 0)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.9, 0.95, 1.0, 1.0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+position = Vector3(30, 40, 20)
+rotation = Vector3(-0.5, 0.6, 0)
+shadow_enabled = true
+energy_multiplier = 1.3
+light_color = Color(0.8, 0.9, 1.0, 1.0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Environment"]
+position = Vector3(0, 30, 0)
+energy_multiplier = 0.2
+omni_range = 150.0
+light_color = Color(0.7, 0.85, 1.0, 1.0)
+
+[node name="IceTower1" type="CSGBox3D" parent="Environment"]
+position = Vector3(-40, 8, -40)
+size = Vector3(12, 16, 12)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.6, 0.8, 1.0, 1.0)
+
+[node name="IceTower2" type="CSGBox3D" parent="Environment"]
+position = Vector3(40, 8, -40)
+size = Vector3(12, 16, 12)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.6, 0.8, 1.0, 1.0)
+
+[node name="IceTower3" type="CSGBox3D" parent="Environment"]
+position = Vector3(-40, 7, 40)
+size = Vector3(12, 14, 12)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.65, 0.82, 1.0, 1.0)
+
+[node name="IceTower4" type="CSGBox3D" parent="Environment"]
+position = Vector3(40, 7, 40)
+size = Vector3(12, 14, 12)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.65, 0.82, 1.0, 1.0)
+
+[node name="FrostVillage1" type="CSGBox3D" parent="Environment"]
+position = Vector3(0, 4, 0)
+size = Vector3(15, 8, 15)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.85, 0.9, 0.95, 1.0)
+
+[node name="FrostVillage2" type="CSGBox3D" parent="Environment"]
+position = Vector3(25, 4, 20)
+size = Vector3(12, 7, 12)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.8, 0.88, 0.93, 1.0)
+
+[node name="FrostVillage3" type="CSGBox3D" parent="Environment"]
+position = Vector3(-25, 4, 20)
+size = Vector3(12, 7, 12)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.8, 0.88, 0.93, 1.0)
+
+[node name="IceTemple" type="CSGBox3D" parent="Environment"]
+position = Vector3(0, 6, -50)
+size = Vector3(20, 12, 20)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.7, 0.85, 1.0, 1.0)
+
+[node name="TrainingGround" type="CSGBox3D" parent="Environment"]
+position = Vector3(0, -0.05, -30)
+size = Vector3(40, 0.1, 40)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.95, 0.96, 0.98, 1.0)
+
+[node name="BossArena" type="Node3D" parent="Environment"]
+position = Vector3(0, 0, -80)
+
+[node name="BossFloor" type="CSGBox3D" parent="Environment/BossArena"]
+position = Vector3(0, 0.5, 0)
+size = Vector3(30, 0.2, 30)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.7, 0.8, 0.95, 1.0)
+
+[node name="CrystalNorth" type="CSGBox3D" parent="Environment/BossArena"]
+position = Vector3(0, 1.5, -16)
+size = Vector3(30, 3, 1)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.5, 0.75, 1.0, 1.0)
+
+[node name="CrystalEast" type="CSGBox3D" parent="Environment/BossArena"]
+position = Vector3(16, 1.5, 0)
+size = Vector3(1, 3, 30)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.5, 0.75, 1.0, 1.0)
+
+[node name="CrystalWest" type="CSGBox3D" parent="Environment/BossArena"]
+position = Vector3(-16, 1.5, 0)
+size = Vector3(1, 3, 30)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.5, 0.75, 1.0, 1.0)
+
+[node name="IceCliff1" type="CSGBox3D" parent="Environment"]
+position = Vector3(-70, 5, 70)
+size = Vector3(8, 10, 8)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.6, 0.8, 1.0, 1.0)
+
+[node name="IceCliff2" type="CSGBox3D" parent="Environment"]
+position = Vector3(70, 5, 70)
+size = Vector3(8, 10, 8)
+material = StandardMaterial3D()
+material.albedo_color = Color(0.6, 0.8, 1.0, 1.0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 2, 0)
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="SpawnPoint1" type="Node3D" parent="SpawnPoints"]
+position = Vector3(-10, 0.5, -20)
+
+[node name="SpawnPoint2" type="Node3D" parent="SpawnPoints"]
+position = Vector3(10, 0.5, -40)
+
+[node name="SpawnPoint3" type="Node3D" parent="SpawnPoints"]
+position = Vector3(20, 0.5, -30)
+
+[node name="SpawnPoint4" type="Node3D" parent="SpawnPoints"]
+position = Vector3(-20, 0.5, -30)
+
+[node name="SpawnPoint5" type="Node3D" parent="SpawnPoints"]
+position = Vector3(0, 0.5, -30)
+
+[node name="SpawnPoint6" type="Node3D" parent="SpawnPoints"]
+position = Vector3(15, 0.5, -15)
+
+[node name="SpawnPoint7" type="Node3D" parent="SpawnPoints"]
+position = Vector3(-15, 0.5, -15)
+
+[node name="SpawnPoint8" type="Node3D" parent="SpawnPoints"]
+position = Vector3(25, 0.5, 20)
+
+[node name="SpawnPoint9" type="Node3D" parent="SpawnPoints"]
+position = Vector3(-25, 0.5, 20)
+
+[node name="SpawnPoint10" type="Node3D" parent="SpawnPoints"]
+position = Vector3(0, 0.5, -50)
+
+[node name="DungeonEntrances" type="Node3D" parent="."]
+
+[node name="DungeonN" type="Node3D" parent="DungeonEntrances"]
+position = Vector3(0, 0, 100)
+
+[node name="DungeonE" type="Node3D" parent="DungeonEntrances"]
+position = Vector3(100, 0, 0)
+
+[node name="DungeonW" type="Node3D" parent="DungeonEntrances"]
+position = Vector3(-100, 0, 0)
+
+[node name="BossSpawnPoint" type="Node3D" parent="."]
+position = Vector3(0, 1, -80)

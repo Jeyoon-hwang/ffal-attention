@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-07T01:56:33.215Z",
+  "entries": {
+    "memory:memory/2026-05-07.md:36:91": {
+      "key": "memory:memory/2026-05-07.md:36:91",
+      "path": "memory/2026-05-07.md",
+      "startLine": 36,
+      "endLine": 91,
+      "source": "memory",
+      "snippet": "- 파티클 지원 (15~60개) #### 4️⃣ **TestDay6.gd** (469줄) - 12개 테스트 항목 완성 - Animation System 기본 (3개) - Character Animation (3개) - Effect Animations (6개) - 모든 준비 완료 (런타임 테스트 대기) --- ## 기술 하이라이트 ### 아키텍처 ``` AnimationSystem (중앙) ↓ ├─ CharacterAnimation (캐릭터 애니메이션) │ ├─ Player (idle, walk, run, attack, hurt, die) │ ├─ NPC (idle, walk, talk) │ └─ Boss (6 patterns) │ └─ EffectAnimations (이펙트) ├─ Basic Attacks (3가지) ├─ Magic Effects (8가지) └─ Utility (4가지) ``` ### 설계 패턴 1. **DB-Driven**: 모든 애니메이션 Dictionary로 정의 2. **Async/Await**: 자연스러운 순서 제어 3. **Tween 풀**: 메모리 효율 4. **모듈화**: 독립적이면서 통합 가능 --- ## 일일 작업 흐름 ### 오전 (09:56 - 시작) 1. 현황 파악 (DAY5_COMPLETION_RE",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-07T01:56:33.215Z",
+      "lastRecalledAt": "2026-05-07T01:56:33.215Z",
+      "queryHashes": [
+        "669890790ae2"
+      ],
+      "recallDays": [
+        "2026-05-07"
+      ],
+      "conceptTags": [
+        "testday6.gd",
+        "db-driven",
+        "async/await",
+        "day5-completion-re",
+        "파티클",
+        "지원",
+        "testday6",
+        "테스트"
+      ]
+    }
+  }
+}

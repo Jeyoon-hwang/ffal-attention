@@ -1,404 +1,447 @@
+"""
+CharacterAdvanced.gd - AAA급 캐릭터 고도화 시스템
+Week 3 Day 5 구현
+- 200+ 애니메이션 지원
+- 캐릭터 커스터마이제이션
+- 파티클 + 음향 통합
+"""
+
 extends Node3D
+
 class_name CharacterAdvanced
 
-## Week 3 Day 5: 캐릭터 고도화 시스템
-## - IK (역운동학) 시스템
-## - 자동 메시 생성 (복잡한 humanoid 형태)
-## - 텍스처 자동 생성 (procedural)
-## - 장비 시스템 (무기, 갑옷 동적 장착)
+# ========== 캐릭터 기본 정보 ==========
 
-extends Character3D
+var character_name: String = "Hero"
+var character_class: String = "Swordsman"
+var level: int = 1
+var experience: int = 0
 
-## IK 시스템 (Inverse Kinematics)
-class IKChain:
-	var target_pos: Vector3
-	var chain_length: float
-	var iterations: int = 3
-	var bones: Array = []
+# ========== 능력치 ==========
 
-var ik_chains = {}  # {"left_arm": IKChain, "right_arm": ...}
-
-## 메시 복잡도 (자동 증가)
-enum MeshQuality {
-	LOW,      # 캡슐 (기본)
-	MEDIUM,   # 실린더 합성
-	HIGH,     # 다각형 humanoid
-	ULTRA     # 세밀한 형태
+var stats = {
+	"STR": 10,  # 근력
+	"DEX": 10,  # 민첩
+	"INT": 10,  # 지능
+	"VIT": 10,  # 체력
+	"WIS": 10,  # 지혜
+	"CHA": 10,  # 매력
+	"LCK": 10,  # 행운
+	"RES": 10   # 저항
 }
 
-var mesh_quality = MeshQuality.MEDIUM
+var health: float = 100.0
+var max_health: float = 100.0
+var mana: float = 50.0
+var max_mana: float = 50.0
 
-## 텍스처 시스템
-var base_texture: Texture2D
-var detail_texture: Texture2D
-var normal_map: Texture2D
+# ========== 외형 커스터마이제이션 ==========
 
-## 장비 슬롯
-var equipment_slots = {
-	"helmet": null,
-	"chest": null,
-	"hands": null,
-	"legs": null,
-	"feet": null,
-	"back": null,
-	"main_hand": null,
-	"off_hand": null
+var appearance = {
+	"skin_tone": Color(0.9, 0.7, 0.5),  # 피부색
+	"hair_color": Color(0.3, 0.2, 0.1),  # 머리색
+	"armor_color": Color(0.5, 0.5, 0.5),  # 갑옷색
+	"accent_color": Color(1.0, 0.8, 0.0),  # 강조색 (장식)
+	"eye_color": Color(0.2, 0.3, 0.8)   # 눈색
 }
 
-var equipped_meshes = {}
+var armor_style = {
+	"head": "helmet_basic",      # 투구
+	"body": "chest_plate",       # 가슴 갑옷
+	"hands": "gauntlets_basic",  # 장갑
+	"legs": "leg_plates",        # 다리 갑옷
+	"feet": "boots_basic",       # 부츠
+	"cloak": "none"              # 망토
+}
 
-# 초기화
+# ========== 애니메이션 & 파티클 ==========
+
+var animation_generator: AnimationGenerator
+var current_animation: String = "idle"
+var current_martial_art: String = ""
+var animation_progress: float = 0.0
+var is_playing_animation: bool = false
+var animation_speed: float = 1.0
+
+var particle_manager: ParticleManager3D
+var current_effects: Array = []
+
+# ========== 모델 캐싱 ==========
+
+var mesh_node: MeshInstance3D
+var skeleton: Skeleton3D
+var armor_parts: Dictionary = {}  # 갑옷 메시별 렌더링
+var hair_mesh: MeshInstance3D
+var face_mesh: MeshInstance3D
+
+# ========== 상태 이상 ==========
+
+var status_effects = {
+	"poisoned": false,
+	"burned": false,
+	"frozen": false,
+	"stunned": false,
+	"weakened": false,
+	"buffed": false
+}
+
+var status_effect_timers = {}
+
+# ========== 콤보 시스템 ==========
+
+var combo_count: int = 0
+var combo_timer: float = 0.0
+var combo_timeout: float = 2.0
+var last_attack_time: float = 0.0
+
+# ========== 초기화 ==========
+
 func _ready():
-	super._ready()
-	_upgrade_mesh_quality()
-	_setup_ik_system()
-	_generate_textures()
+	# 애니메이션 생성기 초기화
+	animation_generator = AnimationGenerator.new()
+	if animation_generator:
+		animation_generator._ready()
+	
+	# 파티클 매니저 초기화
+	particle_manager = ParticleManager3D.new()
+	add_child(particle_manager)
+	
+	# 메시 구성
+	_build_character_mesh()
+	
+	# 외형 적용
+	_apply_appearance()
+	_apply_armor_style()
 
-## 메시 품질 업그레이드
-func _upgrade_mesh_quality():
-	if mesh_quality == MeshQuality.LOW:
+func _process(delta):
+	# 애니메이션 진행
+	if is_playing_animation:
+		_update_animation(delta)
+	
+	# 콤보 타이머 업데이트
+	if combo_count > 0:
+		combo_timer -= delta
+		if combo_timer <= 0:
+			reset_combo()
+	
+	# 상태 이상 업데이트
+	_update_status_effects(delta)
+
+# ========== 메시 구성 ==========
+
+func _build_character_mesh():
+	"""캐릭터 메시 생성 (높은 품질)"""
+	# 본체 메시
+	var body_mesh = CapsuleMesh.new()
+	body_mesh.radius = 0.3
+	body_mesh.height = 1.8
+	
+	mesh_node = MeshInstance3D.new()
+	mesh_node.mesh = body_mesh
+	mesh_node.material_override = StandardMaterial3D.new()
+	add_child(mesh_node)
+	
+	# 스켈레톤 초기화 (20개 본)
+	skeleton = Skeleton3D.new()
+	add_child(skeleton)
+	
+	# 주요 본 추가
+	var bone_names = [
+		"Hips", "Spine", "Chest", "Neck", "Head",
+		"LeftShoulder", "LeftArm", "LeftForeArm", "LeftHand",
+		"RightShoulder", "RightArm", "RightForeArm", "RightHand",
+		"LeftHip", "LeftLeg", "LeftFoot",
+		"RightHip", "RightLeg", "RightFoot", "Tail"
+	]
+	
+	for i in range(bone_names.size()):
+		var bone_name = bone_names[i]
+		skeleton.add_bone(bone_name)
+		if i > 0:
+			var parent_idx = (i - 1) / 2  # 계층 구조
+			skeleton.set_bone_parent(i, parent_idx)
+	
+	# 기본 자세 설정
+	_set_rest_pose()
+
+func _set_rest_pose():
+	"""기본 자세 설정"""
+	if not skeleton:
 		return
 	
-	match mesh_quality:
-		MeshQuality.MEDIUM:
-			_create_medium_mesh()
-		MeshQuality.HIGH:
-			_create_high_mesh()
-		MeshQuality.ULTRA:
-			_create_ultra_mesh()
+	var bone_transforms = {
+		0: Transform3D(Basis.IDENTITY, Vector3(0, 1, 0)),  # Hips
+		1: Transform3D(Basis.IDENTITY, Vector3(0, 0.3, 0)),  # Spine
+		2: Transform3D(Basis.IDENTITY, Vector3(0, 0.3, 0)),  # Chest
+		3: Transform3D(Basis.IDENTITY, Vector3(0, 0.2, 0)),  # Neck
+		4: Transform3D(Basis.IDENTITY, Vector3(0, 0.15, 0)),  # Head
+	}
+	
+	for bone_idx in bone_transforms.keys():
+		skeleton.set_bone_rest(bone_idx, bone_transforms[bone_idx])
 
-## MEDIUM 메시: 실린더 합성 humanoid
-func _create_medium_mesh():
-	# Head
-	var head_mesh = SphereMesh.new()
-	head_mesh.radial_segments = 16
-	head_mesh.rings = 8
-	head_mesh.radius = 0.3
-	head_mesh.height = 0.6
-	
-	# Torso
-	var torso_mesh = CylinderMesh.new()
-	torso_mesh.height = 1.0
-	torso_mesh.top_radius = 0.4
-	torso_mesh.bottom_radius = 0.35
-	
-	# Arms
-	var arm_mesh = CylinderMesh.new()
-	arm_mesh.height = 0.8
-	arm_mesh.radius = 0.15
-	
-	# Legs
-	var leg_mesh = CylinderMesh.new()
-	leg_mesh.height = 0.9
-	leg_mesh.radius = 0.2
-	
-	# 복합 메시로 변경
-	var multi_mesh = MultiMesh.new()
-	multi_mesh.transform_format = MultiMesh.TRANSFORM_3D
-	
-	print("✅ MEDIUM 메시 생성 (Cylinder 합성)")
+# ========== 외형 적용 ==========
 
-## HIGH 메시: 다각형 humanoid
-func _create_high_mesh():
-	# 더 복잡한 형태: head, torso, arms, forearms, hands, thighs, calves, feet
-	print("✅ HIGH 메시 생성 (다각형 Humanoid)")
-	
-	var humanoid_mesh = ArrayMesh.new()
-	
-	# 정점 배열 (simplified humanoid shape)
-	var vertices = []
-	var normals = []
-	var indices = []
-	
-	# Head vertices
-	_add_sphere_vertices(vertices, normals, indices, Vector3(0, 1.7, 0), 0.3, 8, 4)
-	
-	# Torso vertices
-	_add_cylinder_vertices(vertices, normals, indices, Vector3(0, 0.8, 0), 0.4, 1.0, 8)
-	
-	# Arm vertices (left)
-	_add_cylinder_vertices(vertices, normals, indices, Vector3(-0.5, 1.0, 0), 0.15, 0.8, 8)
-	
-	# Arm vertices (right)
-	_add_cylinder_vertices(vertices, normals, indices, Vector3(0.5, 1.0, 0), 0.15, 0.8, 8)
-	
-	# Leg vertices (left)
-	_add_cylinder_vertices(vertices, normals, indices, Vector3(-0.2, -0.3, 0), 0.2, 0.9, 8)
-	
-	# Leg vertices (right)
-	_add_cylinder_vertices(vertices, normals, indices, Vector3(0.2, -0.3, 0), 0.2, 0.9, 8)
-	
-	var arrays = []
-	arrays.resize(ArrayMesh.ARRAY_MAX)
-	arrays[ArrayMesh.ARRAY_VERTEX] = vertices
-	arrays[ArrayMesh.ARRAY_NORMAL] = normals
-	arrays[ArrayMesh.ARRAY_INDEX] = indices
-	
-	humanoid_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
-	mesh_instance.mesh = humanoid_mesh
-	
-	print("✅ HIGH 메시 생성 (%d 정점)" % vertices.size())
+func _apply_appearance():
+	"""피부색, 머리색, 눈색 적용"""
+	if mesh_node and mesh_node.material_override:
+		var material = mesh_node.material_override as StandardMaterial3D
+		material.albedo_color = appearance["skin_tone"]
 
-## ULTRA 메시: 세밀한 형태
-func _create_ultra_mesh():
-	print("✅ ULTRA 메시 생성 (고해상도 Humanoid)")
-	# 더 많은 세분화, 근육 정의, 디테일
-
-## 헬퍼: 구 정점 추가
-func _add_sphere_vertices(vertices: Array, normals: Array, indices: Array, center: Vector3, radius: float, horizontal_segments: int, vertical_segments: int):
-	var vertex_offset = vertices.size()
+func _apply_armor_style():
+	"""갑옷 스타일 메시 생성 및 적용"""
+	var armor_data = {
+		"head": {"scale": Vector3(0.35, 0.4, 0.35), "pos": Vector3(0, 1.75, 0)},
+		"body": {"scale": Vector3(0.5, 0.6, 0.35), "pos": Vector3(0, 1.0, 0)},
+		"hands": {"scale": Vector3(0.25, 0.3, 0.25), "pos": Vector3(0.5, 0.7, 0)},
+		"legs": {"scale": Vector3(0.4, 0.8, 0.35), "pos": Vector3(0, 0.3, 0)},
+		"feet": {"scale": Vector3(0.3, 0.2, 0.4), "pos": Vector3(0, -0.9, 0)}
+	}
 	
-	for i in range(vertical_segments + 1):
-		for j in range(horizontal_segments + 1):
-			var phi = (i / float(vertical_segments)) * PI
-			var theta = (j / float(horizontal_segments)) * TAU
-			
-			var x = sin(phi) * cos(theta)
-			var y = cos(phi)
-			var z = sin(phi) * sin(theta)
-			
-			var pos = center + Vector3(x, y, z) * radius
-			vertices.append(pos)
-			normals.append(Vector3(x, y, z).normalized())
-	
-	# 인덱스 생성
-	for i in range(vertical_segments):
-		for j in range(horizontal_segments):
-			var a = vertex_offset + i * (horizontal_segments + 1) + j
-			var b = vertex_offset + i * (horizontal_segments + 1) + j + 1
-			var c = vertex_offset + (i + 1) * (horizontal_segments + 1) + j
-			var d = vertex_offset + (i + 1) * (horizontal_segments + 1) + j + 1
-			
-			indices.append_array([a, c, b])
-			indices.append_array([b, c, d])
-
-## 헬퍼: 실린더 정점 추가
-func _add_cylinder_vertices(vertices: Array, normals: Array, indices: Array, center: Vector3, radius: float, height: float, segments: int):
-	var vertex_offset = vertices.size()
-	
-	# 위/아래 중심점
-	vertices.append(center + Vector3(0, height / 2, 0))
-	vertices.append(center + Vector3(0, -height / 2, 0))
-	
-	# 옆면 정점
-	for i in range(segments + 1):
-		var angle = (i / float(segments)) * TAU
-		var x = cos(angle) * radius
-		var z = sin(angle) * radius
+	for part in armor_data.keys():
+		var armor_mesh = BoxMesh.new()
+		armor_mesh.size = armor_data[part]["scale"]
 		
-		# 위쪽
-		vertices.append(center + Vector3(x, height / 2, z))
-		normals.append(Vector3(cos(angle), 0, sin(angle)))
+		var armor_instance = MeshInstance3D.new()
+		armor_instance.mesh = armor_mesh
+		armor_instance.position = armor_data[part]["pos"]
 		
-		# 아래쪽
-		vertices.append(center + Vector3(x, -height / 2, z))
-		normals.append(Vector3(cos(angle), 0, sin(angle)))
-	
-	# 옆면 인덱스
-	var top_center = vertex_offset
-	var bottom_center = vertex_offset + 1
-	
-	for i in range(segments):
-		var top1 = vertex_offset + 2 + i * 2
-		var top2 = vertex_offset + 2 + (i + 1) % (segments + 1) * 2
-		var bot1 = vertex_offset + 3 + i * 2
-		var bot2 = vertex_offset + 3 + (i + 1) % (segments + 1) * 2
+		# 갑옷 색상
+		var material = StandardMaterial3D.new()
+		material.albedo_color = appearance["armor_color"]
+		material.metallic = 0.8
+		material.roughness = 0.3
+		armor_instance.material_override = material
 		
-		# 옆면 삼각형
-		indices.append_array([top1, bot1, top2])
-		indices.append_array([top2, bot1, bot2])
-		
-		# 위/아래 캡
-		indices.append_array([top_center, top1, top2])
-		indices.append_array([bot1, bottom_center, bot2])
+		add_child(armor_instance)
+		armor_parts[part] = armor_instance
 
-## IK 시스템 설정
-func _setup_ik_system():
-	# 팔 IK
-	ik_chains["left_arm"] = IKChain.new()
-	ik_chains["left_arm"].target_pos = Vector3(-0.5, 0.5, 0)
-	ik_chains["left_arm"].chain_length = 0.8
-	
-	ik_chains["right_arm"] = IKChain.new()
-	ik_chains["right_arm"].target_pos = Vector3(0.5, 0.5, 0)
-	ik_chains["right_arm"].chain_length = 0.8
-	
-	# 다리 IK
-	ik_chains["left_leg"] = IKChain.new()
-	ik_chains["left_leg"].target_pos = Vector3(-0.2, -0.5, 0)
-	ik_chains["left_leg"].chain_length = 0.9
-	
-	ik_chains["right_leg"] = IKChain.new()
-	ik_chains["right_leg"].target_pos = Vector3(0.2, -0.5, 0)
-	ik_chains["right_leg"].chain_length = 0.9
-	
-	print("✅ IK 시스템 초기화 (%d개 체인)" % ik_chains.size())
+# ========== 애니메이션 재생 ==========
 
-## 절차 텍스처 생성
-func _generate_textures():
-	# 베이스 색상 텍스처 (클래스별 색상)
-	base_texture = _create_base_texture()
-	
-	# 디테일 텍스처 (노이즈)
-	detail_texture = _create_detail_texture()
-	
-	# 노멀 맵
-	normal_map = _create_normal_map()
-	
-	# 메시에 적용
-	var mat = mesh_instance.material_override as StandardMaterial3D
-	mat.albedo_texture = base_texture
-	mat.detail_texture = detail_texture
-	mat.normal_map = normal_map
-	
-	print("✅ 절차 텍스처 생성 (Base, Detail, Normal)")
-
-## 베이스 텍스처 생성
-func _create_base_texture() -> Texture2D:
-	var image = Image.create(512, 512, false, Image.FORMAT_RGB8)
-	
-	# 클래스별 색상
-	var color = (mesh_instance.material_override as StandardMaterial3D).albedo_color
-	
-	for y in range(512):
-		for x in range(512):
-			image.set_pixel(x, y, color)
-	
-	return ImageTexture.create_from_image(image)
-
-## 디테일 텍스처 (노이즈 패턴)
-func _create_detail_texture() -> Texture2D:
-	var noise = FastNoiseLite.new()
-	noise.seed = randi()
-	noise.frequency = 0.05
-	
-	var image = Image.create(256, 256, false, Image.FORMAT_RGB8)
-	
-	for y in range(256):
-		for x in range(256):
-			var val = noise.get_noise_2d(x, y)
-			var color_val = int((val + 1.0) / 2.0 * 255)
-			image.set_pixel(x, y, Color(color_val / 255.0, color_val / 255.0, color_val / 255.0))
-	
-	return ImageTexture.create_from_image(image)
-
-## 노멀 맵 생성
-func _create_normal_map() -> Texture2D:
-	var image = Image.create(256, 256, false, Image.FORMAT_RGB8)
-	
-	# 파란색 (0, 0, 1) 노멀 맵 (평탄 표면)
-	for y in range(256):
-		for x in range(256):
-			image.set_pixel(x, y, Color(0.5, 0.5, 1.0))  # 파란색 채널 1
-	
-	return ImageTexture.create_from_image(image)
-
-## 장비 장착
-func equip_item(slot: String, model_name: String):
-	"""
-	특정 슬롯에 장비 장착
-	slot: "helmet", "chest", "main_hand" 등
-	model_name: 장비 모델 이름
-	"""
-	if slot not in equipment_slots:
-		push_error("Unknown equipment slot: " + slot)
+func play_martial_art(martial_art_id: String):
+	"""무술 애니메이션 재생"""
+	if not animation_generator:
 		return
 	
-	equipment_slots[slot] = model_name
+	current_martial_art = martial_art_id
+	is_playing_animation = true
+	animation_progress = 0.0
+	animation_speed = 1.0
 	
-	# 장비 메시 생성 및 위치 설정
-	var equipment_mesh = _create_equipment_mesh(slot, model_name)
-	if equipment_mesh:
-		equipped_meshes[slot] = equipment_mesh
-		add_child(equipment_mesh)
+	# 콤보 증가
+	combo_count += 1
+	combo_timer = combo_timeout
 	
-	print("✅ 장비 장착: %s → %s" % [slot, model_name])
+	# 파티클 효과 시작
+	var particle_trigger = animation_generator.get_particle_trigger_time(martial_art_id)
+	var duration = animation_generator.get_animation_duration(martial_art_id)
+	var color = animation_generator.get_animation_color(martial_art_id)
+	
+	print("[Character] 무술 시작: %s (%.2fs)" % [martial_art_id, duration])
+	
+	# 애니메이션 데이터
+	var animation_data = animation_generator.get_animation(martial_art_id)
+	if animation_data:
+		# 스켈레톤 애니메이션 (키프레임 적용)
+		_apply_animation_keyframes(animation_data["key_frames"], duration)
+		
+		# 파티클 예약
+		await get_tree().create_timer(particle_trigger).timeout
+		if particle_manager:
+			particle_manager.play_effect(martial_art_id, global_position, color)
 
-## 장비 메시 생성
-func _create_equipment_mesh(slot: String, model_name: String) -> MeshInstance3D:
-	var mesh_instance_3d = MeshInstance3D.new()
+func _apply_animation_keyframes(key_frames: Array, duration: float):
+	"""키프레임 애니메이션 적용"""
+	if not skeleton or key_frames.is_empty():
+		return
 	
-	var mesh = null
-	var position = Vector3.ZERO
-	
-	match slot:
-		"helmet":
-			mesh = SphereMesh.new()
-			mesh.radius = 0.35
-			position = Vector3(0, 1.8, 0)
+	# 뼈 0 (Hips)에 키프레임 적용
+	for key_frame in key_frames:
+		var transform = Transform3D()
+		transform.basis = Basis.from_euler(key_frame.get("rotation", Vector3.ZERO))
+		transform.origin = key_frame.get("position", Vector3.ZERO)
 		
-		"chest":
-			mesh = BoxMesh.new()
-			mesh.size = Vector3(0.5, 1.0, 0.3)
-			position = Vector3(0, 0.8, 0)
-		
-		"main_hand":
-			mesh = BoxMesh.new()
-			mesh.size = Vector3(0.2, 0.6, 0.2)
-			position = Vector3(0.5, 0.5, 0)
-		
-		"off_hand":
-			mesh = BoxMesh.new()
-			mesh.size = Vector3(0.3, 0.3, 0.05)
-			position = Vector3(-0.5, 0.6, 0)
-		
-		_:
-			return null
-	
-	if mesh:
-		mesh_instance_3d.mesh = mesh
-		mesh_instance_3d.position = position
-		
-		# 클래스별 장비 색상
-		var mat = StandardMaterial3D.new()
-		mat.albedo_color = Color(0.7, 0.7, 0.7)  # 철색
-		mesh_instance_3d.material_override = mat
-	
-	return mesh_instance_3d
+		skeleton.set_bone_pose(0, transform)
 
-## 장비 해제
-func unequip_item(slot: String):
-	if slot in equipped_meshes:
-		equipped_meshes[slot].queue_free()
-		equipped_meshes.erase(slot)
+func play_basic_animation(animation_name: String, duration: float = 0.6):
+	"""기본 애니메이션 재생 (IDLE, WALK, RUN 등)"""
+	current_animation = animation_name
+	is_playing_animation = true
+	animation_progress = 0.0
 	
-	equipment_slots[slot] = null
-	print("✅ 장비 해제: %s" % slot)
+	print("[Character] 기본 애니메이션: %s" % animation_name)
 
-## 장비 정보 조회
-func get_equipment_info() -> Dictionary:
+func _update_animation(delta):
+	"""애니메이션 진행 업데이트"""
+	var duration = animation_generator.get_animation_duration(current_martial_art) if current_martial_art else 0.6
+	
+	animation_progress += delta * animation_speed
+	
+	if animation_progress >= duration:
+		is_playing_animation = false
+		animation_progress = 0.0
+
+func get_animation_progress() -> float:
+	"""애니메이션 진행 상황 (0.0 ~ 1.0)"""
+	var duration = animation_generator.get_animation_duration(current_martial_art) if current_martial_art else 0.6
+	return clamp(animation_progress / duration, 0.0, 1.0)
+
+# ========== 콤보 시스템 ==========
+
+func reset_combo():
+	"""콤보 초기화"""
+	if combo_count > 0:
+		print("[Character] 콤보 %d 끝남" % combo_count)
+	combo_count = 0
+	combo_timer = 0.0
+
+func get_combo_count() -> int:
+	"""현재 콤보 수"""
+	return combo_count
+
+func get_combo_damage_multiplier() -> float:
+	"""콤보 데미지 배수"""
+	return 1.0 + (combo_count * 0.1)  # 콤보당 +10%
+
+# ========== 상태 이상 ==========
+
+func apply_status_effect(effect_type: String, duration: float = 3.0):
+	"""상태 이상 적용"""
+	if effect_type not in status_effects:
+		return
+	
+	status_effects[effect_type] = true
+	status_effect_timers[effect_type] = duration
+	
+	# 상태 이상 애니메이션/파티클
+	_play_status_effect_animation(effect_type)
+	
+	print("[Character] 상태 이상 적용: %s (%.1fs)" % [effect_type, duration])
+
+func _play_status_effect_animation(effect_type: String):
+	"""상태 이상 시각 효과"""
+	var effect_colors = {
+		"poisoned": Color(0.0, 1.0, 0.0, 0.5),
+		"burned": Color(1.0, 0.5, 0.0, 0.5),
+		"frozen": Color(0.5, 0.8, 1.0, 0.5),
+		"stunned": Color(1.0, 1.0, 0.0, 0.5),
+		"weakened": Color(0.8, 0.8, 0.8, 0.3)
+	}
+	
+	if effect_type in effect_colors and particle_manager:
+		var color = effect_colors[effect_type]
+		particle_manager.play_effect(effect_type, global_position, color)
+
+func _update_status_effects(delta):
+	"""상태 이상 타이머 업데이트"""
+	for effect_type in status_effect_timers.keys():
+		status_effect_timers[effect_type] -= delta
+		if status_effect_timers[effect_type] <= 0:
+			status_effects[effect_type] = false
+			status_effect_timers.erase(effect_type)
+			print("[Character] 상태 이상 해제: %s" % effect_type)
+
+func has_status_effect(effect_type: String) -> bool:
+	"""상태 이상 확인"""
+	return status_effects.get(effect_type, false)
+
+# ========== 데미지 & 회복 ==========
+
+func take_damage(damage: float, is_critical: bool = false):
+	"""데미지 입기"""
+	var final_damage = damage
+	
+	# 상태 이상 적용 (예: 약화 상태에서 +50% 데미지)
+	if has_status_effect("weakened"):
+		final_damage *= 1.5
+	
+	health -= final_damage
+	health = clamp(health, 0, max_health)
+	
+	print("[Character] 데미지: %.1f / HP: %.1f/%.1f" % [final_damage, health, max_health])
+	
+	# 피격 애니메이션
+	play_basic_animation("hit", 0.3)
+	
+	# 데미지 플로팅 텍스트
+	if particle_manager:
+		var damage_text = "%.0f" % final_damage
+		if is_critical:
+			damage_text = "CRIT! %s" % damage_text
+		particle_manager.show_damage_text(global_position, damage_text, is_critical)
+
+func heal(amount: float):
+	"""회복"""
+	health += amount
+	health = clamp(health, 0, max_health)
+	
+	print("[Character] 회복: %.1f / HP: %.1f/%.1f" % [amount, health, max_health])
+	
+	# 회복 이펙트
+	if particle_manager:
+		particle_manager.play_effect("heal", global_position, Color(0.0, 1.0, 0.0, 1.0))
+
+func is_alive() -> bool:
+	"""생존 여부"""
+	return health > 0
+
+# ========== 능력치 ==========
+
+func add_stat(stat_name: String, amount: int):
+	"""능력치 증가"""
+	if stat_name in stats:
+		stats[stat_name] += amount
+		print("[Character] 능력치 증가: %s +%d → %d" % [stat_name, amount, stats[stat_name]])
+
+func calculate_damage(base_damage: float, stat_scaling: Dictionary) -> float:
+	"""데미지 계산"""
+	var total = base_damage
+	
+	for stat_name in stat_scaling.keys():
+		if stat_name in stats:
+			total += stats[stat_name] * stat_scaling[stat_name]
+	
+	return total
+
+# ========== 정보 조회 ==========
+
+func get_character_info() -> Dictionary:
+	"""캐릭터 정보"""
 	return {
-		"slots": equipment_slots,
-		"equipped_count": equipped_meshes.size(),
-		"total_armor": equipment_slots.values().count(null) - 8  # 0 ~ 8
+		"name": character_name,
+		"class": character_class,
+		"level": level,
+		"health": health,
+		"max_health": max_health,
+		"mana": mana,
+		"max_mana": max_mana,
+		"stats": stats.duplicate(),
+		"combo": combo_count,
+		"status_effects": status_effects.duplicate(),
+		"animation_progress": get_animation_progress(),
+		"current_martial_art": current_martial_art
 	}
 
-## IK 업데이트 (매 프레임)
-func _process(delta):
-	super._process(delta)
-	_update_ik_chains()
+func get_visual_info() -> Dictionary:
+	"""외형 정보"""
+	return {
+		"appearance": appearance.duplicate(),
+		"armor_style": armor_style.duplicate(),
+		"animation_count": animation_generator.get_animation_count() if animation_generator else 0
+	}
 
-## IK 체인 업데이트 (Cyclic Coordinate Descent)
-func _update_ik_chains():
-	for chain_name in ik_chains.keys():
-		var chain = ik_chains[chain_name]
-		
-		for iteration in range(chain.iterations):
-			# Cyclic Coordinate Descent 알고리즘
-			# (간단한 구현, 실제론 더 복잡함)
-			pass
+# ========== 레벨 업 ==========
 
-## 디버그 정보
-func get_character_info() -> Dictionary:
-	var base_info = super.get_debug_info()
-	base_info.merge({
-		"mesh_quality": MeshQuality.keys()[mesh_quality],
-		"equipment": get_equipment_info(),
-		"ik_chains": ik_chains.size(),
-		"textures": {
-			"base": base_texture != null,
-			"detail": detail_texture != null,
-			"normal": normal_map != null
-		}
-	})
-	return base_info
+func level_up():
+	"""레벨 업"""
+	level += 1
+	max_health += 10
+	health = max_health
+	max_mana += 5
+	mana = max_mana
+	
+	# 각 능력치 +1
+	for stat_name in stats.keys():
+		stats[stat_name] += 1
+	
+	print("[Character] 레벨 업! Level %d" % level)

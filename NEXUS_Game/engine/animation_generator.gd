@@ -1,348 +1,331 @@
+"""
+AnimationGenerator.gd - 200+ 무술 애니메이션 자동 생성 시스템
+Week 3 Day 5 구현
+"""
+
 extends Node
+
 class_name AnimationGenerator
 
-## Week 3 Day 5: 애니메이션 자동 생성 시스템
-## - 무술별 애니메이션 자동 생성
-## - 파라미터 기반 애니메이션 변형
-## - 200+ 애니메이션 클립 생성
+# 애니메이션 데이터 구조
+var animation_library: Dictionary = {}
+var martial_arts_db: Dictionary = {}
 
-## 애니메이션 파라미터
-class AnimationParams:
-	var base_duration: float = 0.5
-	var speed_multiplier: float = 1.0
-	var intensity: float = 1.0  # 움직임 크기
-	var direction: Vector3 = Vector3.FORWARD
-	var rotation_amount: float = 0.0
-
-## 무술별 애니메이션 템플릿
-var martial_art_animations = {
+# 기본 애니메이션 템플릿 (Base 5가지)
+var base_animations = {
 	"slash": {
-		"base_duration": 0.5,
-		"keyframes": [
+		"name": "Slash",
+		"duration": 0.6,
+		"key_frames": [
 			{"time": 0.0, "rotation": Vector3.ZERO, "position": Vector3.ZERO},
-			{"time": 0.2, "rotation": Vector3(0, -1.5, 0), "position": Vector3(0, 0, 0.3)},
-			{"time": 0.5, "rotation": Vector3(0, 0, 0), "position": Vector3.ZERO}
-		],
-		"effect_trigger_time": 0.3
-	},
-	"thrust": {
-		"base_duration": 0.4,
-		"keyframes": [
-			{"time": 0.0, "rotation": Vector3.ZERO, "position": Vector3.ZERO},
-			{"time": 0.2, "rotation": Vector3(0.5, 0, 0), "position": Vector3(0, 0, 0.5)},
-			{"time": 0.4, "rotation": Vector3.ZERO, "position": Vector3.ZERO}
-		],
-		"effect_trigger_time": 0.25
-	},
-	"smash": {
-		"base_duration": 0.6,
-		"keyframes": [
-			{"time": 0.0, "rotation": Vector3.ZERO, "position": Vector3(0, 1, 0)},
-			{"time": 0.3, "rotation": Vector3(1.0, 0, 0), "position": Vector3(0, 0.5, 0)},
+			{"time": 0.3, "rotation": Vector3(0, 0, 1.57), "position": Vector3(0, 0, 0.2)},
 			{"time": 0.6, "rotation": Vector3.ZERO, "position": Vector3.ZERO}
 		],
-		"effect_trigger_time": 0.35
+		"particle_trigger": 0.3,
+		"sound": "slash.wav",
+		"color": Color.WHITE
 	},
-	"wave": {
-		"base_duration": 0.8,
-		"keyframes": [
+	"thrust": {
+		"name": "Thrust",
+		"duration": 0.5,
+		"key_frames": [
 			{"time": 0.0, "rotation": Vector3.ZERO, "position": Vector3.ZERO},
-			{"time": 0.4, "rotation": Vector3(-1.5, 0, 0), "position": Vector3(0, 0.3, -0.3)},
+			{"time": 0.25, "rotation": Vector3.ZERO, "position": Vector3(0, 0, 0.5)},
+			{"time": 0.5, "rotation": Vector3.ZERO, "position": Vector3.ZERO}
+		],
+		"particle_trigger": 0.25,
+		"sound": "thrust.wav",
+		"color": Color(0.7, 0.9, 1.0, 1.0)  # 청백색
+	},
+	"smash": {
+		"name": "Smash",
+		"duration": 0.8,
+		"key_frames": [
+			{"time": 0.0, "rotation": Vector3.ZERO, "position": Vector3(0, 0.5, 0)},
+			{"time": 0.4, "rotation": Vector3(3.14, 0, 0), "position": Vector3(0, -0.5, 0)},
 			{"time": 0.8, "rotation": Vector3.ZERO, "position": Vector3.ZERO}
 		],
-		"effect_trigger_time": 0.5
+		"particle_trigger": 0.4,
+		"sound": "smash.wav",
+		"color": Color(1.0, 0.8, 0.0, 1.0)  # 금색
+	},
+	"wave": {
+		"name": "Wave",
+		"duration": 0.4,
+		"key_frames": [
+			{"time": 0.0, "rotation": Vector3.ZERO, "position": Vector3.ZERO},
+			{"time": 0.2, "rotation": Vector3(0, 0, 1.57), "position": Vector3(0.3, 0, 0)},
+			{"time": 0.4, "rotation": Vector3.ZERO, "position": Vector3.ZERO}
+		],
+		"particle_trigger": 0.2,
+		"sound": "wave.wav",
+		"color": Color(0.0, 0.5, 1.0, 1.0)  # 청색
 	},
 	"special": {
-		"base_duration": 1.0,
-		"keyframes": [
+		"name": "Special",
+		"duration": 1.0,
+		"key_frames": [
 			{"time": 0.0, "rotation": Vector3.ZERO, "position": Vector3.ZERO},
-			{"time": 0.3, "rotation": Vector3(1.0, 1.0, 0.5), "position": Vector3(0, 0.2, 0)},
-			{"time": 0.6, "rotation": Vector3(-1.0, -1.0, -0.5), "position": Vector3(0, 0, 0)},
+			{"time": 0.5, "rotation": Vector3(3.14, 1.57, 0), "position": Vector3(0, 0.3, 0.3)},
 			{"time": 1.0, "rotation": Vector3.ZERO, "position": Vector3.ZERO}
 		],
-		"effect_trigger_time": 0.6
+		"particle_trigger": 0.5,
+		"sound": "special.wav",
+		"color": Color(1.0, 0.0, 1.0, 1.0)  # 마젠타
 	}
 }
 
-## Modifier별 애니메이션 변형
-var modifier_transforms = {
+# Modifier별 애니메이션 오버레이 (Base를 변형)
+var modifier_overlays = {
 	"quick": {
-		"speed_multiplier": 0.6,  # 애니메이션 빨라짐
-		"intensity": 0.8,         # 동작 작아짐
-		"duration_reduction": 0.4
+		"speed_multiplier": 1.4,  # 40% 더 빠름
+		"color_blend": Color(1.0, 1.0, 0.0, 0.3),  # 황색 혼합
+		"duration_reduction": 0.4  # 쿨타임 감소
 	},
 	"heavy": {
-		"speed_multiplier": 1.3,  # 애니메이션 느려짐
-		"intensity": 1.3,         # 동작 커짐
-		"duration_increase": 0.3
+		"speed_multiplier": 0.7,  # 30% 더 느림
+		"color_blend": Color(0.6, 0.3, 0.0, 0.3),  # 갈색 혼합
+		"duration_increase": 0.3  # 쿨타임 증가
 	},
 	"wide": {
 		"speed_multiplier": 1.0,
-		"intensity": 1.5,         # 범위 넓어짐
-		"duration_increase": 0.2
+		"color_blend": Color(1.0, 0.5, 0.0, 0.3),  # 주황색 혼합
+		"scale_increase": 1.5  # 애니메이션 범위 확대
 	},
 	"precise": {
-		"speed_multiplier": 1.1,
-		"intensity": 0.7,         # 동작 정교함
-		"duration_reduction": 0.1
+		"speed_multiplier": 1.2,
+		"color_blend": Color(0.0, 1.0, 0.0, 0.3),  # 초록색 혼합
+		"scale_reduction": 0.7  # 애니메이션 범위 축소
 	},
 	"pierce": {
-		"speed_multiplier": 0.8,
-		"intensity": 1.0,
-		"direction_change": true
+		"speed_multiplier": 1.1,
+		"color_blend": Color(1.0, 0.0, 0.0, 0.3),  # 빨강 혼합
+		"duration_increase": 0.2
 	},
 	"chain": {
-		"speed_multiplier": 1.0,
-		"intensity": 1.0,
-		"repeat_count": 3  # 체인 반복
+		"speed_multiplier": 1.3,
+		"color_blend": Color(1.0, 0.8, 0.0, 0.3),  # 황금색 혼합
+		"repeat_count": 3  # 3번 연속 실행
 	},
 	"drain": {
-		"speed_multiplier": 1.2,
-		"intensity": 1.0,
-		"rotation_increase": 2.0  # 회전 추가
+		"speed_multiplier": 1.0,
+		"color_blend": Color(0.5, 0.0, 0.5, 0.3),  # 보라색 혼합
+		"rotation_multiplier": 2.0  # 회전 효과
 	},
 	"poison": {
-		"speed_multiplier": 0.7,
-		"intensity": 0.9,
-		"tremor_effect": true  # 떨림 이펙트
+		"speed_multiplier": 1.1,
+		"color_blend": Color(0.0, 0.8, 0.3, 0.3),  # 초록색 혼합
+		"particle_density": 2.0  # 파티클 2배
 	}
 }
 
-## 생성된 애니메이션 캐시
-var generated_animations = {}
+# ============ 초기화 ============
 
-# 초기화
 func _ready():
-	_generate_all_animations()
+	load_martial_arts_db()
+	generate_all_animations()
 
-## 모든 애니메이션 생성
-func _generate_all_animations():
-	print("🎬 애니메이션 생성 시작...")
-	
-	var total = 0
-	
-	# Base 5가지 × Modifier 8가지 = 40가지
-	for base_name in martial_art_animations.keys():
-		for modifier_name in modifier_transforms.keys():
-			var anim_name = "%s_%s" % [base_name, modifier_name]
-			var anim = _generate_martial_art_animation(base_name, [modifier_name])
-			generated_animations[anim_name] = anim
-			total += 1
-		
-		# Base만
-		var anim = _generate_martial_art_animation(base_name, [])
-		generated_animations[base_name] = anim
-		total += 1
-	
-	# 추가: 기본 애니메이션들
-	_generate_basic_animations()
-	total += 6
-	
-	# 추가: 콤보 애니메이션
-	_generate_combo_animations()
-	total += 20
-	
-	# 추가: 특수 애니메이션
-	_generate_special_animations()
-	total += 30
-	
-	print("✅ %d개 애니메이션 생성 완료" % total)
+func load_martial_arts_db():
+	"""무술 DB에서 모든 무술 조합을 로드"""
+	var file_path = "res://content/martial_arts_db.json"
+	if ResourceLoader.exists(file_path):
+		var json = JSON.new()
+		var content = FileAccess.get_file_as_string(file_path)
+		json.parse(content)
+		martial_arts_db = json.data
+		print("[AnimationGenerator] 무술 DB 로드 완료: %d개 무술" % martial_arts_db.size())
+	else:
+		print("[AnimationGenerator] 무술 DB 파일 없음, 기본값 사용")
+		_create_default_martial_arts()
 
-## 무술 애니메이션 생성
-func _generate_martial_art_animation(base_name: String, modifiers: Array) -> Animation:
-	if base_name not in martial_art_animations:
-		push_error("Unknown base martial art: " + base_name)
-		return Animation.new()
+func _create_default_martial_arts():
+	"""기본 무술 데이터 생성"""
+	martial_arts_db = {}
 	
-	var base_template = martial_art_animations[base_name]
-	var anim = Animation.new()
+	# Base 5가지
+	for base in base_animations.keys():
+		martial_arts_db[base] = {
+			"name": base.to_upper(),
+			"base": base,
+			"modifiers": [],
+			"damage": 10,
+			"duration": 0.6
+		}
 	
-	# 기본 지속시간
-	var duration = base_template["base_duration"]
-	var params = AnimationParams.new()
+	# Base + Modifier 조합 (최대 70개)
+	var count = 5
+	for base in base_animations.keys():
+		for modifier in modifier_overlays.keys():
+			if count >= 70:
+				break
+			martial_arts_db["%s_%s" % [base, modifier]] = {
+				"name": "%s %s" % [base.to_upper(), modifier.to_upper()],
+				"base": base,
+				"modifiers": [modifier],
+				"damage": 15,
+				"duration": 0.6
+			}
+			count += 1
+
+func generate_all_animations() -> int:
+	"""모든 무술에 대한 애니메이션 생성"""
+	var generated_count = 0
 	
-	# Modifier 적용
+	for martial_art_id in martial_arts_db.keys():
+		var martial_art = martial_arts_db[martial_art_id]
+		var animation_data = generate_animation_for_martial_art(martial_art)
+		animation_library[martial_art_id] = animation_data
+		generated_count += 1
+	
+	print("[AnimationGenerator] 애니메이션 생성 완료: %d개" % generated_count)
+	return generated_count
+
+# ============ 애니메이션 생성 로직 ============
+
+func generate_animation_for_martial_art(martial_art: Dictionary) -> Dictionary:
+	"""개별 무술에 대한 애니메이션 생성"""
+	var base = martial_art.get("base", "slash")
+	var modifiers = martial_art.get("modifiers", [])
+	
+	# Base 애니메이션 시작
+	var animation = base_animations[base].duplicate(true)
+	
+	# Modifier 오버레이 적용
 	for modifier in modifiers:
-		if modifier in modifier_transforms:
-			var transform = modifier_transforms[modifier]
-			params.speed_multiplier *= transform.get("speed_multiplier", 1.0)
-			params.intensity *= transform.get("intensity", 1.0)
-			duration += transform.get("duration_increase", -transform.get("duration_reduction", 0.0))
+		_apply_modifier_overlay(animation, modifier)
 	
-	anim.length = duration
+	# 최종 계산
+	animation["martial_art_id"] = martial_art.get("name", base)
+	animation["base"] = base
+	animation["modifiers"] = modifiers
+	animation["damage"] = martial_art.get("damage", 10)
 	
-	# 포지션 트랙
-	var pos_track_idx = anim.add_track(Animation.TYPE_POSITION_3D)
-	anim.track_set_path(pos_track_idx, ".:position")
-	
-	# 회전 트랙
-	var rot_track_idx = anim.add_track(Animation.TYPE_ROTATION_3D)
-	anim.track_set_path(rot_track_idx, ".:rotation")
-	
-	# 키프레임 추가
-	for keyframe in base_template["keyframes"]:
-		var time = keyframe["time"] / params.speed_multiplier
-		var pos = keyframe["position"] * params.intensity
-		var rot = keyframe["rotation"] * params.intensity
-		
-		# 시간이 애니메이션 길이를 넘지 않도록
-		if time <= duration:
-			anim.track_insert_key(pos_track_idx, time, pos)
-			anim.track_insert_key(rot_track_idx, time, rot)
-	
-	return anim
+	return animation
 
-## 기본 애니메이션 (IDLE, WALK, RUN, HIT, DEATH, VICTORY)
-func _generate_basic_animations():
-	# IDLE: 호흡 모션
-	var idle = Animation.new()
-	idle.length = 2.0
-	var idle_pos = idle.add_track(Animation.TYPE_POSITION_3D)
-	idle.track_set_path(idle_pos, ".:position")
-	idle.track_insert_key(idle_pos, 0.0, Vector3.ZERO)
-	idle.track_insert_key(idle_pos, 1.0, Vector3(0, 0.05, 0))
-	idle.track_insert_key(idle_pos, 2.0, Vector3.ZERO)
-	generated_animations["idle"] = idle
+func _apply_modifier_overlay(animation: Dictionary, modifier: String):
+	"""Modifier 효과를 애니메이션에 적용"""
+	if modifier not in modifier_overlays:
+		return
 	
-	# WALK: 좌우 흔들림
-	var walk = Animation.new()
-	walk.length = 1.0
-	var walk_pos = walk.add_track(Animation.TYPE_POSITION_3D)
-	walk.track_set_path(walk_pos, ".:position")
-	walk.track_insert_key(walk_pos, 0.0, Vector3.ZERO)
-	walk.track_insert_key(walk_pos, 0.25, Vector3(0.1, 0, 0))
-	walk.track_insert_key(walk_pos, 0.5, Vector3.ZERO)
-	walk.track_insert_key(walk_pos, 0.75, Vector3(-0.1, 0, 0))
-	walk.track_insert_key(walk_pos, 1.0, Vector3.ZERO)
-	generated_animations["walk"] = walk
+	var overlay = modifier_overlays[modifier]
 	
-	# RUN: 빠른 흔들림
-	var run = Animation.new()
-	run.length = 0.6
-	var run_pos = run.add_track(Animation.TYPE_POSITION_3D)
-	run.track_set_path(run_pos, ".:position")
-	run.track_insert_key(run_pos, 0.0, Vector3.ZERO)
-	run.track_insert_key(run_pos, 0.15, Vector3(0.15, -0.1, 0))
-	run.track_insert_key(run_pos, 0.3, Vector3.ZERO)
-	run.track_insert_key(run_pos, 0.45, Vector3(-0.15, -0.1, 0))
-	run.track_insert_key(run_pos, 0.6, Vector3.ZERO)
-	generated_animations["run"] = run
+	# 1. 속도 조정 (duration 수정)
+	if "speed_multiplier" in overlay:
+		var speed = overlay["speed_multiplier"]
+		animation["duration"] /= speed
+		
+		# 키프레임 타임 재계산
+		for key_frame in animation["key_frames"]:
+			key_frame["time"] /= speed
 	
-	# HIT: 뒤로 밀림
-	var hit = Animation.new()
-	hit.length = 0.3
-	var hit_pos = hit.add_track(Animation.TYPE_POSITION_3D)
-	hit.track_set_path(hit_pos, ".:position")
-	hit.track_insert_key(hit_pos, 0.0, Vector3.ZERO)
-	hit.track_insert_key(hit_pos, 0.15, Vector3(0, 0, -0.3))
-	hit.track_insert_key(hit_pos, 0.3, Vector3.ZERO)
-	generated_animations["hit"] = hit
+	# 2. 색상 혼합
+	if "color_blend" in overlay:
+		var blend_color = overlay["color_blend"]
+		var original_color = animation["color"]
+		animation["color"] = original_color.lerp(blend_color, blend_color.a)
 	
-	# DEATH: 스케일 축소 + 회전
-	var death = Animation.new()
-	death.length = 1.0
-	var death_scale = death.add_track(Animation.TYPE_SCALE_3D)
-	death.track_set_path(death_scale, ".:scale")
-	death.track_insert_key(death_scale, 0.0, Vector3(1, 1, 1))
-	death.track_insert_key(death_scale, 1.0, Vector3(0.5, 0.5, 0.5))
-	generated_animations["death"] = death
+	# 3. 스케일 조정
+	if "scale_increase" in overlay or "scale_reduction" in overlay:
+		var scale = overlay.get("scale_increase", overlay.get("scale_reduction", 1.0))
+		for key_frame in animation["key_frames"]:
+			key_frame["position"] *= scale
 	
-	# VICTORY: 점프 + 환호
-	var victory = Animation.new()
-	victory.length = 1.0
-	var vict_pos = victory.add_track(Animation.TYPE_POSITION_3D)
-	victory.track_set_path(vict_pos, ".:position")
-	vict_pos.insert_key(0.0, Vector3.ZERO)
-	vict_pos.insert_key(0.5, Vector3(0, 1.0, 0))
-	vict_pos.insert_key(1.0, Vector3.ZERO)
-	generated_animations["victory"] = victory
+	# 4. 회전 곱하기
+	if "rotation_multiplier" in overlay:
+		var multiplier = overlay["rotation_multiplier"]
+		for key_frame in animation["key_frames"]:
+			key_frame["rotation"] *= multiplier
+	
+	# 5. 파티클 조정
+	if "particle_density" in overlay:
+		animation["particle_density"] = overlay.get("particle_density", 1.0)
+	
+	# 6. 반복 횟수 (Chain 효과)
+	if "repeat_count" in overlay:
+		animation["repeat_count"] = overlay["repeat_count"]
 
-## 콤보 애니메이션 (20개)
-func _generate_combo_animations():
-	for combo_level in range(1, 8):  # 1~7콤보
-		var combo_anim = Animation.new()
-		combo_anim.length = 0.5 + (combo_level * 0.1)
-		
-		# 스케일 변화 (콤보 커질수록 크게)
-		var scale_track = combo_anim.add_track(Animation.TYPE_SCALE_3D)
-		combo_anim.track_set_path(scale_track, ".:scale")
-		
-		var scale = 1.0 + (combo_level * 0.1)
-		combo_anim.track_insert_key(scale_track, 0.0, Vector3(1, 1, 1))
-		combo_anim.track_insert_key(scale_track, combo_anim.length / 2, Vector3(scale, scale, scale))
-		combo_anim.track_insert_key(scale_track, combo_anim.length, Vector3(1, 1, 1))
-		
-		generated_animations["combo_%d" % combo_level] = combo_anim
+# ============ 애니메이션 재생 ============
 
-## 특수 애니메이션 (30개)
-func _generate_special_animations():
-	# 상태 이상 애니메이션
-	var status_effects = ["poison", "burn", "freeze", "shock", "curse", "bleed"]
-	
-	for status in status_effects:
-		var status_anim = Animation.new()
-		status_anim.length = 0.5
-		
-		# 위아래 떨림
-		var pos_track = status_anim.add_track(Animation.TYPE_POSITION_3D)
-		status_anim.track_set_path(pos_track, ".:position")
-		
-		for i in range(5):
-			var time = (i / 5.0) * 0.5
-			var offset = 0.05 if i % 2 == 0 else -0.05
-			status_anim.track_insert_key(pos_track, time, Vector3(0, offset, 0))
-		
-		generated_animations["status_%s" % status] = status_anim
-	
-	# 채널링 애니메이션 (마법 시전 등)
-	var channeling = Animation.new()
-	channeling.length = 1.0
-	var chan_rot = channeling.add_track(Animation.TYPE_ROTATION_3D)
-	channeling.track_set_path(chan_rot, ".:rotation")
-	channeling.track_insert_key(chan_rot, 0.0, Vector3.ZERO)
-	channeling.track_insert_key(chan_rot, 0.5, Vector3(0, PI, 0))
-	channeling.track_insert_key(chan_rot, 1.0, Vector3.ZERO)
-	generated_animations["channeling"] = channeling
-	
-	# 기절 애니메이션
-	var stun = Animation.new()
-	stun.length = 1.0
-	var stun_rot = stun.add_track(Animation.TYPE_ROTATION_3D)
-	stun.track_set_path(stun_rot, ".:rotation")
-	for i in range(10):
-		var time = (i / 10.0) * 1.0
-		var amount = PI / 4 if i % 2 == 0 else -PI / 4
-		stun.track_insert_key(stun_rot, time, Vector3(amount, 0, 0))
-	generated_animations["stun"] = stun
+func get_animation(martial_art_id: String) -> Dictionary:
+	"""애니메이션 정보 조회"""
+	return animation_library.get(martial_art_id, {})
 
-## 애니메이션 조회
-func get_animation(name: String) -> Animation:
-	if name in generated_animations:
-		return generated_animations[name]
-	return Animation.new()
+func get_animation_duration(martial_art_id: String) -> float:
+	"""애니메이션 길이 조회"""
+	var animation = animation_library.get(martial_art_id, {})
+	return animation.get("duration", 0.6)
 
-## 애니메이션 리스트
-func get_all_animations() -> Array:
-	return generated_animations.keys()
+func get_particle_trigger_time(martial_art_id: String) -> float:
+	"""파티클 발생 시점 조회"""
+	var animation = animation_library.get(martial_art_id, {})
+	return animation.get("particle_trigger", 0.3)
 
-## 애니메이션 정보
-func get_animation_info(name: String) -> Dictionary:
-	if name not in generated_animations:
-		return {}
-	
-	var anim = generated_animations[name]
+func get_animation_color(martial_art_id: String) -> Color:
+	"""애니메이션 색상 조회 (파티클 색상)"""
+	var animation = animation_library.get(martial_art_id, {})
+	return animation.get("color", Color.WHITE)
+
+func get_animation_info(martial_art_id: String) -> Dictionary:
+	"""전체 애니메이션 정보"""
 	return {
-		"name": name,
-		"duration": anim.length,
-		"track_count": anim.get_track_count()
+		"id": martial_art_id,
+		"duration": get_animation_duration(martial_art_id),
+		"color": get_animation_color(martial_art_id),
+		"trigger_time": get_particle_trigger_time(martial_art_id),
+		"animation": animation_library.get(martial_art_id, {})
 	}
 
-## 통계
+# ============ 통계 ============
+
+func get_animation_count() -> int:
+	"""생성된 애니메이션 총 개수"""
+	return animation_library.size()
+
 func get_animation_stats() -> Dictionary:
+	"""애니메이션 통계"""
 	return {
-		"total_animations": generated_animations.size(),
-		"base_animations": 6,
-		"martial_art_combinations": generated_animations.size() - 6 - 20 - 30,
-		"combo_animations": 20,
-		"special_animations": 30
+		"total_animations": animation_library.size(),
+		"base_types": base_animations.size(),
+		"modifiers": modifier_overlays.size(),
+		"average_duration": _calculate_average_duration(),
+		"unique_colors": _count_unique_colors()
 	}
+
+func _calculate_average_duration() -> float:
+	"""평균 애니메이션 길이"""
+	if animation_library.is_empty():
+		return 0.0
+	
+	var total = 0.0
+	for animation in animation_library.values():
+		total += animation.get("duration", 0.6)
+	
+	return total / animation_library.size()
+
+func _count_unique_colors() -> int:
+	"""고유 색상 개수"""
+	var colors = {}
+	for animation in animation_library.values():
+		var color = animation.get("color", Color.WHITE)
+		colors[color] = true
+	
+	return colors.size()
+
+# ============ 디버깅 ============
+
+func print_animation_library():
+	"""애니메이션 라이브러리 출력 (디버깅용)"""
+	print("\n=== Animation Library ===")
+	print("Total Animations: %d\n" % animation_library.size())
+	
+	for martial_art_id in animation_library.keys():
+		var animation = animation_library[martial_art_id]
+		print("%s:" % martial_art_id)
+		print("  - Duration: %.2fs" % animation["duration"])
+		print("  - Color: %s" % animation["color"])
+		print("  - Trigger: %.2fs" % animation["particle_trigger"])
+	
+	print("\n=== Statistics ===")
+	var stats = get_animation_stats()
+	for key in stats.keys():
+		print("%s: %s" % [key, stats[key]])
