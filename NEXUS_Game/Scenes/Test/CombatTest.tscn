@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0y5x2l8j2a3n8x9"]
+
+[ext_resource type="Script" path="res://Scripts/Martial/MartialArtEngine.gd"]
+[ext_resource type="Script" path="res://Scripts/Combat/Player.gd"]
+[ext_resource type="Script" path="res://Scripts/Combat/Enemy.gd"]
+[ext_resource type="Script" path="res://Scripts/Combat/CombatSystem.gd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a8b9c"]
+size = Vector3(1, 2, 0.5)
+
+[node name="CombatTestScene" type="Node3D"]
+
+[node name="MartialArtEngine" type="Node" parent="."]
+script = ExtResource("Script_path_martial_art_engine")
+
+[node name="CombatSystem" type="Node" parent="."]
+script = ExtResource("Script_path_combat_system")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+position = Vector3(0, 0, 0)
+script = ExtResource("Script_path_player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("BoxShape3D_a8b9c")
+
+[node name="Enemy1" type="CharacterBody3D" parent="."]
+position = Vector3(5, 0, 0)
+script = ExtResource("Script_path_enemy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy1"]
+shape = SubResource("BoxShape3D_a8b9c")
+
+[node name="Enemy2" type="CharacterBody3D" parent="."]
+position = Vector3(-5, 0, 0)
+script = ExtResource("Script_path_enemy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy2"]
+shape = SubResource("BoxShape3D_a8b9c")
+
+[node name="TestController" type="Node" parent="."]
+
+[connection signal="body_entered" from="Player" to="CombatSystem" method="_on_player_entered_combat"]
