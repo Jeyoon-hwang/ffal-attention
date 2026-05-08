@@ -316,6 +316,65 @@ func print_martial_art_info(ma: MartialArt):
 	print("설명: %s" % ma.description)
 	print("발견 시간: %s" % ma.discovered_at)
 
+# JSON에서 무술 로드
+func load_martial_arts_from_json(file_path: String) -> Array:
+	var loaded_arts = []
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	
+	if file == null:
+		print("오류: 파일을 찾을 수 없음 - ", file_path)
+		return loaded_arts
+	
+	var json_string = file.get_as_text()
+	var json = JSON.new()
+	var error = json.parse(json_string)
+	
+	if error != OK:
+		print("오류: JSON 파싱 실패")
+		return loaded_arts
+	
+	var data = json.data
+	if data == null or !data.has("martial_arts"):
+		print("오류: JSON 형식 잘못됨")
+		return loaded_arts
+	
+	for ma_data in data["martial_arts"]:
+		var ma = MartialArt.new()
+		ma.id = ma_data.get("id", str(hash(ma)))
+		ma.name = ma_data.get("name", "무명")
+		ma.level = ma_data.get("level", 1)
+		ma.damage = float(ma_data.get("power", 50))
+		ma.description = ma_data.get("description", "")
+		
+		# 배열 형식 데이터
+		var base_type = ma_data.get("base_type", "")
+		if base_type != "":
+			ma.bases = [base_type]
+		
+		var style = ma_data.get("style", "")
+		if style != "":
+			ma.styles = [style]
+		
+		var pattern = ma_data.get("pattern", "")
+		if pattern != "":
+			ma.patterns = [pattern]
+		
+		var effects = ma_data.get("effects", [])
+		ma.effects = effects if effects is Array else []
+		
+		# 기본 속성
+		ma.speed = 1.0
+		ma.accuracy = 1.0
+		ma.cooldown = float(ma_data.get("cooldown", 1.0))
+		ma.color = generate_martial_art_color(ma.effects)
+		
+		all_martial_arts[ma.id] = ma
+		loaded_arts.append(ma)
+		discovered_martial_arts.append(ma.id)
+	
+	print("무술 JSON 로드 완료: %d개 무술 로드됨" % loaded_arts.size())
+	return loaded_arts
+
 # 통계
 func print_statistics():
 	print("\n=== 무술 시스템 통계 ===")
