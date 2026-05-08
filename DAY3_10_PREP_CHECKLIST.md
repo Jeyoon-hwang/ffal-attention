@@ -1,354 +1,350 @@
-# 🔧 Day 3-10 준비 체크리스트 (2026-05-09 ~ 2026-05-10)
-## Week 3 시작을 위한 개발 환경 최종 준비
+# 📋 Day 3-10 준비 체크리스트
+## Week 3-4 모델링/애니메이션 본격 개발 전 준비
 
-**작성일:** 2026-05-08  
-**체크 날짜:** 2026-05-09 ~ 2026-05-10  
-**상태:** 준비 시작  
-
----
-
-## 📋 Day-by-Day 준비 항목
-
-### **Day 3-4 (2026-05-09, 목요일 & 금요일) - 도구 & 환경 준비**
-
-#### 개발 도구 준비
-- [ ] **Blender 확인** (모델링)
-  ```bash
-  which blender
-  blender --version
-  ```
-  - 설치 필요 시: https://www.blender.org/download/
-  - 권장: 4.0 이상
-
-- [ ] **Python 모듈 확인** (프로시저럴 생성)
-  ```bash
-  pip list | grep -i "trimesh\|numpy\|pillow"
-  ```
-  - 필요 시 설치:
-    ```bash
-    pip install trimesh numpy pillow
-    ```
-
-- [ ] **Godot 프로젝트 확인**
-  ```bash
-  cd /Users/hwangjeyeong/.openclaw/workspace/NEXUS_Dev
-  ls -la project.godot
-  godot --version
-  ```
-  - Godot 4.2 이상 확인
-
-#### Git 준비
-- [ ] **저장소 상태 확인**
-  ```bash
-  cd /Users/hwangjeyeong/.openclaw/workspace/NEXUS_Dev
-  git status
-  git log --oneline | head -5
-  ```
-
-- [ ] **Git 설정**
-  ```bash
-  git config user.name "천재"
-  git config user.email "cheonjae@nexus.dev"
-  ```
-
-#### 디렉토리 구조 최종 확인
-- [ ] **Assets 폴더 구조**
-  ```
-  Assets/
-  ├── Models/
-  │   ├── Characters/      (플레이어, NPC)
-  │   ├── Enemies/         (몬스터)
-  │   ├── Bosses/          (보스)
-  │   └── Environment/     (환경 요소)
-  ├── Animations/
-  │   ├── Character/
-  │   ├── Combat/
-  │   └── Creatures/
-  ├── Textures/
-  ├── Audio/
-  └── UI/
-  ```
-
-- [ ] 없는 폴더 생성
-  ```bash
-  mkdir -p Assets/Models/{Characters,Enemies,Bosses,Environment}
-  mkdir -p Assets/Animations/{Character,Combat,Creatures}
-  ```
+**목표:** Day 11에 즉시 모델링 시작 가능한 환경 구축  
+**기간:** 2026-05-09 ~ 2026-05-17 (8일)  
+**현재:** Day 3 (2026-05-09 6:56 AM)  
 
 ---
 
-### **Day 5-6 (2026-05-10, 토요일 & 일요일) - 리소스 및 스크립트 준비**
+## 🛠️ 도구 & 환경 확인
 
-#### 모델 리소스 수집
-- [ ] **Sketchfab에서 무료 모델 다운로드**
-  - 검색: "human character game ready", "monster game ready"
-  - 포맷: GLB/GLTF 우선
-  - 라이센스: Creative Commons OK
+### ✅ 설치 완료
+- [x] Godot 4.6.2 (godot command 확인)
+- [x] Blender (blender command 확인)
+- [x] Python 3.9 (python3 --version)
+- [x] Git (프로젝트 초기화 완료)
 
-  ```bash
-  # fetch_sketchfab.py 실행 (필요 시)
-  cd /Users/hwangjeyeong/.openclaw/workspace/NEXUS_Dev
-  python3 fetch_sketchfab.py
-  ```
+### ⚙️ 추가 설정 필요
 
-- [ ] **프로시저럴 생성 스크립트 준비**
-  ```bash
-  # 기존 스크립트 확인
-  ls -la /Users/hwangjeyeong/.openclaw/workspace/NEXUS_Dev/*.py
-  ```
-
-  주요 스크립트:
-  - `generate_models.py` - 기본 모델 생성
-  - `create_3d_models.py` - 고급 모델 생성
-  - `gen_martial_arts.py` - 무술 애니메이션
-
-#### 애니메이션 생성 도구 준비
-- [ ] **Blender 애니메이션 스크립트 준비**
-  ```bash
-  # 기존 스크립트 확인 또는 새로 작성
-  ls -la /Users/hwangjeyeong/.openclaw/workspace/NEXUS_Dev/*animation*.py
-  ls -la /Users/hwangjeyeong/.openclaw/workspace/NEXUS_Dev/*anim*.sh
-  ```
-
-- [ ] **Godot 애니메이션 생성 스크립트 준비**
-  ```bash
-  cd /Users/hwangjeyeong/.openclaw/workspace/NEXUS_Dev/Scripts/Animation
-  ls -la generate_animations.py
-  ```
-
----
-
-### **Day 7-8 (준비 완료 점검 일) - Godot 프로젝트 최적화**
-
-#### 스크립트 시스템 확인
-- [ ] **CharacterModelBuilder.gd 확인**
-  ```bash
-  cd /Users/hwangjeyeong/.openclaw/workspace/NEXUS_Dev
-  grep -n "class_name\|func " Scripts/Graphics/CharacterModelBuilder.gd | head -20
-  ```
-
-- [ ] **AnimationController.gd 확인**
-  ```bash
-  grep -n "class_name\|func " Scripts/Graphics/AnimationController.gd | head -20
-  ```
-
-- [ ] **BossAnimationController.gd 확인** (있는지 확인, 없으면 Day 11에 생성)
-  ```bash
-  ls -la Scripts/Graphics/BossAnimationController.gd 2>/dev/null || echo "생성 필요"
-  ```
-
-#### 테스트 씬 준비
-- [ ] **모델 테스트 씬 생성**
-  ```
-  Scenes/Test/
-  ├── CharacterModelTest.tscn     (새로 생성)
-  ├── AnimationTest.tscn          (새로 생성)
-  └── BossAnimationTest.tscn      (새로 생성)
-  ```
-
-#### 데이터 구조 확인
-- [ ] **애니메이션 메타데이터 구조**
-  ```
-  Data/
-  ├── animations.json             (생성 또는 확인)
-  └── animation_config.json       (생성 또는 확인)
-  ```
-
-  샘플 구조:
-  ```json
-  {
-    "character": {
-      "idle": {
-        "frames": 30,
-        "fps": 30,
-        "loop": true,
-        "duration": 1.0
-      }
-    },
-    "monsters": {
-      "wolf": {
-        "walk": {...}
-      }
-    }
-  }
-  ```
-
----
-
-### **Day 9-10 (최종 점검) - 워크플로우 및 문서**
-
-#### 개발 워크플로우 정의
-- [ ] **일일 개발 프로세스**
-  1. Git pull (최신 코드 가져오기)
-  2. 오늘 작업 항목 확인 (WEEK3_4_DETAILED_PLAN.md)
-  3. 모델/애니메이션 개발
-  4. Godot에서 테스트
-  5. 버그 로깅
-  6. Git add/commit/push
-  7. 다음 날 준비
-
-#### 성능 목표 설정
-- [ ] **성능 기준선 측정**
-  ```bash
-  # Godot에서 FPS 측정 도구 활성화
-  # Tools → Monitor (Ctrl+Alt+D)
-  ```
-
-  목표:
-  - FPS: 60 이상
-  - 메모리: 500MB 이하
-  - 로딩 시간: 5초 이하
-
-#### 문서 정리
-- [ ] **Day 11 시작 가이드 문서 생성**
-  - 모델 디자인 문서
-  - 애니메이션 타이밍 문서
-  - 색상 팔레트 정의
-
-- [ ] **개발 로그 템플릿 생성**
-  ```markdown
-  # Day N 개발 로그
-  
-  **날짜:** 2026-05-XX
-  **완료 항목:**
-  - [ ] ...
-  
-  **문제 및 해결:**
-  - ...
-  
-  **내일 계획:**
-  - ...
-  
-  **버그 리스트:**
-  - ...
-  ```
-
----
-
-## 🎨 모델 & 애니메이션 기초 작업
-
-### 색상 팔레트 정의
-```
-주요 색상:
-- 플레이어: 파란색 톤 (신뢰감)
-- 몬스터: 빨강/검정 톤 (위협감)
-- 보스: 금색/검정 톤 (강렬함)
-- 환경: 녹색/갈색 톤 (자연)
-- UI: 흰색/검은색 톤 (가독성)
-```
-
-### 모델 폴리곤 목표
-```
-- 플레이어: 2000-3000개
-- 일반 몬스터: 1000-2000개
-- 보스: 3000-5000개
-- 환경: 500-1000개
-- 목표: 총 50K 이하 (성능)
-```
-
-### 애니메이션 표준화
-```
-- 프레임 레이트: 30 FPS
-- 루프 애니메이션: 부드럽게 (시작/끝 동일)
-- 전환: 0.2초 (부드러운 변화)
-- 음향: Day 19+ 추가
-```
-
----
-
-## 📊 리소스 체크리스트
-
-### 필수 준비물
-- [x] Godot 4.2+
-- [x] Blender 또는 프로시저럴 생성 도구
-- [x] Python 3.8+
-- [x] Git
-- [x] 텍스트 에디터 (VS Code)
-
-### 권장 준비물
-- [ ] Sketchfab 계정 (무료 모델 다운로드)
-- [ ] Freesound.org 계정 (음향 효과)
-- [ ] 모델 참조 이미지 수집
-- [ ] 색상 팔레트 도구 (coolors.co)
-
----
-
-## 🚀 Day 11 시작 체크리스트
-
-### 월요일 (2026-05-11, Day 11) 아침 확인
-- [ ] 모든 도구 설치 완료 확인
-- [ ] NEXUS_Dev 프로젝트 열 수 있는지 확인
-- [ ] Scripts/Graphics 폴더 구조 확인
-- [ ] Assets/Models 폴더 준비 완료 확인
-- [ ] 오늘 작업 항목 확인 (플레이어 모델 & 애니메이션)
-
-### 시작 전 최종 점검
+#### Day 3 (오늘) - 기본 환경 설정
 ```bash
-# 터미널 확인
-cd /Users/hwangjeyeong/.openclaw/workspace/NEXUS_Dev
-git status                    # 깔끔한 상태 확인
-godot --version              # Godot 4.2+ 확인
-python3 -c "import trimesh"  # 필요한 모듈 확인
+# 1. Python 모듈 설치 (모델링 자동화 용)
+pip3 install trimesh numpy pillow
 
-# Godot 실행
-godot                         # 또는 godot . (프로젝트 폴더에서)
+# 2. Blender Python API 테스트
+blender --version
+
+# 3. Godot FBX 임포트 설정 확인
+cd NEXUS_Game
+godot --editor &
+# → Assets 폴더 구조 확인
+# → Import 설정 기본값 확인
+# → 종료
+```
+
+**체크:** 에러 없음? ✅ → Day 4로
+
+---
+
+## 📚 리소스 수집 (Day 3-4)
+
+### 1️⃣ 모델 다운로드 웹사이트 (무료 CC0/CC-BY)
+
+**주요 사이트:**
+- **Sketchfab** (https://sketchfab.com)
+  - 필터: CC0 License, Human Character, 20k-50k polys
+  - 다운로드 형식: Blend, FBX
+
+- **OpenGameArt.org** (https://opengameart.org)
+  - Rigged Human Models (자동 리깅 포함)
+  - Fantasy characters
+
+- **Mixamo** (https://www.mixamo.com)
+  - 애니메이션 라이브러리 (무료)
+  - 자동 리깅 (로그인 필요)
+
+### 2️⃣ 다운로드 목록 (Day 3-4)
+
+#### 플레이어 캐릭터
+- [ ] 남성 캐릭터 (Rigged, 미드폴리)
+  - 저장 위치: `Assets/Models/Characters/Base/PlayerMale_Base.blend`
+  - 소요: 20분
+
+#### 몬스터 3종 (Day 13까지 다운로드)
+- [ ] Wolf (늑대) - 애니메이션 가능한 모델
+- [ ] Bat (박쥐) - Flying 애니메이션 필요
+- [ ] Skeleton (해골) - 골격 구조 명확한 모델
+
+#### 보스 모델 (Day 16까지)
+- [ ] Boss Character (중급 고폴리, 신체가 복잡한 모델)
+
+#### 환경 에셋 (Day 14까지)
+- [ ] 나무 (3종)
+- [ ] 바위 (2종)
+- [ ] 건물 (1종: 무술관)
+
+**저장 구조:**
+```
+Assets/
+├── Models/
+│   ├── Characters/
+│   │   └── Base/
+│   │       ├── PlayerMale_Base.blend
+│   │       ├── Wolf_Base.blend
+│   │       └── ...
+│   └── Environment/
+│       ├── Tree_01.blend
+│       ├── Rock_01.blend
+│       └── ...
 ```
 
 ---
 
-## 📝 추가 작업 항목
+## 🔧 Blender 워크플로우 설정 (Day 4-5)
 
-### 선택사항 (여유 있으면)
-- [ ] 참조 이미지 및 컨셉 아트 수집
-- [ ] 음향 효과 미리 수집 (Day 17+에 사용)
-- [ ] 보스 디자인 스케치
-- [ ] 지역 배경음악 선정
-
-### 장기 계획 (Week 5+)
-- [ ] 추가 모델링 기술 습득
-- [ ] 애니메이션 최적화 기법 학습
-- [ ] Godot 성능 최적화 심화
-
----
-
-## 🎯 성공 기준
-
-✅ **Day 10 종료 시점:**
-- [ ] 모든 도구 설치 완료
-- [ ] Godot 프로젝트 완벽하게 로드
-- [ ] Assets 폴더 구조 정비 완료
-- [ ] 개발 워크플로우 정의 완료
-- [ ] Day 11 시작 준비 100% 완료
-- [ ] 에러 0건
-
----
-
-## 📞 도움말
-
-### 문제 발생 시
-```
-Q: Blender/Godot 설치 문제?
-A: 공식 사이트에서 다운로드 (링크는 아래)
-
-Q: Python 모듈 설치 실패?
-A: pip install --upgrade pip 후 재시도
-
-Q: Git 설정 문제?
-A: git config --global 사용 (사용자 전체)
+### 1️⃣ Blender 프로젝트 템플릿
+```bash
+mkdir -p NEXUS_BlenderWorkspace
+cd NEXUS_BlenderWorkspace
+blender --version
 ```
 
-### 리소스 링크
-- Blender 다운로드: https://www.blender.org/download/
-- Godot 다운로드: https://godotengine.org/download/
-- Sketchfab 모델: https://sketchfab.com/
-- 색상 도구: https://coolors.co/
+### 2️⃣ 리깅 & 애니메이션 도구
+
+#### 자동 리깅 방법 (3가지 선택)
+1. **Mixamo (가장 간단)**
+   - Mixamo 웹사이트 업로드 → 자동 리깅 → 다운로드 (FBX)
+   - 소요: 2-3분 per 모델
+
+2. **Rigify (Blender 기본 애드온)**
+   - Blender 메뉴: Add-ons → Rigify 활성화
+   - 자동 생성, 고급 제어 가능
+   - 소요: 5-10분 per 모델
+
+3. **Auto-Rig Pro (커뮤니티 애드온)**
+   - 다운로드: https://github.com/ndee85/auto_rig_pro_freeBased on earlier download
+   - 설치: Add-ons → Install from file
+   - 소요: 2-5분 per 모델
+
+**Day 5 할 일:**
+- [ ] Mixamo 계정 생성 (무료)
+- [ ] Rigify 활성화 확인
+- [ ] 테스트 모델로 자동 리깅 1회 연습
+
+### 3️⃣ Blender FBX 내보내기 설정
+
+**Day 5 오후:**
+```
+Blender → File → Export → FBX
+확인할 설정:
+  ✅ Animation: ON
+  ✅ NLA Strips: ON (리깅 애니메이션 유지)
+  ✅ All Action: ON (모든 애니메이션 포함)
+  ✅ Deformed Mesh: ON (리깅된 메쉬)
+  ✅ Leaf Bones: OFF (불필요한 뼈 제거)
+  
+설정 저장: 기본값으로 계속 사용
+```
 
 ---
 
-**Version:** 1.0  
-**Last Updated:** 2026-05-08  
-**Next Step:** Day 3 시작 (2026-05-09)  
-**Status:** 준비 목록 생성 완료 ✅
+## 🎬 애니메이션 생성 도구 (Day 5-6)
 
-**모든 준비를 완료하고 Day 11 (2026-05-11)부터 본격 개발을 시작합니다!** 🚀
+### 1️⃣ Mixamo 애니메이션 사용 방법
 
+**Day 6 실습:**
+```
+1. Mixamo 접속 (https://www.mixamo.com)
+2. 캐릭터 업로드 (또는 기본 제공 캐릭터)
+3. 검색: "Walk" → 다운로드 (FBX, 60fps)
+4. 저장 위치: Assets/Animations/MixamoLib/
+5. Blender에서 임포트 & 통합
+```
+
+### 2️⃣ Blender 직접 애니메이션 (백업용)
+
+**Dope Sheet로 키프레임 생성 (Day 6-7):**
+- Idle (30프레임)
+- Walk (60프레임)
+- Run (45프레임)
+- Attack (30프레임)
+- Evade (20프레임)
+
+**참고:** 자동화 스크립트는 Day 12에 작성
+
+---
+
+## 🏗️ Godot 프로젝트 최적화 (Day 6-7)
+
+### 1️⃣ Import 설정 확인
+
+**Day 6 오전:**
+```bash
+cd NEXUS_Game
+
+# Godot 열기
+godot --editor
+
+# 확인할 것:
+# 1. Project Settings → Import → Scene → FBX
+#    - Animation: Enabled
+#    - Meshes: Ensure Tangents ✅
+# 2. Assets 폴더 각 부위별 생성 확인
+#    - Models/Characters/
+#    - Models/Enemies/
+#    - Models/Environment/
+# 3. 각 폴더에 .import 폴더 자동 생성 확인
+```
+
+### 2️⃣ Test Scene 생성
+
+**Day 7 오전:**
+```gdscript
+# Scenes/Test_ModelImport.tscn 생성
+# 내용:
+# - 빈 씬 생성
+# - 3D Node 추가
+# - 더미 FBX 모델 임포트 (테스트)
+# - 애니메이션 재생 테스트
+
+# Scripts/Test/ModelImportTest.gd
+extends Node3D
+
+@export var model_path: String = "res://Assets/Models/Characters/Base/PlayerMale_Base.fbx"
+
+func _ready():
+    var model = load(model_path)
+    if model:
+        print("✅ Model loaded successfully")
+        add_child(model.instantiate())
+    else:
+        print("❌ Model load failed")
+```
+
+---
+
+## 📝 개발 문서 & 워크플로우 (Day 7-8)
+
+### 1️⃣ Daily Log 템플릿 생성
+
+**Day 7:**
+```markdown
+# memory/DAILY_NEXUS_LOGS.md
+
+## Day 11 (2026-05-11) - 플레이어 모델 + 기본 애니메이션
+- 시작 시간: 09:00
+- 종료 시간: 17:00
+- 목표: 플레이어 모델 + 애니메이션 5개
+- 성과: ✅ 완성
+- 버그: 0건
+- 진행도: 40% → 45%
+- 주석: ...
+```
+
+### 2️⃣ Git Workflow 확정
+
+**Day 8:**
+```bash
+# Commit 메시지 형식:
+# Day 11: Player model + 5 animations
+# - Add PlayerMale_v1 model (12k polygons)
+# - Add animations: Idle, Walk, Run, Attack, Evade
+# - Godot import successful
+# - No errors, 60 FPS stable
+# Progress: 40% → 45%
+
+# Branch 전략:
+git checkout -b week3_4_graphics
+# → Day 24에 main으로 merge
+```
+
+---
+
+## ✅ Day 3-10 최종 체크리스트
+
+### 📋 구성 항목 (우선순위순)
+
+#### Day 3 (오늘) ⚡
+- [ ] Python 모듈 설치 (`pip3 install trimesh numpy pillow`)
+- [ ] Godot 4.6 확인
+- [ ] Blender 확인
+- [ ] 기본 구조 최종 확인 (Assets, Scripts, Scenes 폴더)
+
+#### Day 4
+- [ ] Sketchfab에서 플레이어 모델 1개 다운로드
+- [ ] 저장 위치 확인 (Assets/Models/Characters/Base/)
+- [ ] Blender에서 열기 (노드 확인)
+
+#### Day 5
+- [ ] Mixamo 계정 생성
+- [ ] Rigify 활성화
+- [ ] FBX 내보내기 설정 확인
+- [ ] 테스트: 플레이어 모델 리깅 1회
+
+#### Day 6
+- [ ] Godot Import 설정 확인
+- [ ] Test Scene 생성 (ModelImportTest.tscn)
+- [ ] 더미 FBX 임포트 테스트
+- [ ] 에러 확인
+
+#### Day 7
+- [ ] Blender Dope Sheet 연습 (간단한 애니메이션 만들기)
+- [ ] FBX 내보내기 테스트
+- [ ] Godot에서 애니메이션 재생 테스트
+- [ ] Daily Log 템플릿 생성
+
+#### Day 8
+- [ ] Mixamo에서 애니메이션 3개 다운로드 & 테스트
+- [ ] Blender-Godot 워크플로우 확정
+- [ ] Git workflow 확정
+- [ ] Day 11 최종 준비 확인
+
+#### Day 9-10
+- [ ] 모든 도구 최종 확인
+- [ ] 리소스 다운로드 목록 정리
+- [ ] Day 11 오전 9:00 시작 준비
+- [ ] 마지막 에러 확인
+
+---
+
+## 🎯 Day 11 시작 조건 (체크리스트)
+
+```
+✅ Godot 4.6 정상 작동
+✅ Blender 리깅 가능 확인
+✅ Mixamo 애니메이션 다운로드 경로 준비
+✅ Assets 폴더 구조 최종 확인
+✅ Git 준비 완료 (branch week3_4_graphics)
+✅ Daily Log 시스템 준비
+✅ 에러 = 0
+
+→ **Day 11 09:00 풀속도 시작!** ⚡
+```
+
+---
+
+## 📊 진행도 추적
+
+```
+Day 3 (현재): 준비 0% → 20%
+Day 4-5:      준비 20% → 40%
+Day 6-7:      준비 40% → 60%
+Day 8-9:      준비 60% → 80%
+Day 10:       준비 80% → 100% ✅
+
+Day 11:       개발 시작! (40% → 45% 목표)
+```
+
+---
+
+## 🚀 최종 목표
+
+**Day 11 09:00에 바로 시작 가능한 상태 만들기**
+
+- ✅ 모든 도구 설치 & 확인
+- ✅ 워크플로우 확정
+- ✅ 리소스 다운로드 준비
+- ✅ Godot 설정 완료
+- ✅ 에러 0
+- ✅ 문서 모두 준비
+
+**준비 완료 시점: 2026-05-10 18:00**
+
+**시작 시점: 2026-05-11 09:00** 🔥
+
+---
+
+**Status:** 🟡 Day 3 시작 (현재)  
+**Target:** 🟢 Day 11 09:00 완벽 준비  
+**Motto:** "에러 0, 완벽한 게임을 만든다!" ⚡
