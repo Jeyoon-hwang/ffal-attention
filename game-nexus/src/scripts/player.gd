@@ -11,7 +11,14 @@ var mouse_sensitivity = constants.PLAYER_MOUSE_SENSITIVITY
 var max_health = constants.PLAYER_MAX_HEALTH
 var max_energy = constants.PLAYER_MAX_ENERGY
 
-# 무술 스킬
+# 무술 시스템 (Day 4 업그레이드)
+var martial_engine: Node  # MartialArtEngine 싱글톤
+var martial_arts_slots = []  # 5개 슬롯 (무술 배치)
+var active_martial_art_index = 0  # 현재 활성 무술
+var martial_art_cooldowns = [0.0, 0.0, 0.0, 0.0, 0.0]  # 각 슬롯의 쿨다운
+var loaded_martial_arts = []  # 로드된 모든 무술
+
+# 무술 스킬 (구식, 호환성)
 var basic_attack_damage = constants.PLAYER_BASIC_ATTACK_DAMAGE
 var skill_cooldown = constants.PLAYER_SKILL_COOLDOWN
 var energy_per_skill = constants.PLAYER_SKILL_ENERGY_COST
@@ -40,6 +47,67 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	health = max_health
 	energy = max_energy
+	
+	# Day 4: 무술 엔진 통합
+	load_martial_arts()
+	initialize_martial_slots()
+
+# Day 4: 무술 시스템
+func load_martial_arts():
+	"""MartialArtEngine에서 무술 로드"""
+	if has_node("/root/MartialArtEngine"):
+		martial_engine = get_node("/root/MartialArtEngine")
+	else:
+		print("⚠️ MartialArtEngine을 찾을 수 없음 (아직 씬에 추가 안됨)")
+		return
+	
+	# JSON 파일에서 무술 로드
+	var json_path = "res://src/data/MartialArts/martial_arts_base_set.json"
+	loaded_martial_arts = martial_engine.load_martial_arts_from_json(json_path)
+	
+	if loaded_martial_arts.size() > 0:
+		print("✅ %d개 무술 로드 완료" % loaded_martial_arts.size())
+	else:
+		print("❌ 무술 로드 실패")
+
+func initialize_martial_slots():
+	"""무술 5개 슬롯 초기화 (랜덤 선택)"""
+	if loaded_martial_arts.size() == 0:
+		print("⚠️ 로드된 무술이 없어서 슬롯 초기화 불가")
+		return
+	
+	for i in range(5):
+		var random_index = randi() % loaded_martial_arts.size()
+		var selected_martial = loaded_martial_arts[random_index]
+		martial_arts_slots.append(selected_martial)
+		print("[슬롯 %d] %s 배치" % [i+1, selected_martial.name])
+
+func use_martial_art(slot_index: int) -> bool:
+	"""특정 슬롯의 무술 사용"""
+	if slot_index < 0 or slot_index >= martial_arts_slots.size():
+		return false
+	
+	if martial_art_cooldowns[slot_index] > 0:
+		print("⚠️ [슬롯 %d] 쿨다운 중... (%.1f초)" % [slot_index+1, martial_art_cooldowns[slot_index]])
+		return false
+	
+	var martial = martial_arts_slots[slot_index]
+	if energy < martial.damage * 0.5:  # 위력의 50%를 에너지로 사용
+		print("⚠️ 에너지 부족! (필요 %.0f)" % (martial.damage * 0.5))
+		return false
+	
+	# 무술 사용
+	energy -= martial.damage * 0.5
+	martial_art_cooldowns[slot_index] = martial.cooldown
+	active_martial_art_index = slot_index
+	
+	# 대미지 계산 (내공 보너스)
+	var final_damage = martial.damage
+	if is_spirit_active:
+		final_damage *= constants.PLAYER_SPIRIT_DAMAGE_MULTIPLIER
+	
+	print("🥋 [%s] 발동! (대미지 %.0f, 쿨 %.1f초)" % [martial.name, final_damage, martial.cooldown])
+	return true
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -47,6 +115,12 @@ func _input(event):
 		camera_x_rotation = clamp(camera_x_rotation, -PI/2, PI/2)
 		camera.rotation.x = camera_x_rotation
 		rotate_y(-event.relative.x * mouse_sensitivity * 0.01)
+	
+	# Day 4: 무술 슬롯 입력 (1-5)
+	if event is InputEventKey and event.pressed:
+		if event.keycode >= KEY_1 and event.keycode <= KEY_5:
+			var slot = event.keycode - KEY_1
+			use_martial_art(slot)
 
 func _physics_process(delta):
 	# 중력
@@ -63,6 +137,11 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0
 		velocity.z = 0
+	
+	# Day 4: 무술 쿨다운 감소
+	for i in range(martial_art_cooldowns.size()):
+		if martial_art_cooldowns[i] > 0:
+			martial_art_cooldowns[i] -= delta
 	
 	# 점프
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

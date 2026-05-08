@@ -43,6 +43,12 @@ var boss_spawned = false
 @onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready():
+	# Day 4: MartialArtEngine 로드
+	var martial_engine = preload("res://src/scripts/martial_art_engine.gd").new()
+	martial_engine.name = "MartialArtEngine"
+	add_child(martial_engine)
+	print("✅ MartialArtEngine 로드 완료")
+	
 	# Week 2: 새로운 시스템 로드
 	region_manager = preload("res://src/scripts/region_manager.gd").new()
 	dungeon_generator = preload("res://src/scripts/dungeon_generator.gd").new()
