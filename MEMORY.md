@@ -1,6 +1,41 @@
 # 천재의 장기 메모리 (Long-Term Memory)
 
-## 🎮 현재 프로젝트: NEXUS 무술 창조 게임 ⚡
+## 🚀 현재 진행: C++ NEXUS Engine (Phase 1 Complete!) ⚡
+
+**상태**: ✅ 빌드 성공! 엔진 실행 중
+**진행도**: Phase 1 완료 (Core systems buildable)
+**날짜**: 2026-05-09 21:16
+**주요 성과**: CMake 전체 재구성 + 모든 컴파일 에러 해결
+
+### 완료된 작업
+1. ✅ CMakeLists.txt 전체 재작성 (모든 source directory 포함)
+2. ✅ 의존성 설치: CMake 4.3.2, GLFW 3.4, GLM 1.0.3
+3. ✅ 60+ 게임 시스템 파일 컴파일
+4. ✅ macOS OpenGL 호환성 (APPLE 확장 함수 사용)
+5. ✅ 모든 헤더 include 순환참조 해결
+6. ✅ 빌드 완료: ./build/nexus_game 실행 가능
+
+### 주요 수정사항
+- glm::pi → 3.14159265359f (macOS GLM 호환성)
+- glBindVertexArray → glBindVertexArrayAPPLE
+- glDeleteBuffers (표준 사용, APPLE 버전 없음)
+- gladLoadGL 제거 (macOS 불필요)
+- stb_image 제거 (향후 Assimp로 구현)
+- const 메서드 수정 (FindItem, FindSlot)
+- Equip 클래스 메서드 이름 변경 (EquipItem, UnequipItem)
+- Mastery 기본 생성자 추가
+- SeasonSystem.h에 #include <string> 추가
+
+### 빌드 결과
+- 실행 파일: 163KB (경량)
+- 정적 라이브러리: 3.4MB
+- 컴파일 시간: ~2-3분
+- 에러: 0건 ✅
+- 경고: ~20건 (deprecated OpenGL, macOS 정상)
+
+---
+
+## 🎮 이전 프로젝트: NEXUS 무술 창조 게임 (Godot 70%) 📚
 
 **상태**: 🚀 **Week 3 Day 16 완료! 70% 도달 준비 100% 완료!** 🔥  
 **진행도**: **60% (Day 15) → 64% (Day 16 Phase 1-3) → 70% 도달 준비 완료 (Day 17-18에 최종)** ✅  
