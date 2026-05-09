@@ -51,15 +51,27 @@ func _process(delta):
 	var energy_bar = create_bar(energy_percent)
 	var spirit_bar = create_bar(spirit_percent)
 	
+	# Day 5: 방어/회피 상태
+	var defense_status = "🛡️ 방어 중" if player.is_defending else ""
+	var dodge_status = ""
+	if player.dodge_cooldown_timer > 0:
+		dodge_status = " | 🏃 회피 (%.1f초)" % player.dodge_cooldown_timer
+	elif player.current_i_frames > 0:
+		dodge_status = " | 🌀 무적 중"
+	
+	var combat_status = defense_status + dodge_status
+	
 	hud_label.text = """
 [🥋 무사의 상태]
 체력: %s %.0f%% (%d/%d)
 에너지: %s %.0f%% (%d/%d)
 내공: %s %.0f%% (%d/%d)
+%s
 """ % [
 		health_bar, health_percent, player.health, player.max_health,
 		energy_bar, energy_percent, player.energy, player.max_energy,
-		spirit_bar, spirit_percent, player.spirit, player.max_spirit
+		spirit_bar, spirit_percent, player.spirit, player.max_spirit,
+		combat_status
 	]
 	
 	# ============================================================
