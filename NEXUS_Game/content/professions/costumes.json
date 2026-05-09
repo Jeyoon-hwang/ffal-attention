@@ -1,0 +1,304 @@
+{
+  "professions": {
+    "swordsman": {
+      "id": "swordsman",
+      "name": "검사 (Swordsman)",
+      "description": "날카로운 칼날로 적을 베는 전투 전문가",
+      "base_stats": {
+        "STR": 15,
+        "DEX": 10,
+        "INT": 0,
+        "VIT": 10,
+        "WIS": 0,
+        "CHA": 0
+      },
+      "costume": {
+        "primary_color": "#2C3E50",
+        "secondary_color": "#E74C3C",
+        "accent_color": "#F39C12",
+        "chest_piece": "armored_tunic",
+        "arm_piece": "metal_pauldrons",
+        "leg_piece": "combat_pants",
+        "foot_piece": "leather_boots",
+        "features": {
+          "has_cape": false,
+          "has_helmet": false,
+          "has_gloves": true,
+          "has_shoulder_pads": true
+        },
+        "fabric_type": "metal",
+        "special_effect": "sword_sheath_on_back"
+      },
+      "starting_weapon": "iron_sword",
+      "starting_martial_arts": [
+        "basic_slash",
+        "power_strike"
+      ]
+    },
+    
+    "archer": {
+      "id": "archer",
+      "name": "궁수 (Archer)",
+      "description": "원거리에서 정확한 화살을 쏘는 사냥꾼",
+      "base_stats": {
+        "STR": 5,
+        "DEX": 20,
+        "INT": 5,
+        "VIT": 0,
+        "WIS": 0,
+        "CHA": 0
+      },
+      "costume": {
+        "primary_color": "#27AE60",
+        "secondary_color": "#8B7355",
+        "accent_color": "#D4A574",
+        "chest_piece": "leather_jerkin",
+        "arm_piece": "ranger_guards",
+        "leg_piece": "scout_pants",
+        "foot_piece": "hiking_boots",
+        "features": {
+          "has_cape": false,
+          "has_helmet": false,
+          "has_gloves": true,
+          "has_shoulder_pads": false
+        },
+        "fabric_type": "leather",
+        "special_effect": "bow_on_back"
+      },
+      "starting_weapon": "wooden_bow",
+      "starting_martial_arts": [
+        "basic_shot",
+        "rapid_fire"
+      ]
+    },
+    
+    "mage": {
+      "id": "mage",
+      "name": "마도사 (Mage)",
+      "description": "마법의 힘으로 적을 격파하는 신비로운 존재",
+      "base_stats": {
+        "STR": -10,
+        "DEX": 5,
+        "INT": 25,
+        "VIT": -5,
+        "WIS": 20,
+        "CHA": 0
+      },
+      "costume": {
+        "primary_color": "#8E44AD",
+        "secondary_color": "#3498DB",
+        "accent_color": "#F1C40F",
+        "chest_piece": "mystic_robes",
+        "arm_piece": "enchanted_sleeves",
+        "leg_piece": "flowing_pants",
+        "foot_piece": "mystical_slippers",
+        "features": {
+          "has_cape": true,
+          "has_helmet": false,
+          "has_gloves": false,
+          "has_shoulder_pads": false
+        },
+        "fabric_type": "silk",
+        "special_effect": "mana_aura_floating_particles"
+      },
+      "starting_weapon": "staff",
+      "starting_martial_arts": [
+        "fireball",
+        "ice_spike"
+      ]
+    },
+    
+    "rogue": {
+      "id": "rogue",
+      "name": "도적 (Rogue)",
+      "description": "어둠 속에서 움직이며 치명타를 날리는 암살자",
+      "base_stats": {
+        "STR": 8,
+        "DEX": 25,
+        "INT": 0,
+        "VIT": -5,
+        "WIS": 5,
+        "CHA": 20
+      },
+      "costume": {
+        "primary_color": "#1C1C1C",
+        "secondary_color": "#555555",
+        "accent_color": "#00FF00",
+        "chest_piece": "leather_vest",
+        "arm_piece": "studded_sleeves",
+        "leg_piece": "dark_pants",
+        "foot_piece": "silent_boots",
+        "features": {
+          "has_cape": false,
+          "has_helmet": false,
+          "has_gloves": true,
+          "has_shoulder_pads": false
+        },
+        "fabric_type": "leather",
+        "special_effect": "shadow_cloak_stealth_visual"
+      },
+      "starting_weapon": "dagger",
+      "starting_martial_arts": [
+        "backstab",
+        "evasion"
+      ]
+    },
+    
+    "paladin": {
+      "id": "paladin",
+      "name": "기사 (Paladin)",
+      "description": "신성한 방어력으로 아군을 지키는 수호자",
+      "base_stats": {
+        "STR": 15,
+        "DEX": 0,
+        "INT": 5,
+        "VIT": 15,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "costume": {
+        "primary_color": "#F39C12",
+        "secondary_color": "#FFFFFF",
+        "accent_color": "#E74C3C",
+        "chest_piece": "full_plate_armor",
+        "arm_piece": "gauntlets",
+        "leg_piece": "plate_legs",
+        "foot_piece": "steel_boots",
+        "features": {
+          "has_cape": false,
+          "has_helmet": true,
+          "has_gloves": true,
+          "has_shoulder_pads": true
+        },
+        "fabric_type": "metal",
+        "special_effect": "holy_shield_glow"
+      },
+      "starting_weapon": "long_sword",
+      "starting_martial_arts": [
+        "shield_bash",
+        "holy_strike"
+      ]
+    },
+    
+    "bard": {
+      "id": "bard",
+      "name": "음유시인 (Bard)",
+      "description": "음악과 마법으로 전장을 조종하는 예술가",
+      "base_stats": {
+        "STR": 0,
+        "DEX": 10,
+        "INT": 15,
+        "VIT": 5,
+        "WIS": 10,
+        "CHA": 25
+      },
+      "costume": {
+        "primary_color": "#9B59B6",
+        "secondary_color": "#F1C40F",
+        "accent_color": "#E67E22",
+        "chest_piece": "fancy_doublet",
+        "arm_piece": "ornate_sleeves",
+        "leg_piece": "silk_pants",
+        "foot_piece": "embroidered_shoes",
+        "features": {
+          "has_cape": true,
+          "has_helmet": false,
+          "has_gloves": false,
+          "has_shoulder_pads": false
+        },
+        "fabric_type": "silk",
+        "special_effect": "musical_notes_buff_particles"
+      },
+      "starting_weapon": "lute",
+      "starting_martial_arts": [
+        "resonant_note",
+        "charm_spell"
+      ]
+    }
+  },
+  
+  "equipment_slots": [
+    {
+      "slot_id": "head",
+      "body_part": "head",
+      "can_override_appearance": true,
+      "visual_priority": 1
+    },
+    {
+      "slot_id": "chest",
+      "body_part": "torso",
+      "can_override_appearance": true,
+      "visual_priority": 2
+    },
+    {
+      "slot_id": "legs",
+      "body_part": "legs",
+      "can_override_appearance": true,
+      "visual_priority": 3
+    },
+    {
+      "slot_id": "feet",
+      "body_part": "feet",
+      "can_override_appearance": true,
+      "visual_priority": 4
+    },
+    {
+      "slot_id": "hands",
+      "body_part": "hands",
+      "can_override_appearance": true,
+      "visual_priority": 5
+    },
+    {
+      "slot_id": "neck",
+      "body_part": "neck",
+      "can_override_appearance": false,
+      "visual_priority": 6
+    },
+    {
+      "slot_id": "ring_left",
+      "body_part": "left_hand",
+      "can_override_appearance": false,
+      "visual_priority": 7
+    },
+    {
+      "slot_id": "ring_right",
+      "body_part": "right_hand",
+      "can_override_appearance": false,
+      "visual_priority": 8
+    }
+  ],
+  
+  "appearance_presets": {
+    "skin_tones": [
+      {"name": "light", "hex": "#F4A76E"},
+      {"name": "medium", "hex": "#D4A574"},
+      {"name": "dark", "hex": "#8B6239"},
+      {"name": "pale", "hex": "#FFFACD"}
+    ],
+    "hair_styles": [
+      "short_straight",
+      "long_curly",
+      "wavy_medium",
+      "shaved_sides",
+      "braids",
+      "afro",
+      "long_straight",
+      "spiky"
+    ],
+    "hair_colors": [
+      {"name": "black", "hex": "#000000"},
+      {"name": "brown", "hex": "#8B4513"},
+      {"name": "blonde", "hex": "#FFD700"},
+      {"name": "red", "hex": "#DC143C"},
+      {"name": "white", "hex": "#FFFFFF"},
+      {"name": "silver", "hex": "#C0C0C0"}
+    ],
+    "eye_colors": [
+      {"name": "brown", "hex": "#8B4513"},
+      {"name": "blue", "hex": "#4169E1"},
+      {"name": "green", "hex": "#228B22"},
+      {"name": "hazel", "hex": "#8B7355"},
+      {"name": "violet", "hex": "#8B008B"}
+    ]
+  }
+}

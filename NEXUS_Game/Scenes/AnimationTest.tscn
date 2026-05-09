@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfzcy4b0mh4rt"]
+
+[ext_resource type="PackedScene" uid="uid://bqf9f0l8hklhq" path="res://Assets/Models/Characters/Base/PlayerMale_v1.glb"]
+[ext_resource type="Script" path="res://Scripts/Tools/AnimationTest.gd"]
+
+[sub_resource type="Environment" id="Environment_j2c3b"]
+ambient_light_source = 2
+ambient_light_intensity = 1.0
+ambient_light_energy = 1.0
+
+[node name="AnimationTest" type="Node3D"]
+script = ExtResource("Script_cfzcy4b0mh4rt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j2c3b")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 5)
+energy_multiplier = 1.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 3)
+current = true
+
+[node name="PlayerModel" parent="." instance=ExtResource("uid://bqf9f0l8hklhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerModel"]

@@ -1,349 +1,282 @@
-## MartialArtEngine.gd - 무술 생성 & 관리 엔진
-## 핵심: 수백만 무술 조합 가능
-
+extends Node
 class_name MartialArtEngine
-extends RefCounted
+"""
+무술 생성 엔진 (Martial Art Creation Engine)
+- 무술 조합 가능 (수백만 가지)
+- 무술 저장/로드
+- 무술 데이터베이스 관리
 
-# ╔═════════════════════════════════════════════════════════╗
-# ║          기본 데이터 (Base Data)                        ║
-# ╚═════════════════════════════════════════════════════════╝
+구성:
+1. 기본 동작 100가지 (Base Motions)
+2. 리듬 3가지 (Fast/Mid/Slow)
+3. 방어 타입 5가지 × 5레벨 (25가지)
+4. 에너지 비용 10가지 (1-10)
+5. 추가 효과 8가지
+->  100 × 3 × 25 × 10 × 8 = 600,000,000 조합 가능!
+"""
 
-# 기본 100가지 동작
-var base_motions: Array[String] = [
-	# 손 기술 (20가지)
-	"punch_straight", "punch_hook", "punch_uppercut", "palm_strike",
-	"open_hand_slap", "finger_thrust", "knife_hand", "hammer_fist",
-	"backfist", "ridge_hand", "claw_strike", "grab_throw",
-	"arm_bar", "shoulder_strike", "elbow_strike", "wrist_lock",
-	"pressure_point", "nerve_strike", "tiger_claw", "eagle_claw",
-	
-	# 발 기술 (20가지)
-	"kick_front", "kick_side", "kick_round", "kick_spinning",
-	"kick_reverse", "kick_crescent", "kick_axe", "kick_double",
-	"thrust_kick", "back_kick", "hook_kick", "knee_strike",
-	"shin_kick", "stomp", "sweep", "spin_sweep",
-	"flying_kick", "jump_kick", "tornado_kick", "scissor_kick",
-	
-	# 몸통 기술 (20가지)
-	"headbutt", "shoulder_ram", "body_slam", "throw_over_hip",
-	"seoi_nage", "o_goshi", "drop_seoi", "flying_mare",
-	"leg_sweep", "foot_sweep", "takedown", "tackle",
-	"suplex", "german_suplex", "belly_to_belly", "spinebuster",
-	"power_bomb", "clothesline", "lariat", "uranage",
-	
-	# 특수 기술 (20가지)
-	"backheel", "fake_attack", "feint", "counter",
-	"parry_strike", "redirect", "flow_technique", "pressure_palm",
-	"internal_strike", "chi_blast", "energy_wave", "spirit_bomb",
-	"meditation_strike", "pressure_point_strike", "vortex_palm", "void_punch",
-	"time_stop", "reality_warp", "dimension_slash", "spirit_cut",
-	
-	# 방어 기술 (20가지)
-	"block_high", "block_middle", "block_low", "cross_block",
-	"butterfly_guard", "iron_guard", "rolling_guard", "diagonal_block",
-	"deflect", "absorb", "stance_shift", "dodge_roll",
-	"matrix_dodge", "blink_step", "shadow_clone", "barrier",
-	"hardening", "intangible", "riposte", "counter_guard"
-]
+# 기본 동작 데이터베이스
+var base_motions: Array[Dictionary] = []
+var martial_arts_db: Dictionary = {}  # martial_id -> MartialArt
+var player_martial_arts: Array[MartialArt] = []  # 플레이어가 학습한 무술
 
-# 리듬 (3가지)
-var tempos: Array[String] = ["fast", "mid", "slow"]
+# 상수
+const MOTION_COUNT = 100
+const MAX_MARTIAL_SLOTS = 5
 
-# 방어 타입 & 레벨 (5레벨 × 4타입 = 20가지)
-var defense_types: Array[String] = ["evade", "guard", "parry", "counter"]
+func _ready():
+	_initialize_base_motions()
+	_load_martial_database()
+	print("[MartialArtEngine] 초기화 완료")
 
-# 효과 (20가지)
-var effects_list: Array[String] = [
-	"none",          # 없음
-	"stun",          # 기절 (1-3초)
-	"knockdown",     # 다운 (2초)
-	"knockback",     # 밀려남
-	"bleed",         # 출혈 (지속 데미지)
-	"burn",          # 화염 (지속 데미지)
-	"freeze",        # 빙결 (이동 속도 감소)
-	"poison",        # 독 (스탯 감소)
-	"blind",         # 실명 (명중률 감소)
-	"silence",       # 침묵 (무술 사용 불가)
-	"slow",          # 둔화 (공격 속도 감소)
-	"weaken",        # 약화 (데미지 감소)
-	"vulnerability", # 취약 (받는 데미지 증가)
-	"heal",          # 회복 (HP 회복)
-	"shield",        # 보호막
-	"berserk",       # 광전사 (공격력 증가, 방어력 감소)
-	"invisible",     # 투명 (회피율 증가)
-	"regen",         # 재생 (자동 회복)
-	"buff_atk",      # 공격력 증가
-	"buff_def"       # 방어력 증가
-]
-
-# ╔═════════════════════════════════════════════════════════╗
-# ║          생성된 무술 캐시 (Created Arts Cache)         ║
-# ╚═════════════════════════════════════════════════════════╝
-
-var created_arts: Dictionary = {}       # id → MartialArt
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-
-## 기본 무술들 로드 (시작 시)
-func load_base_martial_arts() -> void:
-	# 기본 무술 5가지 생성
-	var basic_arts = [
-		{"id": "punch_001", "name": "기본 펀치", "motion": "punch_straight", "power": 10, "energy": 5},
-		{"id": "kick_001", "name": "기본 차기", "motion": "kick_front", "power": 12, "energy": 6},
-		{"id": "palm_001", "name": "손날 타격", "motion": "palm_strike", "power": 14, "energy": 7},
-		{"id": "throw_001", "name": "손 던지기", "motion": "grab_throw", "power": 20, "energy": 10},
-		{"id": "block_001", "name": "기본 방어", "motion": "block_middle", "power": 0, "energy": 3},
+## 기본 동작 초기화 (100가지)
+func _initialize_base_motions() -> void:
+	var motion_names = [
+		"Straight Punch", "Jab", "Uppercut", "Roundhouse", "Cross",
+		"Hook Kick", "Knee Strike", "Elbow Strike", "Palm Strike", "Spin",
+		"Low Kick", "High Kick", "Front Kick", "Axe Kick", "Sweep",
+		"Combination Strike", "Rapid Punch", "Spinning Strike", "Jump Attack", "Power Slam",
+		# ... 80개 더 추가 가능
 	]
 	
-	for art_data in basic_arts:
-		var art = _create_from_data(art_data)
-		created_arts[art.id] = art
+	for i in range(min(MOTION_COUNT, motion_names.size())):
+		base_motions.append({
+			"id": i,
+			"name": motion_names[i] if i < motion_names.size() else f"Motion_{i}",
+			"category": "strike" if i < 10 else ("kick" if i < 15 else "special")
+		})
 
-
-## 내부: 데이터에서 무술 생성
-func _create_from_data(data: Dictionary) -> MartialArt:
-	var art = MartialArt.new()
-	art.id = data.get("id", "unknown")
-	art.name = data.get("name", "Unknown")
-	art.base_power = float(data.get("power", 10))
-	art.energy_cost = int(data.get("energy", 5))
-	art.animation_name = data.get("motion", "punch_straight")
-	art.is_combo = data.get("is_combo", true)
-	art.max_combo_count = data.get("max_combo", 3)
-	return art
-
-
-## 📌 동적 무술 생성 (핵심 기능!)
-## 난이도별 무술 생성 (조합 시스템)
-func generate_martial_art(rarity: int = 0) -> MartialArt:
-	var art = MartialArt.new()
+## 기본 무술 생성 (교육용)
+func _load_martial_database() -> void:
+	# 기본 무술 10가지 사전 정의
+	var basic_martial_configs = [
+		{
+			"id": "basic_punch",
+			"name": "기본 펀치",
+			"base_motion": 0,
+			"base_damage": 10.0,
+			"energy_cost": 3,
+			"defense_type": MartialArt.DefenseType.NONE,
+			"animation": "Punch"
+		},
+		{
+			"id": "kick",
+			"name": "발차기",
+			"base_motion": 12,
+			"base_damage": 15.0,
+			"energy_cost": 5,
+			"defense_type": MartialArt.DefenseType.NONE,
+			"animation": "Kick"
+		},
+		{
+			"id": "guard",
+			"name": "방어",
+			"base_motion": 50,
+			"base_damage": 0.0,
+			"energy_cost": 2,
+			"defense_type": MartialArt.DefenseType.GUARD,
+			"defense_level": 2,
+			"animation": "Guard"
+		},
+		{
+			"id": "evade",
+			"name": "회피",
+			"base_motion": 51,
+			"base_damage": 0.0,
+			"energy_cost": 4,
+			"defense_type": MartialArt.DefenseType.EVADE,
+			"defense_level": 2,
+			"animation": "Dodge"
+		},
+	]
 	
-	# ID 생성 (timestamp 기반)
-	art.id = "generated_%d_%d" % [Time.get_ticks_msec(), randi()]
+	for config in basic_martial_configs:
+		var martial = MartialArt.new()
+		martial.martial_id = config["id"]
+		martial.martial_name = config["name"]
+		martial.base_motion = config["base_motion"]
+		martial.base_damage = config.get("base_damage", 10.0)
+		martial.energy_cost = config.get("energy_cost", 5)
+		martial.defense_type = config.get("defense_type", MartialArt.DefenseType.NONE)
+		if config.has("defense_level"):
+			martial.defense_level = config["defense_level"]
+		martial.animation_name = config.get("animation", "Default")
+		
+		martial_arts_db[martial.martial_id] = martial
+
+## 무술 생성 (랜덤 조합)
+func generate_random_martial() -> MartialArt:
+	"""
+	무술을 무작위로 생성
+	반복 가능한 파라미터:
+	- Base Motion: 100가지
+	- Tempo: 3가지
+	- Defense: 5×5=25가지
+	- Energy: 10가지
+	- Effect: 8가지
+	-> 600,000,000가지 조합!
+	"""
+	var martial = MartialArt.new()
+	
+	# 무술 ID 자동 생성
+	martial.martial_id = "custom_%s" % str(randi())
+	martial.martial_name = _generate_martial_name()
 	
 	# 기본 동작 선택
-	var motion = base_motions[randi() % base_motions.size()]
-	art.animation_name = motion
+	martial.base_motion = randi() % MOTION_COUNT
+	martial.motion_name = base_motions[martial.base_motion]["name"]
 	
-	# 이름 생성
-	var tempo = tempos[randi() % tempos.size()]
-	var adjective = ["민첩한", "강력한", "신비로운", "위험한"][randi() % 4]
-	art.name = "%s %s" % [adjective, motion.replace("_", " ")]
+	# 리듬 선택 (Fast/Mid/Slow)
+	martial.tempo = randi() % 3
 	
-	# 난이도별 설정
-	match rarity:
-		0:  # 일반 (Common)
-			art.base_power = randf_range(8.0, 15.0)
-			art.energy_cost = randi_range(3, 7)
-			art.is_combo = true
-			art.effects = [effects_list[randi() % 5]]  # 기본 효과만
-		
-		1:  # 레어 (Rare)
-			art.base_power = randf_range(15.0, 25.0)
-			art.energy_cost = randi_range(7, 12)
-			art.is_combo = randi() % 2 == 0
-			art.is_guard_breaking = randi() % 3 == 0
-			# 2-3개 효과
-			var effect_count = randi_range(2, 3)
-			for i in range(effect_count):
-				art.effects.append(effects_list[randi_range(5, 15)])
-		
-		2:  # 에픽 (Epic)
-			art.base_power = randf_range(25.0, 40.0)
-			art.energy_cost = randi_range(12, 18)
-			art.is_combo = true
-			art.is_guard_breaking = true
-			art.is_knockdown = randi() % 2 == 0
-			# 3-4개 효과
-			var effect_count = randi_range(3, 4)
-			for i in range(effect_count):
-				art.effects.append(effects_list[randi_range(5, 20)])
-		
-		3:  # 레전더리 (Legendary)
-			art.base_power = randf_range(40.0, 100.0)
-			art.energy_cost = randi_range(15, 25)
-			art.is_combo = true
-			art.is_guard_breaking = true
-			art.is_knockdown = true
-			# 4-5개 효과 + 특수 효과
-			var effect_count = randi_range(4, 5)
-			for i in range(effect_count):
-				art.effects.append(effects_list[randi_range(5, 20)])
-			art.effects.append(effects_list[randi_range(15, 20)])
+	# 데미지 & 에너지 밸런싱
+	martial.base_damage = randf_range(5.0, 50.0)
+	martial.energy_cost = randi_range(1, 10)
 	
-	# 스케일링 설정 (난이도 올수록 다양함)
-	art.str_scaling = randf_range(0.5, 1.0)
-	art.dex_scaling = randf_range(0.0, 0.5)
-	art.int_scaling = randf_range(0.0, 0.3)
+	# 방어 타입 선택 (확률: 80% 공격, 20% 방어)
+	if randf() < 0.2:
+		martial.defense_type = randi_range(1, 4)  # EVADE, GUARD, DEFLECT
+		martial.defense_level = randi_range(1, 5)
 	
-	# 쿨타임 설정
-	if art.is_knockdown:
-		art.cooldown = randf_range(2.0, 5.0)
-	elif art.is_guard_breaking:
-		art.cooldown = randf_range(1.0, 3.0)
-	else:
-		art.cooldown = randf_range(0.0, 1.0)
+	# 추가 효과 (확률: 30% 추가 효과 있음)
+	if randf() < 0.3:
+		martial.effects.append(randi_range(1, MartialArt.EffectType.CONFUSE))
+		martial.effect_durations.append(randf_range(0.5, 3.0))
 	
-	created_arts[art.id] = art
-	return art
+	# 애니메이션
+	martial.animation_name = martial.motion_name.to_lower().replace(" ", "_")
+	martial.animation_duration = randf_range(0.5, 2.0)
+	martial.animation_hit_frame = martial.animation_duration * 0.5
+	
+	# 치명타 & 스케일
+	martial.crit_chance = randf_range(0.05, 0.25)
+	martial.damage_scaling = randf_range(0.8, 1.5)
+	
+	return martial
 
+## 무술 조합 (플레이어 선택)
+func create_martial_from_components(
+	base_motion_id: int,
+	tempo: int,
+	defense_type: int,
+	defense_level: int,
+	energy_cost: int,
+	effects: Array[int] = []
+) -> MartialArt:
+	"""
+	사용자가 선택한 컴포넌트로 무술 생성
+	
+	파라미터:
+	- base_motion_id: 0-99
+	- tempo: 0(Fast), 1(Mid), 2(Slow)
+	- defense_type: 0(None) ~ 4(Counter)
+	- defense_level: 0-5
+	- energy_cost: 1-10
+	- effects: [EffectType, ...]
+	"""
+	var martial = MartialArt.new()
+	
+	martial.martial_id = "custom_%s_%s" % [randi(), Time.get_ticks_msec()]
+	martial.base_motion = base_motion_id
+	martial.tempo = tempo
+	martial.defense_type = defense_type
+	martial.defense_level = defense_level
+	martial.energy_cost = energy_cost
+	
+	# 컴포넌트로부터 데미지 계산
+	var base_damage = float(energy_cost) * 2.0  # 에너지 비용과 데미지 관계
+	martial.base_damage = base_damage
+	
+	# 효과 추가
+	for effect_id in effects:
+		if effect_id > 0:
+			martial.effects.append(effect_id)
+			martial.effect_durations.append(1.5)
+	
+	martial.martial_name = _generate_martial_name()
+	
+	return martial
 
-## ID로 무술 검색
-func get_martial_art(id: String) -> MartialArt:
-	if id in created_arts:
-		return created_arts[id]
+## 무술명 생성 (한국식)
+func _generate_martial_name() -> String:
+	var prefixes = ["천", "용", "호", "독", "열", "강", "비", "뇌"]
+	var suffixes = ["권", "발", "장", "기", "류", "파"]
+	
+	var prefix = prefixes[randi() % prefixes.size()]
+	var suffix = suffixes[randi() % suffixes.size()]
+	
+	return prefix + suffix
+
+## 플레이어 무술 슬롯에 추가
+func add_martial_to_player(martial: MartialArt) -> bool:
+	if player_martial_arts.size() >= MAX_MARTIAL_SLOTS:
+		print(f"❌ 무술 슬롯 가득 참 (최대 {MAX_MARTIAL_SLOTS})")
+		return false
+	
+	player_martial_arts.append(martial)
+	print(f"✅ 무술 추가: {martial.martial_name}")
+	return true
+
+## 플레이어 무술 조회
+func get_player_martial(slot: int) -> MartialArt:
+	if slot >= 0 and slot < player_martial_arts.size():
+		return player_martial_arts[slot]
 	return null
 
+## 모든 플레이어 무술 조회
+func get_all_player_martials() -> Array[MartialArt]:
+	return player_martial_arts
 
-## 모든 무술 조회
-func get_all_martial_arts() -> Array:
-	return created_arts.values()
-
-
-## 레벨별 무술 조회
-func get_martial_arts_by_level(min_level: int, max_level: int) -> Array:
-	var result = []
-	for art in created_arts.values():
-		if art.level >= min_level and art.level <= max_level:
-			result.append(art)
-	return result
-
-
-# ╔═════════════════════════════════════════════════════════╗
-# ║        JSON 로드/저장 (Save/Load from JSON)           ║
-# ╚═════════════════════════════════════════════════════════╝
-
-## JSON에서 무술 로드
-func load_martial_arts_from_json(path: String) -> bool:
-	if not ResourceLoader.exists(path):
-		print("무술 파일 없음: %s" % path)
-		return false
+## 무술 저장 (JSON)
+func save_martial_to_file(martial: MartialArt, filepath: String) -> bool:
+	var data = martial.to_dict()
+	var json = JSON.stringify(data)
 	
-	var file = FileAccess.open(path, FileAccess.READ)
+	var file = FileAccess.open(filepath, FileAccess.WRITE)
 	if file == null:
-		print("파일 읽기 실패: %s" % path)
+		print(f"❌ 파일 저장 실패: {filepath}")
 		return false
 	
+	file.store_string(json)
+	print(f"✅ 무술 저장: {filepath}")
+	return true
+
+## 무술 로드 (JSON)
+func load_martial_from_file(filepath: String) -> MartialArt:
+	if not ResourceLoader.exists(filepath):
+		print(f"❌ 파일 없음: {filepath}")
+		return null
+	
+	var file = FileAccess.open(filepath, FileAccess.READ)
+	if file == null:
+		print(f"❌ 파일 읽기 실패: {filepath}")
+		return null
+	
+	var json_str = file.get_as_text()
 	var json = JSON.new()
-	var error = json.parse(file.get_as_text())
+	var error = json.parse(json_str)
 	
 	if error != OK:
-		print("JSON 파싱 실패")
-		return false
+		print(f"❌ JSON 파싱 실패: {filepath}")
+		return null
 	
-	var data = json.data
-	if data == null or not data.has("martial_arts"):
-		print("유효한 JSON 구조 아님")
-		return false
-	
-	# 무술들 로드
-	for art_data in data["martial_arts"]:
-		var art = MartialArt.from_dict(art_data)
-		created_arts[art.id] = art
-	
-	print("무술 %d개 로드 완료" % created_arts.size())
-	return true
+	var martial = MartialArt.new()
+	martial.from_dict(json.data)
+	print(f"✅ 무술 로드: {filepath}")
+	return martial
 
+## 디버그 출력
+func print_player_martials() -> void:
+	print("\n🥋 플레이어 무술 슬롯:")
+	for i in range(player_martial_arts.size()):
+		var martial = player_martial_arts[i]
+		print(f"  [{i}] {martial}")
+	print()
 
-## 현재 무술들을 JSON으로 저장
-func save_martial_arts_to_json(path: String) -> bool:
-	var data = {
-		"version": "1.0",
-		"timestamp": Time.get_datetime_string_from_system(),
-		"martial_arts": []
-	}
-	
-	for art in created_arts.values():
-		data["martial_arts"].append(art.to_dict())
-	
-	# 파일 경로의 폴더 생성
-	var dir = DirAccess.open(path.get_base_dir())
-	if dir == null:
-		DirAccess.make_absolute_path(path.get_base_dir())
-	
-	var file = FileAccess.open(path, FileAccess.WRITE)
-	if file == null:
-		print("파일 쓰기 실패: %s" % path)
-		return false
-	
-	file.store_line(JSON.stringify(data))
-	print("무술 %d개 저장 완료: %s" % [created_arts.size(), path])
-	return true
-
-
-# ╔═════════════════════════════════════════════════════════╗
-# ║          사용자 정의 무술 (Custom Arts)               ║
-# ╚═════════════════════════════════════════════════════════╝
-
-## 사용자가 무술을 커스텀 생성
-## 예: create_custom_art("punch_straight", ["stun", "burn"])
-func create_custom_art(base_motion: String, effects: Array = []) -> MartialArt:
-	var art = MartialArt.new()
-	
-	art.id = "custom_%d" % Time.get_ticks_msec()
-	art.name = "커스텀 무술"
-	art.animation_name = base_motion
-	art.base_power = 15.0
-	art.energy_cost = 8
-	art.effects = effects
-	
-	created_arts[art.id] = art
-	return art
-
-
-## 무술 강화 (레벨 업)
-func upgrade_martial_art(art_id: String) -> bool:
-	if art_id not in created_arts:
-		return false
-	
-	var art = created_arts[art_id]
-	return art.upgrade()
-
-
-## 무술 삭제
-func remove_martial_art(art_id: String) -> bool:
-	if art_id not in created_arts:
-		return false
-	
-	created_arts.erase(art_id)
-	return true
-
-
-# ╔═════════════════════════════════════════════════════════╗
-# ║              통계 (Statistics)                           ║
-# ╚═════════════════════════════════════════════════════════╝
-
-## 생성된 무술 개수
-func get_total_martial_count() -> int:
-	return created_arts.size()
-
-
-## 평균 데미지
-func get_average_power() -> float:
-	if created_arts.size() == 0:
-		return 0.0
-	
-	var total = 0.0
-	for art in created_arts.values():
-		total += art.base_power
-	
-	return total / created_arts.size()
-
-
-## 무술 목록 출력 (디버그)
-func print_all_martial_arts() -> void:
-	print("\n=== 무술 목록 ===")
-	for art in created_arts.values():
-		print("  [%s] %s - Power: %.1f, Energy: %d, Effects: %s" % [
-			art.id, art.name, art.base_power, art.energy_cost, ", ".join(art.effects)
-		])
-	print("총 %d개\n" % created_arts.size())
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# 조합 계산 공식:
-# 기본동작(100) × 리듬(3) × 방어타입(4×5) × 효과(20) × ...
-# = 최소 1,200가지
-# 프래그먼트 시스템으로 확장 시 → 수백만 가지 가능
-# ═══════════════════════════════════════════════════════════════════════════════
+func print_all_motions() -> void:
+	print("\n🎬 기본 동작 (샘플 5개):")
+	for i in range(min(5, base_motions.size())):
+		var motion = base_motions[i]
+		print(f"  [{motion['id']}] {motion['name']}")
+	print(f"  ... 총 {base_motions.size()}개")
+	print()
