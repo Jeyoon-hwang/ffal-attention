@@ -44,6 +44,16 @@ const PLAYER_SPIRIT_MAX = 100
 const PLAYER_SPIRIT_DAMAGE_MULTIPLIER = 1.5
 const PLAYER_SPIRIT_COST_PER_SECOND = 5  # 내공 소비
 
+# 플레이어 방어 (Day 5)
+const PLAYER_DEFENSE_DAMAGE_MULTIPLIER = 0.5  # 방어 중 50% 피해만 받음
+const PLAYER_DEFENSE_ENERGY_COST_PER_SEC = 1.0  # 초당 에너지 소비
+
+# 플레이어 회피 (Day 5)
+const PLAYER_DODGE_ENERGY_COST = 25  # 회피 시 에너지 소비
+const PLAYER_DODGE_COOLDOWN = 0.5  # 회피 쿨다운
+const PLAYER_DODGE_I_FRAME_DURATION = 0.3  # 무적 시간
+const PLAYER_DODGE_SPEED_MULTIPLIER = 2.5  # 회피 중 이동 속도
+
 # ============================================================
 # 👹 적 설정
 # ============================================================

@@ -41,6 +41,15 @@ var spin_attack_timer = 0.0  # 회전 공격 쿨다운
 var dash_attack_timer = 0.0  # 대시 공격 쿨다운
 var is_dashing = false  # 대시 중인 여부
 
+# 방어 시스템 (Day 5)
+var is_defending = false  # 현재 방어 중
+var defense_energy_cost_timer = 0.0  # 방어 에너지 소비 타이밍
+
+# 회피 시스템 (Day 5)
+var is_dodging = false  # 현재 회피 중 (무적 상태)
+var dodge_cooldown_timer = 0.0  # 회피 쿨다운 남은 시간
+var current_i_frames = 0.0  # 무적 시간 남은 시간
+
 @onready var camera = $Camera3D
 
 func _ready():
@@ -151,9 +160,13 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_select"):
 		basic_attack()
 	
-	# 무술 스킬 (우클릭)
-	if Input.is_action_just_pressed("ui_focus_next"):
-		skill_attack()
+	# Day 5: 방어 (우클릭 누르기)
+	if Input.is_action_pressed("ui_focus_next"):
+		if not is_defending and not is_attacking:
+			start_defending()
+	else:
+		if is_defending:
+			stop_defending()
 	
 	# 내공 활성화 (Q)
 	if Input.is_action_just_pressed("ui_cut"):
@@ -166,6 +179,14 @@ func _physics_process(delta):
 	# 대시 공격 (Shift) - 새 기능
 	if Input.is_action_just_pressed("ui_dash"):
 		dash_attack()
+	
+	# Day 5: 회피 (Space - 동싏때 보단 동작싱 주의)
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		# 방어 중이 아니면 점프, 더 중이면 회피
+		if is_defending:
+			attempt_dodge()
+		else:
+			velocity.y = jump_force
 	
 	# 에너지 회복 [개선: 공격 중일 때 비활성화, attack_timer로 정확 제어]
 	if attack_timer <= 0 and not is_dashing:
@@ -197,6 +218,19 @@ func _physics_process(delta):
 		# 내공 회복 (활성화 중이 아닐 때만)
 		var spirit_recovery = 2.0  # 초당 2 내공 회복
 		spirit = min(spirit + spirit_recovery * delta, max_spirit)
+	
+	# Day 5: 방어 에너지 소비
+	apply_defense_energy_cost(delta)
+	
+	# Day 5: 회피 쿨다운 감소
+	if dodge_cooldown_timer > 0:
+		dodge_cooldown_timer -= delta
+	
+	# Day 5: 무적 시간 감소
+	if current_i_frames > 0:
+		current_i_frames -= delta
+		if current_i_frames <= 0:
+			is_dodging = false
 	
 	# Godot 4 API: move_and_slide()는 자동으로 velocity를 적용
 	move_and_slide()
@@ -274,7 +308,18 @@ func toggle_spirit():
 			print("⚠️ 내공이 부족합니다! (현재 내공: %.0f / %.0f)" % [spirit, max_spirit])
 
 func take_damage(damage: int):
-	health -= damage
+	# Day 5: 무적 시간 중인 피해 무시
+	if current_i_frames > 0:
+		print("🌀 회피 중! 피해 무시")
+		return
+	
+	# Day 5: 방어 중을 때 방어 대미지 감소
+	var final_damage = damage
+	if is_defending:
+		final_damage = int(damage * constants.PLAYER_DEFENSE_DAMAGE_MULTIPLIER)
+		print("🛡️ 방어! (%.0f → %.0f)" % [damage, final_damage])
+	
+	health -= final_damage
 	if health <= 0:
 		die()
 	print("체력: %.0f / %.0f" % [health, max_health])
@@ -379,3 +424,73 @@ func get_actual_damage(base_damage: float) -> float:
 	if is_spirit_active:
 		final_damage *= constants.PLAYER_SPIRIT_DAMAGE_MULTIPLIER
 	return final_damage
+
+# ============================================================
+# Day 5: 방어 시스템
+# ============================================================
+
+func start_defending():
+	"""방어 시작 (우클릭 누르기)"""
+	if is_defending:
+		return
+	
+	is_defending = true
+	defense_energy_cost_timer = 0.0
+	print("🛡️ 방어 시작!")
+
+func stop_defending():
+	"""방어 해제 (우클릭 떼기)"""
+	if not is_defending:
+		return
+	
+	is_defending = false
+	defense_energy_cost_timer = 0.0
+	print("방어 해제")
+
+func apply_defense_energy_cost(delta: float):
+	"""방어 중 에너지 감소"""
+	if not is_defending:
+		return
+	
+	defense_energy_cost_timer += delta
+	
+	# 0.1초마다 에너지 소비
+	if defense_energy_cost_timer >= 0.1:
+		energy -= constants.PLAYER_DEFENSE_ENERGY_COST_PER_SEC * defense_energy_cost_timer
+		defense_energy_cost_timer = 0.0
+	
+		# 에너지 소진 시 방어 자동 해제
+		if energy <= 0:
+			energy = 0
+			stop_defending()
+			print("⚠️ 에너지 소진! 방어 해제됨")
+
+# ============================================================
+# Day 5: 회피 시스템
+# ============================================================
+
+func attempt_dodge():
+	"""회피 시도 (Space 누르기)"""
+	# 쿨다운 확인
+	if dodge_cooldown_timer > 0:
+		print("⚠️ 회피 쿨다운 중... (%.1f초)" % dodge_cooldown_timer)
+		return
+	
+	# 에너지 확인
+	if energy < constants.PLAYER_DODGE_ENERGY_COST:
+		print("⚠️ 에너지 부족! (현재 %.0f / 필요 %.0f)" % [energy, constants.PLAYER_DODGE_ENERGY_COST])
+		return
+	
+	# 회피 실행
+	energy -= constants.PLAYER_DODGE_ENERGY_COST
+	dodge_cooldown_timer = constants.PLAYER_DODGE_COOLDOWN
+	current_i_frames = constants.PLAYER_DODGE_I_FRAME_DURATION
+	is_dodging = true
+	is_defending = false  # 방어 자동 해제
+	
+	# 회피 방향: 카메라가 보는 방향의 반대로 (앞으로)
+	var dodge_direction = -transform.basis.z
+	velocity.x = dodge_direction.x * constants.PLAYER_SPEED * constants.PLAYER_DODGE_SPEED_MULTIPLIER
+	velocity.z = dodge_direction.z * constants.PLAYER_SPEED * constants.PLAYER_DODGE_SPEED_MULTIPLIER
+	
+	print("🌀 회피! (에너지 소모 %.0f, 무적 시간 %.1f초)" % [constants.PLAYER_DODGE_ENERGY_COST, constants.PLAYER_DODGE_I_FRAME_DURATION])
