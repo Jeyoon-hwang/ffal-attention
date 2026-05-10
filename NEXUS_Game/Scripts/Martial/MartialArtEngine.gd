@@ -27,6 +27,7 @@ const MAX_MARTIAL_SLOTS = 5
 func _ready():
 	_initialize_base_motions()
 	_load_martial_database()
+	initialize_combat_martial_arts()  # 450+ 무술 자동 생성
 	print("[MartialArtEngine] 초기화 완료")
 
 ## 기본 동작 초기화 (100가지)
@@ -280,3 +281,23 @@ func print_all_motions() -> void:
 		print(f"  [{motion['id']}] {motion['name']}")
 	print(f"  ... 총 {base_motions.size()}개")
 	print()
+
+## 450+ 무술 자동 생성 (게임 시작 시)
+func initialize_combat_martial_arts() -> void:
+	"""
+	게임 시작 시 450+ 무술 자동 생성
+	이미 100개 이상이면 건너뜀
+	"""
+	if martial_arts_db.size() > 100:
+		return  # 이미 충분함
+	
+	print("\n[MartialArtEngine] 450+ 무술 생성 중...")
+	var start_count = martial_arts_db.size()
+	
+	for i in range(450):
+		var martial = generate_random_martial()
+		if martial:
+			if not martial_arts_db.has(martial.martial_id):
+				martial_arts_db[martial.martial_id] = martial
+	
+	print(f"[MartialArtEngine] 생성 완료: {start_count} → {martial_arts_db.size()}개 무술")

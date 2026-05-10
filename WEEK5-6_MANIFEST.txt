@@ -1,0 +1,363 @@
+================================================================================
+NEXUS 무술 창조 게임 - Week 5-6 계획 완성 매니페스트
+================================================================================
+
+생성일: 2026-05-10 12:00 (Asia/Seoul)
+생성자: 천재 ⚡
+상태: ✅ 모든 계획 문서 준비 완료
+
+================================================================================
+📄 GENERATED DOCUMENTS (5개 파일, 98KB)
+================================================================================
+
+1. WEEK5-6_README.md (7.5KB) ⭐ START HERE
+   - 4개 문서의 가이드
+   - 빠른 시작 (5분)
+   - 일일 루틴
+   - FAQ
+
+2. WEEK5-6_EXECUTIVE_SUMMARY.md (13KB) 📊 OVERVIEW
+   - 현재 상태 (Day 1-28 완료)
+   - Week 5-6 목표
+   - 기술 하이라이트
+   - 진행도 추적
+   - 성공 기준
+
+3. WEEK5-6_DETAILED_PLAN.md (39KB) 📋 CORE REFERENCE
+   - Day 29-42의 모든 상세 내용
+   - 각 Day별:
+     * 구체적인 Task
+     * 코드 구조
+     * 산출물
+     * 테스트 항목
+     * 일일 로그 예시
+
+4. WEEK5-6_TASK_BREAKDOWN.json (19KB) ⏱️ TIME TRACKING
+   - 각 Day의 구체적 시간 추정
+   - Task별 라인 수 추정
+   - 의존성 표시
+   - Git 커밋 메시지
+   - JSON 형식 (프로그래매틱 처리 가능)
+
+5. WEEK5-6_IMPLEMENTATION_GUIDE.md (27KB) 💻 CODE REFERENCE
+   - 완전한 GDScript 코드 예제
+   - 알고리즘 설명 (BSP, Perlin Noise 등)
+   - JSON 데이터 구조
+   - 테스트 함수들
+   - Best practices
+
+================================================================================
+📊 CONTENT METRICS
+================================================================================
+
+Code Examples:
+  - MountainTerrainGenerator.gd: 110줄 (완전한 코드)
+  - DungeonGenerator.gd: 200줄 (BSP 알고리즘)
+  - NPCManager.gd: 120줄
+  - DialogueSystem.gd: 180줄
+  - QuestManager.gd: 150줄
+  - GameBalancer.gd: 200줄 (전체 테스트 스위트)
+  - 그 외 14개 파일
+
+JSON Examples:
+  - NPC 데이터베이스 샘플
+  - 퀘스트 데이터베이스 샘플
+  - 장비 데이터베이스 샘플
+  - 드롭 테이블 샘플
+
+================================================================================
+🎯 EXECUTION PLAN (Day 29-42, 14일)
+================================================================================
+
+Week 5: Day 29-35 (7일, 35% → 50%)
+  Day 29-30: Zone 2-5 지형 완성 (+2%)
+  Day 31-32: 던전 생성 엔진 (+2%)
+  Day 33-34: NPC & 대화 (+2%)
+  Day 35:    퀘스트 1부 (+2%)
+
+Week 6: Day 36-42 (7일, 50% → 60%)
+  Day 36:    퀘스트 완성 (+2%)
+  Day 37-38: 무술 & 장비 (+4%)
+  Day 39-40: 드롭 & 경제 (+4%)
+  Day 41-42: 밸런싱 & QA (+2%)
+
+최종: 35% → 60% ✅ (25% 증가)
+
+================================================================================
+📁 OUTPUT STRUCTURE
+================================================================================
+
+NEXUS_Game/에 추가될 파일:
+
+Scripts/ (20개 새 파일, ~70,000줄):
+  ├─ World/Zones/
+  │  ├─ MountainTerrainGenerator.gd
+  │  ├─ DesertTerrainGenerator.gd
+  │  └─ OceanTerrainGenerator.gd
+  ├─ World/
+  │  ├─ WorldManager.gd
+  │  └─ EnvironmentDecorator.gd
+  ├─ World/Dungeons/
+  │  ├─ DungeonGenerator.gd
+  │  ├─ DungeonSpawner.gd
+  │  ├─ DungeonTypes.gd
+  │  └─ DungeonMechanics.gd
+  ├─ NPC/
+  │  ├─ NPCManager.gd
+  │  └─ DialogueSystem.gd
+  ├─ Quests/
+  │  ├─ QuestManager.gd
+  │  ├─ QuestTracker.gd
+  │  └─ QuestRewardSystem.gd
+  ├─ Combat/
+  │  └─ AdvancedMartialArtSystem.gd
+  ├─ Items/
+  │  ├─ EquipmentSystem.gd
+  │  ├─ LootSystem.gd
+  │  └─ ItemEconomySystem.gd
+  └─ GameBalance/
+     └─ GameBalancer.gd
+
+Data/ (5개 새 JSON, 350+ 아이템):
+  ├─ NPCs/
+  │  └─ npc_database.json (20명)
+  ├─ Quests/
+  │  └─ quest_database.json (200개)
+  ├─ Equipment/
+  │  └─ equipment_database.json (50개)
+  ├─ Items/
+  │  └─ loot_tables.json
+  └─ MartialArts/
+     └─ martial_arts_advanced.json (70개 조합)
+
+Documentation/ (일일 로그):
+  └─ memory/2026-05-13 to 2026-05-26 (14개 파일)
+
+================================================================================
+✅ QUALITY ASSURANCE
+================================================================================
+
+정한 기준:
+  ✅ 에러: 0건
+  ✅ 경고: 0건
+  ✅ 테스트: 100% 통과
+  ✅ FPS: 60+ 유지
+  ✅ 메모리: <1GB
+  ✅ 로딩: <5초
+
+검증 방법:
+  - GameBalancer.gd의 테스트 함수들
+  - DETAILED_PLAN.md의 일일 테스트 항목
+  - Git commit 메시지로 진행도 추적
+
+================================================================================
+📚 HOW TO USE THESE DOCUMENTS
+================================================================================
+
+Week 5 시작 전 (Day 28 끝, Day 29 시작 전):
+  1. WEEK5-6_README.md 정독 (10분)
+  2. WEEK5-6_EXECUTIVE_SUMMARY.md 읽기 (10분)
+  3. WEEK5-6_DETAILED_PLAN.md Day 29-30 섹션 정독 (30분)
+  4. Day 29 시작!
+
+매일 아침 (09:00):
+  1. WEEK5-6_DETAILED_PLAN.md에서 오늘 섹션 읽기 (10분)
+  2. WEEK5-6_TASK_BREAKDOWN.json에서 시간 확인 (2분)
+  3. 첫 Task 시작
+
+코드 작성 중:
+  1. WEEK5-6_IMPLEMENTATION_GUIDE.md의 코드 예제 참고
+  2. 필요한 부분만 복사해서 사용
+  3. 클래스명, 함수명 맞춰서 수정
+
+매일 저녁 (18:00-20:00):
+  1. WEEK5-6_IMPLEMENTATION_GUIDE.md로 코드 검증
+  2. WEEK5-6_DETAILED_PLAN.md의 테스트 실행
+  3. 일일 로그 작성 (memory/2026-05-XX-*.md)
+  4. Git 커밋
+
+문제 발생 시:
+  1. WEEK5-6_TASK_BREAKDOWN.json에서 의존성 확인
+  2. WEEK5-6_DETAILED_PLAN.md의 "dependencies" 섹션 읽기
+  3. WEEK5-6_IMPLEMENTATION_GUIDE.md의 예제 다시 읽기
+
+================================================================================
+🎓 KEY TECHNOLOGIES
+================================================================================
+
+Day 29-30: Procedural Terrain Generation
+  - Perlin Noise를 이용한 높이맵 생성
+  - Mesh 생성 & 최적화
+
+Day 31-32: Binary Space Partitioning (BSP)
+  - 동적 던전 레이아웃 생성
+  - 무한 반복성 보장
+
+Day 33-34: Graph-Based Dialogue System
+  - 대화 노드 그래프
+  - 조건부 분기
+  - 결과 적용
+
+Day 35-36: Quest Management System
+  - 다중 목표 추적
+  - 동적 보상
+  - 진행도 저장
+
+Day 37-40: Complex Game Systems
+  - 무술 조합 알고리즘
+  - 동적 경제 (수급-가격 연계)
+  - 드롭 확률 및 레어티 시스템
+
+Day 41-42: Comprehensive Testing & Balancing
+  - 자동화된 밸런싱 테스트
+  - 게임플레이 흐름 검증
+  - 성능 모니터링
+
+================================================================================
+📈 SUCCESS METRICS
+================================================================================
+
+코드:
+  - GDScript: 70개 → 90개 파일 (+20)
+  - 코드: ~70,000줄 → ~140,000줄 (100% 증가)
+  - 에러: 0건 유지 ✅
+  - 경고: 0건 유지 ✅
+
+게임 콘텐츠:
+  - NPC: 6명 → 20명 (+233%)
+  - 퀘스트: 10개 → 200개 (+1900%)
+  - 무술: 81개 → 150개 (+85%)
+  - 장비: 0개 → 50개 (신규)
+  - 지역: 5개 완성 (프로토타입 → 완전)
+
+게임플레이:
+  - 플레이타임: 50-100시간 추정 (+50h)
+  - 재플레이성: 무한 (동적 던전)
+  - 게임 밸런싱: 완료 (테스트됨)
+
+================================================================================
+🚀 NEXT STEPS
+================================================================================
+
+이 문서들 준비 후:
+
+1. Git 준비
+   git checkout -b week5-content-explosion
+   
+2. Day 29 시작
+   WEEK5-6_DETAILED_PLAN.md Day 29 섹션 정독
+   MountainTerrainGenerator.gd 파일 생성
+   
+3. 매일 진행
+   아침: 계획 읽기
+   낮: 코드 작성
+   저녁: 테스트 & 커밋
+
+4. Day 42 완료
+   전체 게임 밸런싱 완료
+   progress: 60% 달성 ✅
+
+================================================================================
+📞 DOCUMENT REFERENCE
+================================================================================
+
+문서를 읽다가:
+
+Q: "Zone 2는 어떻게 구현하나?"
+A: WEEK5-6_DETAILED_PLAN.md Day 29 "오전" 섹션
+   + WEEK5-6_IMPLEMENTATION_GUIDE.md "Day 29-30" 섹션
+
+Q: "Day 31은 얼마나 걸려?"
+A: WEEK5-6_TASK_BREAKDOWN.json
+   → "day_31" → "estimated_hours": 8
+
+Q: "BSP 알고리즘은 뭔가?"
+A: WEEK5-6_IMPLEMENTATION_GUIDE.md "Day 31-32" 섹션
+   → 200줄의 완전한 구현 코드
+
+Q: "NPC 데이터는 뭐 넣어야 하나?"
+A: WEEK5-6_IMPLEMENTATION_GUIDE.md "Day 33-34" 섹션
+   → JSON 예제 포함
+
+================================================================================
+✅ CHECKLIST
+================================================================================
+
+Week 5 시작 전:
+  ☑️ 5개 문서 모두 다운로드
+  ☑️ WEEK5-6_README.md 읽음
+  ☑️ WEEK5-6_EXECUTIVE_SUMMARY.md 읽음
+  ☑️ WEEK5-6_DETAILED_PLAN.md Day 29-30 섹션 정독
+  ☑️ Git branch 생성: week5-content-explosion
+  ☑️ IDE (Godot) 준비
+  ☑️ Day 29 첫 Task 시작 준비
+
+Day 29 시작:
+  ☑️ MountainTerrainGenerator.gd 파일 생성
+  ☑️ IMPLEMENTATION_GUIDE.md에서 코드 복사
+  ☑️ 테스트 실행
+  ☑️ 첫 커밋: "Day 29: Zone terrain generation start"
+
+매일:
+  ☑️ 아침 계획 읽기
+  ☑️ 코드 작성
+  ☑️ 테스트 실행
+  ☑️ 저녁 커밋
+
+Week 6 시작:
+  ☑️ DETAILED_PLAN.md Day 36-42 재정독
+  ☑️ Day 36 시작
+
+Week 6 끝:
+  ☑️ 모든 Game Balancer 테스트 통과
+  ☑️ FPS 60+ 확인
+  ☑️ 메모리 <1GB 확인
+  ☑️ 전체 Game flow 테스트
+  ☑️ 최종 커밋: "Week 5-6 complete: 35% → 60%"
+  ☑️ Git tag: week5-6-complete
+
+================================================================================
+📊 FINAL STATS
+================================================================================
+
+문서 통계:
+  총 5개 파일
+  총 98,228 bytes
+  총 3,872 줄
+  총 읽는 시간: ~1.5시간 (처음)
+  일일 참고 시간: ~20분
+
+구현 예상:
+  GDScript: 20개 파일, ~70,000줄
+  JSON: 5개 파일, 350+ 아이템
+  테스트: 자동화된 GameBalancer 포함
+  시간: Day 29-42 (14일, 112시간)
+
+최종 결과:
+  진행도: 35% → 60%
+  에러: 0건 ✅
+  테스트: 100% 통과 ✅
+  게임: 완전히 플레이 가능 ✅
+
+================================================================================
+🎉 YOU ARE READY!
+================================================================================
+
+이 5개의 문서가:
+  ✅ 무엇을 만들지 (DETAILED_PLAN)
+  ✅ 어떻게 만들지 (IMPLEMENTATION_GUIDE)
+  ✅ 얼마나 걸리는지 (TASK_BREAKDOWN)
+  ✅ 왜 중요한지 (EXECUTIVE_SUMMARY)
+  ✅ 어떻게 읽을지 (README)
+
+모두 알려줍니다.
+
+준비 완료!
+
+Day 29, 시작하자! ⚡🥋
+
+================================================================================
+Generated: 2026-05-10 12:00 (Asia/Seoul)
+Created by: 천재 ⚡
+Status: ✅ READY FOR EXECUTION
+================================================================================

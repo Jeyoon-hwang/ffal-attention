@@ -384,16 +384,16 @@ func print_game_status() -> void:
 	for region in region_npcs.keys():
 		var count = get_region_npc_count(region)
 		total_npcs += count
-		print("📍 %s: %d명" % [region, count])
+		print("📍 " + region + ": " + str(count) + "명")
 	
 	for npc_id in npcs.keys():
 		total_trades += trades[npc_id].size()
 		total_dialogues += dialogues[npc_id].size()
 	
 	print("\n📊 통계:")
-	print("  총 NPC: %d명" % total_npcs)
-	print("  총 거래 항목: %d개" % total_trades)
-	print("  총 대사: %d개" % total_dialogues)
+	print("  총 NPC: " + str(total_npcs) + "명")
+	print("  총 거래 항목: " + str(total_trades) + "개")
+	print("  총 대사: " + str(total_dialogues) + "개")
 	print("="*50 + "\n")
 
 # ============================================================

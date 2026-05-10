@@ -346,3 +346,20 @@ func _to_string() -> String:
 	return "Player([Lv.%d] %s, HP: %d/%d, Energy: %d/%d)" % [
 		level, player_name, current_hp, max_hp, current_energy, max_energy
 	]
+
+
+## 게임 시작 시 기본 무술 3개 자동 장착
+func load_starting_martial_arts() -> void:
+	"""게임 시작 시 기본 무술 자동 장착"""
+	var engine = MartialArtEngine.new()
+	engine._ready()
+	engine.initialize_combat_martial_arts()
+	
+	# 기본 3개 무술 가져오기
+	var martial_ids = ["basic_punch", "kick", "guard"]
+	for slot in range(martial_ids.size()):
+		if engine.martial_arts_db.has(martial_ids[slot]):
+			martial_slots[slot] = engine.martial_arts_db[martial_ids[slot]]
+			print(f"✅ [{slot}] {martial_ids[slot]} 장착")
+	
+	print(f"[Player] 기본 무술 {martial_slots.size()}개 슬롯 초기화 완료")

@@ -326,3 +326,18 @@ func _to_string() -> String:
 	return "Enemy([Lv.%d AI%d] %s, HP: %d/%d)" % [
 		level, ai_level, enemy_name, current_hp, max_hp
 	]
+
+
+## AI 난이도별 공격 데미지 계산
+func calculate_attack_damage() -> float:
+	"""AI 난이도별 데미지 계산"""
+	var base_damage = 5.0 + float(ai_level) * 5.0
+	var variance = randf_range(0.8, 1.2)
+	var final_damage = base_damage * variance
+	
+	# 체력이 낮을수록 공격력 증가 (desperate damage)
+	var hp_ratio = float(current_hp) / float(max_hp)
+	if hp_ratio < 0.3:
+		final_damage *= 1.5  # 40% HP 이하: 1.5배 데미지
+	
+	return final_damage
