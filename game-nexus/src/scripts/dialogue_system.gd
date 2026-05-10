@@ -86,7 +86,7 @@ func generate_dialogue_trees() -> void:
 		dialogue_trees[npc_type["name"]] = tree
 		tree_counter += 1
 	
-	print("[Dialogue System] 총 %d개의 대화 트리 생성 완료" % tree_counter)
+	print("[Dialogue System] 총 " + str(tree_counter) + "개의 대화 트리 생성 완료")
 
 # NPC 타입별 대화 트리 생성
 func generate_npc_dialogue_tree(npc_type: Dictionary) -> Dictionary:
@@ -284,13 +284,14 @@ func print_dialogue_options() -> void:
 	if node == null:
 		return
 	
-	print("\n%s (%s) %s" % [node.speaker, node.emotion, emotion_emojis[node.emotion]])
+	print("\n" + node.speaker + " (" + node.emotion + ") " + emotion_emojis[node.emotion])
 	print(node.text)
 	print("\n선택지:")
 	
 	for i in range(node.choices.size()):
 		var choice = node.choices[i]
-		print("  [%d] %s (친밀도: %+d)" % [i + 1, choice.text, choice.affinity_change])
+		var affinity_str = "+" + str(choice.affinity_change) if choice.affinity_change >= 0 else str(choice.affinity_change)
+		print("  [" + str(i + 1) + "] " + choice.text + " (친밀도: " + affinity_str + ")")
 
 # 게임 통계
 func print_game_status() -> void:
@@ -309,11 +310,11 @@ func print_game_status() -> void:
 			total_choices += node.choices.size()
 	
 	print("\n📊 통계:")
-	print("  NPC 타입: %d개" % dialogue_trees.keys().size())
-	print("  총 대화 노드: %d개" % total_nodes)
-	print("  총 선택지: %d개" % total_choices)
+	print("  NPC 타입: " + str(dialogue_trees.keys().size()) + "개")
+	print("  총 대화 노드: " + str(total_nodes) + "개")
+	print("  총 선택지: " + str(total_choices) + "개")
 	
-	print("\n대화 히스토리: %d개 노드" % dialogue_history.size())
+	print("\n대화 히스토리: " + str(dialogue_history.size()) + "개 노드")
 	print("="*50 + "\n")
 
 # ============================================================

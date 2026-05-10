@@ -160,7 +160,7 @@ func generate_npcs() -> void:
 			region_npcs[region].append(npc_id)
 			npc_counter += 1
 	
-	print("[NPC System] 총 %d명의 NPC 생성 완료" % npc_counter)
+	print("[NPC System] 총 " + str(npc_counter) + "명의 NPC 생성 완료")
 
 # 지역별 이름 생성
 func generate_npc_name(region: String) -> String:

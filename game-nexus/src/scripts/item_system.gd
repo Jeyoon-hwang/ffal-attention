@@ -130,7 +130,7 @@ func generate_items() -> void:
 			category_items[category].append(item_id)
 			item_counter += 1
 	
-	print("[Item System] 총 %d개의 아이템 생성 완료" % item_counter)
+	print("[Item System] 총 " + str(item_counter) + "개의 아이템 생성 완료")
 
 # 희귀도 선택 (가중치 기반)
 func pick_rarity() -> String:
@@ -266,7 +266,7 @@ func generate_drops() -> void:
 			drops.append(drop)
 			drop_counter += 1
 	
-	print("[Item Drop] 총 %d개의 드롭 규칙 생성" % drop_counter)
+	print("[Item Drop] 총 " + str(drop_counter) + "개의 드롭 규칙 생성")
 
 # ============================================================
 # 조회 함수
@@ -366,18 +366,18 @@ func print_game_status() -> void:
 	print("\n📊 카테고리별 아이템:")
 	for category in category_items.keys():
 		var count = get_category_item_count(category)
-		print("  %s: %d개" % [category, count])
+		print("  " + category + ": " + str(count) + "개")
 	
 	print("\n📊 희귀도별 아이템:")
 	for rarity in ["common", "uncommon", "rare", "epic", "legendary"]:
 		var count = get_items_by_rarity(rarity).size()
-		print("  %s: %d개" % [rarity, count])
+		print("  " + rarity + ": " + str(count) + "개")
 	
 	print("\n📊 드롭 규칙:")
 	var enemy_drops = get_drops_by_source("enemy").size()
 	var boss_drops = get_drops_by_source("boss").size()
-	print("  적 드롭: %d개" % enemy_drops)
-	print("  보스 드롭: %d개" % boss_drops)
+	print("  적 드롭: " + str(enemy_drops) + "개")
+	print("  보스 드롭: " + str(boss_drops) + "개")
 	
 	print("\n총 아이템: %d개" % get_item_count())
 	print("="*50 + "\n")

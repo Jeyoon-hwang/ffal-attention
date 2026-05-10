@@ -1,0 +1,228 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-05-11T00:56:00Z",
+  "total_zones": 5,
+  "zones": [
+    {
+      "id": 0,
+      "name": "중원",
+      "description": "무술 학파의 중심지. 첫 번째 지역.",
+      "size": 500,
+      "difficulty": [1, 10],
+      "theme": "martial_academy",
+      "heightmap_config": {
+        "scale": 30.0,
+        "persistency": 0.65,
+        "lacunarity": 2.0,
+        "octaves": 5,
+        "max_height": 50
+      },
+      "assets": {
+        "building": {
+          "count": 12,
+          "distribution": "clustered",
+          "types": [0, 1, 2, 3, 4]
+        },
+        "nature": {
+          "count": 40,
+          "distribution": "scattered",
+          "types": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+        },
+        "props": {
+          "count": 15,
+          "distribution": "random",
+          "types": [0, 1, 2, 3, 4, 5]
+        }
+      },
+      "dungeons": 5,
+      "npcs": 3,
+      "merchants": 2,
+      "lighting": {
+        "sun_angle": [45, 120],
+        "sun_color": [1.0, 0.95, 0.9, 1.0],
+        "ambient_light": 0.5,
+        "ambient_color": [0.8, 0.85, 0.95, 1.0],
+        "fog_enabled": false
+      }
+    },
+    {
+      "id": 1,
+      "name": "천산",
+      "description": "거대한 산맥 지역. 고수들의 수련장.",
+      "size": 500,
+      "difficulty": [15, 25],
+      "theme": "mountain",
+      "heightmap_config": {
+        "scale": 35.0,
+        "persistency": 0.65,
+        "lacunarity": 2.0,
+        "octaves": 5,
+        "max_height": 150
+      },
+      "assets": {
+        "building": {
+          "count": 8,
+          "distribution": "sparse",
+          "types": [5, 6, 7, 8, 9]
+        },
+        "nature": {
+          "count": 50,
+          "distribution": "scattered",
+          "types": [10, 11, 12, 13, 14]
+        },
+        "props": {
+          "count": 10,
+          "distribution": "random",
+          "types": [3, 4, 5, 6, 7, 8]
+        }
+      },
+      "dungeons": 10,
+      "npcs": 4,
+      "merchants": 2,
+      "lighting": {
+        "sun_angle": [30, 135],
+        "sun_color": [0.95, 1.0, 1.0, 1.0],
+        "ambient_light": 0.4,
+        "ambient_color": [0.7, 0.8, 1.0, 1.0],
+        "fog_enabled": true,
+        "fog_density": 0.05
+      }
+    },
+    {
+      "id": 2,
+      "name": "황무지",
+      "description": "황량한 폐허. 위험한 몬스터들이 많다.",
+      "size": 500,
+      "difficulty": [20, 30],
+      "theme": "wasteland",
+      "heightmap_config": {
+        "scale": 40.0,
+        "persistency": 0.65,
+        "lacunarity": 2.0,
+        "octaves": 5,
+        "max_height": 80
+      },
+      "assets": {
+        "building": {
+          "count": 6,
+          "distribution": "ruins",
+          "types": [10, 11, 12, 13]
+        },
+        "nature": {
+          "count": 35,
+          "distribution": "scattered",
+          "types": [5, 6, 7, 8]
+        },
+        "props": {
+          "count": 12,
+          "distribution": "random",
+          "types": [2, 3, 4, 5]
+        }
+      },
+      "dungeons": 10,
+      "npcs": 3,
+      "merchants": 0,
+      "lighting": {
+        "sun_angle": [50, 100],
+        "sun_color": [1.0, 0.9, 0.7, 1.0],
+        "ambient_light": 0.6,
+        "ambient_color": [1.0, 0.9, 0.8, 1.0],
+        "fog_enabled": false
+      }
+    },
+    {
+      "id": 3,
+      "name": "동해",
+      "description": "해안 지역. 해적들과 신비로운 생물들의 터전.",
+      "size": 500,
+      "difficulty": [25, 35],
+      "theme": "coastal",
+      "heightmap_config": {
+        "scale": 32.0,
+        "persistency": 0.65,
+        "lacunarity": 2.0,
+        "octaves": 5,
+        "max_height": 60
+      },
+      "assets": {
+        "building": {
+          "count": 10,
+          "distribution": "coastal",
+          "types": [14, 15, 16, 17]
+        },
+        "nature": {
+          "count": 30,
+          "distribution": "scattered",
+          "types": [9, 10, 11, 12, 13]
+        },
+        "props": {
+          "count": 20,
+          "distribution": "random",
+          "types": [4, 5, 6, 7, 8]
+        }
+      },
+      "dungeons": 15,
+      "npcs": 4,
+      "merchants": 2,
+      "lighting": {
+        "sun_angle": [60, 90],
+        "sun_color": [1.0, 0.98, 0.95, 1.0],
+        "ambient_light": 0.7,
+        "ambient_color": [0.85, 0.9, 1.0, 1.0],
+        "fog_enabled": false,
+        "water_reflection": true
+      }
+    },
+    {
+      "id": 4,
+      "name": "흑룡굴",
+      "description": "최종 지역. 어둡고 신비로운 동굴.",
+      "size": 500,
+      "difficulty": [30, 40],
+      "theme": "cave",
+      "heightmap_config": {
+        "scale": 45.0,
+        "persistency": 0.65,
+        "lacunarity": 2.0,
+        "octaves": 5,
+        "max_height": 120
+      },
+      "assets": {
+        "building": {
+          "count": 15,
+          "distribution": "cave",
+          "types": [0, 1, 2, 3, 4]
+        },
+        "nature": {
+          "count": 45,
+          "distribution": "scattered",
+          "types": [7, 8, 9, 10, 11]
+        },
+        "props": {
+          "count": 18,
+          "distribution": "random",
+          "types": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+        }
+      },
+      "dungeons": 20,
+      "npcs": 5,
+      "merchants": 2,
+      "lighting": {
+        "sun_angle": [10, 180],
+        "sun_color": [0.8, 0.7, 0.9, 1.0],
+        "ambient_light": 0.2,
+        "ambient_color": [0.4, 0.3, 0.6, 1.0],
+        "fog_enabled": true,
+        "fog_density": 0.15,
+        "cave_lighting": true
+      }
+    }
+  ],
+  "metadata": {
+    "author": "천재 ⚡",
+    "created_at": "2026-05-11T00:56:00Z",
+    "version": "1.0",
+    "status": "production",
+    "notes": "Day 22: MapGenerator 작성 - 모든 지역 데이터 완성"
+  }
+}

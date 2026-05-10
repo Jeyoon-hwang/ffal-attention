@@ -3,3 +3,5 @@
 {"type":"memory.recall.recorded","timestamp":"2026-05-09T01:56:50.695Z","query":"NEXUS 현재 상태 Day 3 Week 1-2 완료 40%","resultCount":1,"results":[{"path":"memory/2026-05-08.md","startLine":1,"endLine":52,"score":1}]}
 {"type":"memory.recall.recorded","timestamp":"2026-05-09T05:01:23.197Z","query":"NEXUS 무술 창조 게임 개발 진행도","resultCount":1,"results":[{"path":"memory/2026-05-08.md","startLine":1,"endLine":52,"score":1}]}
 {"type":"memory.recall.recorded","timestamp":"2026-05-10T04:56:48.708Z","query":"NEXUS 게임 개발 현황 상태 Week 1","resultCount":1,"results":[{"path":"memory/2026-05-08.md","startLine":1,"endLine":52,"score":1}]}
+{"type":"memory.recall.recorded","timestamp":"2026-05-10T15:56:33.912Z","query":"NEXUS 무술 게임 프로젝트 상태","resultCount":1,"results":[{"path":"memory/2026-05-08.md","startLine":1,"endLine":52,"score":1}]}
+{"type":"memory.recall.recorded","timestamp":"2026-05-10T15:59:54.523Z","query":"NEXUS 게임 프로젝트 현황 상태","resultCount":1,"results":[{"path":"memory/2026-05-08.md","startLine":1,"endLine":52,"score":1}]}

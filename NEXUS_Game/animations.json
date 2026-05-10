@@ -1,0 +1,1274 @@
+{
+  "metadata": {
+    "generated_at": 1778425138911,
+    "generator": "AnimationSystemGenerator v1.0",
+    "total_clips": 50,
+    "categories": {
+      "player": 20,
+      "enemy": 10,
+      "monsters": 10,
+      "boss": 10
+    },
+    "total_duration": 46.2,
+    "total_frames": 1386
+  },
+  "animation_library": {
+    "player": {
+      "idle": {
+        "id": "player_idle",
+        "category": "player",
+        "name": "Player Idle",
+        "duration": 1.5,
+        "fps": 30,
+        "frames": 45,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 112.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "walk": {
+        "id": "player_walk",
+        "category": "player",
+        "name": "Player Walk",
+        "duration": 1.0,
+        "fps": 30,
+        "frames": 30,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 75.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "run": {
+        "id": "player_run",
+        "category": "player",
+        "name": "Player Run",
+        "duration": 0.8,
+        "fps": 30,
+        "frames": 24,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 60.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "jump": {
+        "id": "player_jump",
+        "category": "player",
+        "name": "Player Jump",
+        "duration": 0.6,
+        "fps": 30,
+        "frames": 18,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 45.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "jump_land": {
+        "id": "player_jump_land",
+        "category": "player",
+        "name": "Player Jump Land",
+        "duration": 0.5,
+        "fps": 30,
+        "frames": 15,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 37.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "attack_punch": {
+        "id": "player_attack_punch",
+        "category": "player",
+        "name": "Player Attack Punch",
+        "duration": 0.4,
+        "fps": 30,
+        "frames": 12,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 30.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        },
+        "attack_frame": 6
+      },
+      "attack_kick": {
+        "id": "player_attack_kick",
+        "category": "player",
+        "name": "Player Attack Kick",
+        "duration": 0.5,
+        "fps": 30,
+        "frames": 15,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 37.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        },
+        "attack_frame": 8
+      },
+      "attack_spin": {
+        "id": "player_attack_spin",
+        "category": "player",
+        "name": "Player Attack Spin",
+        "duration": 0.6,
+        "fps": 30,
+        "frames": 18,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 45.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        },
+        "attack_frame": 10
+      },
+      "attack_heavy": {
+        "id": "player_attack_heavy",
+        "category": "player",
+        "name": "Player Attack Heavy",
+        "duration": 0.7,
+        "fps": 30,
+        "frames": 21,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 52.5,
+          "playback_speed": 1.0000000000000002,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        },
+        "attack_frame": 12
+      },
+      "attack_combo": {
+        "id": "player_attack_combo",
+        "category": "player",
+        "name": "Player Attack Combo",
+        "duration": 1.2,
+        "fps": 30,
+        "frames": 36,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 90.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        },
+        "combo_hits": [
+          6,
+          18,
+          30
+        ]
+      },
+      "defend": {
+        "id": "player_defend",
+        "category": "player",
+        "name": "Player Defend",
+        "duration": 0.3,
+        "fps": 30,
+        "frames": 9,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 22.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "dodge_roll": {
+        "id": "player_dodge_roll",
+        "category": "player",
+        "name": "Player Dodge Roll",
+        "duration": 0.5,
+        "fps": 30,
+        "frames": 15,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 37.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        },
+        "i_frames": [
+          5,
+          10
+        ]
+      },
+      "dodge_jump": {
+        "id": "player_dodge_jump",
+        "category": "player",
+        "name": "Player Dodge Jump",
+        "duration": 0.6,
+        "fps": 30,
+        "frames": 18,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 45.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        },
+        "i_frames": [
+          6,
+          12
+        ]
+      },
+      "hit_light": {
+        "id": "player_hit_light",
+        "category": "player",
+        "name": "Player Hit Light",
+        "duration": 0.3,
+        "fps": 30,
+        "frames": 9,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 22.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "hit_heavy": {
+        "id": "player_hit_heavy",
+        "category": "player",
+        "name": "Player Hit Heavy",
+        "duration": 0.5,
+        "fps": 30,
+        "frames": 15,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 37.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "knockdown": {
+        "id": "player_knockdown",
+        "category": "player",
+        "name": "Player Knockdown",
+        "duration": 0.8,
+        "fps": 30,
+        "frames": 24,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 60.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "stand_up": {
+        "id": "player_stand_up",
+        "category": "player",
+        "name": "Player Stand Up",
+        "duration": 0.6,
+        "fps": 30,
+        "frames": 18,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 45.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "victory": {
+        "id": "player_victory",
+        "category": "player",
+        "name": "Player Victory",
+        "duration": 1.0,
+        "fps": 30,
+        "frames": 30,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 75.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "defeat": {
+        "id": "player_defeat",
+        "category": "player",
+        "name": "Player Defeat",
+        "duration": 1.5,
+        "fps": 30,
+        "frames": 45,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 112.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      },
+      "interact": {
+        "id": "player_interact",
+        "category": "player",
+        "name": "Player Interact",
+        "duration": 0.8,
+        "fps": 30,
+        "frames": 24,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 60.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "player_character"
+          ]
+        }
+      }
+    },
+    "enemy": {
+      "idle": {
+        "id": "enemy_idle",
+        "category": "enemy",
+        "name": "Enemy Idle",
+        "duration": 1.5,
+        "fps": 30,
+        "frames": 45,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 112.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "all_enemies"
+          ]
+        }
+      },
+      "walk": {
+        "id": "enemy_walk",
+        "category": "enemy",
+        "name": "Enemy Walk",
+        "duration": 1.0,
+        "fps": 30,
+        "frames": 30,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 75.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "all_enemies"
+          ]
+        }
+      },
+      "run": {
+        "id": "enemy_run",
+        "category": "enemy",
+        "name": "Enemy Run",
+        "duration": 0.8,
+        "fps": 30,
+        "frames": 24,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 60.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "all_enemies"
+          ]
+        }
+      },
+      "attack": {
+        "id": "enemy_attack",
+        "category": "enemy",
+        "name": "Enemy Attack",
+        "duration": 0.5,
+        "fps": 30,
+        "frames": 15,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 37.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "all_enemies"
+          ]
+        },
+        "attack_frame": 8
+      },
+      "attack_heavy": {
+        "id": "enemy_attack_heavy",
+        "category": "enemy",
+        "name": "Enemy Attack Heavy",
+        "duration": 0.7,
+        "fps": 30,
+        "frames": 21,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 52.5,
+          "playback_speed": 1.0000000000000002,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "all_enemies"
+          ]
+        },
+        "attack_frame": 12
+      },
+      "hit_light": {
+        "id": "enemy_hit_light",
+        "category": "enemy",
+        "name": "Enemy Hit Light",
+        "duration": 0.3,
+        "fps": 30,
+        "frames": 9,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 22.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "all_enemies"
+          ]
+        }
+      },
+      "hit_heavy": {
+        "id": "enemy_hit_heavy",
+        "category": "enemy",
+        "name": "Enemy Hit Heavy",
+        "duration": 0.5,
+        "fps": 30,
+        "frames": 15,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 37.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "all_enemies"
+          ]
+        }
+      },
+      "defend": {
+        "id": "enemy_defend",
+        "category": "enemy",
+        "name": "Enemy Defend",
+        "duration": 0.4,
+        "fps": 30,
+        "frames": 12,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 30.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "all_enemies"
+          ]
+        }
+      },
+      "death": {
+        "id": "enemy_death",
+        "category": "enemy",
+        "name": "Enemy Death",
+        "duration": 1.0,
+        "fps": 30,
+        "frames": 30,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 75.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "all_enemies"
+          ]
+        }
+      },
+      "roar": {
+        "id": "enemy_roar",
+        "category": "enemy",
+        "name": "Enemy Roar",
+        "duration": 0.8,
+        "fps": 30,
+        "frames": 24,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 60.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "all_enemies"
+          ]
+        }
+      }
+    },
+    "monsters": {
+      "wolf_growl": {
+        "id": "monsters_wolf_growl",
+        "category": "monsters",
+        "name": "Wolf Growl",
+        "duration": 0.6,
+        "fps": 30,
+        "frames": 18,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 45.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "wolf",
+            "bear",
+            "skeleton",
+            "ghost",
+            "spider"
+          ]
+        }
+      },
+      "wolf_pounce": {
+        "id": "monsters_wolf_pounce",
+        "category": "monsters",
+        "name": "Wolf Pounce",
+        "duration": 0.7,
+        "fps": 30,
+        "frames": 21,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 52.5,
+          "playback_speed": 1.0000000000000002,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "wolf",
+            "bear",
+            "skeleton",
+            "ghost",
+            "spider"
+          ]
+        }
+      },
+      "bear_swipe": {
+        "id": "monsters_bear_swipe",
+        "category": "monsters",
+        "name": "Bear Swipe",
+        "duration": 0.8,
+        "fps": 30,
+        "frames": 24,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 60.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "wolf",
+            "bear",
+            "skeleton",
+            "ghost",
+            "spider"
+          ]
+        }
+      },
+      "bear_roar": {
+        "id": "monsters_bear_roar",
+        "category": "monsters",
+        "name": "Bear Roar",
+        "duration": 1.0,
+        "fps": 30,
+        "frames": 30,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 75.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "wolf",
+            "bear",
+            "skeleton",
+            "ghost",
+            "spider"
+          ]
+        }
+      },
+      "skeleton_slash": {
+        "id": "monsters_skeleton_slash",
+        "category": "monsters",
+        "name": "Skeleton Slash",
+        "duration": 0.5,
+        "fps": 30,
+        "frames": 15,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 37.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "wolf",
+            "bear",
+            "skeleton",
+            "ghost",
+            "spider"
+          ]
+        }
+      },
+      "skeleton_rattle": {
+        "id": "monsters_skeleton_rattle",
+        "category": "monsters",
+        "name": "Skeleton Rattle",
+        "duration": 0.4,
+        "fps": 30,
+        "frames": 12,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 30.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "wolf",
+            "bear",
+            "skeleton",
+            "ghost",
+            "spider"
+          ]
+        }
+      },
+      "ghost_float": {
+        "id": "monsters_ghost_float",
+        "category": "monsters",
+        "name": "Ghost Float",
+        "duration": 2.0,
+        "fps": 30,
+        "frames": 60,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 150.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "wolf",
+            "bear",
+            "skeleton",
+            "ghost",
+            "spider"
+          ]
+        }
+      },
+      "ghost_disappear": {
+        "id": "monsters_ghost_disappear",
+        "category": "monsters",
+        "name": "Ghost Disappear",
+        "duration": 0.5,
+        "fps": 30,
+        "frames": 15,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 37.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "wolf",
+            "bear",
+            "skeleton",
+            "ghost",
+            "spider"
+          ]
+        }
+      },
+      "spider_crawl": {
+        "id": "monsters_spider_crawl",
+        "category": "monsters",
+        "name": "Spider Crawl",
+        "duration": 0.6,
+        "fps": 30,
+        "frames": 18,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 45.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "wolf",
+            "bear",
+            "skeleton",
+            "ghost",
+            "spider"
+          ]
+        }
+      },
+      "spider_bite": {
+        "id": "monsters_spider_bite",
+        "category": "monsters",
+        "name": "Spider Bite",
+        "duration": 0.4,
+        "fps": 30,
+        "frames": 12,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 30.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "wolf",
+            "bear",
+            "skeleton",
+            "ghost",
+            "spider"
+          ]
+        }
+      }
+    },
+    "boss": {
+      "boss1_phase1": {
+        "id": "boss_boss1_phase1",
+        "category": "boss",
+        "name": "Boss 1 Phase 1",
+        "duration": 1.5,
+        "fps": 30,
+        "frames": 45,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 112.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "boss_1",
+            "boss_2",
+            "boss_3",
+            "boss_4",
+            "boss_5"
+          ]
+        }
+      },
+      "boss1_ultimate": {
+        "id": "boss_boss1_ultimate",
+        "category": "boss",
+        "name": "Boss 1 Ultimate",
+        "duration": 2.0,
+        "fps": 30,
+        "frames": 60,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 150.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "boss_1",
+            "boss_2",
+            "boss_3",
+            "boss_4",
+            "boss_5"
+          ]
+        }
+      },
+      "boss2_spin": {
+        "id": "boss_boss2_spin",
+        "category": "boss",
+        "name": "Boss 2 Spin",
+        "duration": 1.2,
+        "fps": 30,
+        "frames": 36,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 90.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "boss_1",
+            "boss_2",
+            "boss_3",
+            "boss_4",
+            "boss_5"
+          ]
+        }
+      },
+      "boss2_laser": {
+        "id": "boss_boss2_laser",
+        "category": "boss",
+        "name": "Boss 2 Laser",
+        "duration": 1.5,
+        "fps": 30,
+        "frames": 45,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 112.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "boss_1",
+            "boss_2",
+            "boss_3",
+            "boss_4",
+            "boss_5"
+          ]
+        }
+      },
+      "boss3_charge": {
+        "id": "boss_boss3_charge",
+        "category": "boss",
+        "name": "Boss 3 Charge",
+        "duration": 1.0,
+        "fps": 30,
+        "frames": 30,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 75.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "boss_1",
+            "boss_2",
+            "boss_3",
+            "boss_4",
+            "boss_5"
+          ]
+        }
+      },
+      "boss3_slam": {
+        "id": "boss_boss3_slam",
+        "category": "boss",
+        "name": "Boss 3 Slam",
+        "duration": 0.8,
+        "fps": 30,
+        "frames": 24,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 60.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "boss_1",
+            "boss_2",
+            "boss_3",
+            "boss_4",
+            "boss_5"
+          ]
+        }
+      },
+      "boss4_flight": {
+        "id": "boss_boss4_flight",
+        "category": "boss",
+        "name": "Boss 4 Flight",
+        "duration": 2.0,
+        "fps": 30,
+        "frames": 60,
+        "loop": true,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 150.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "boss_1",
+            "boss_2",
+            "boss_3",
+            "boss_4",
+            "boss_5"
+          ]
+        }
+      },
+      "boss4_lightning": {
+        "id": "boss_boss4_lightning",
+        "category": "boss",
+        "name": "Boss 4 Lightning",
+        "duration": 1.5,
+        "fps": 30,
+        "frames": 45,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 112.5,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "boss_1",
+            "boss_2",
+            "boss_3",
+            "boss_4",
+            "boss_5"
+          ]
+        }
+      },
+      "boss5_appear": {
+        "id": "boss_boss5_appear",
+        "category": "boss",
+        "name": "Boss 5 Appear",
+        "duration": 2.0,
+        "fps": 30,
+        "frames": 60,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 150.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "boss_1",
+            "boss_2",
+            "boss_3",
+            "boss_4",
+            "boss_5"
+          ]
+        }
+      },
+      "boss5_final": {
+        "id": "boss_boss5_final",
+        "category": "boss",
+        "name": "Boss 5 Final Attack",
+        "duration": 3.0,
+        "fps": 30,
+        "frames": 90,
+        "loop": false,
+        "blend_in": 0.1,
+        "blend_out": 0.1,
+        "performance": {
+          "memory_kb": 225.0,
+          "playback_speed": 1.0,
+          "is_optimized": true
+        },
+        "metadata": {
+          "created_at": 1778425138911,
+          "version": "1.0",
+          "compatible_with": [
+            "boss_1",
+            "boss_2",
+            "boss_3",
+            "boss_4",
+            "boss_5"
+          ]
+        }
+      }
+    }
+  }
+}
