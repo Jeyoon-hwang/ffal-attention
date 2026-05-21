@@ -1,0 +1,163 @@
+{
+  "timestamp": "2026-05-21 18:39:54",
+  "evaluation": {
+    "AC": 1.0,
+    "TE": 0.07666666666666666,
+    "elapsed_time": 0.013322114944458008,
+    "avg_inference_time": 1.3322114944458008e-05,
+    "affordances_detected": 5,
+    "affordances_possible": 5,
+    "pipeline_stats": {
+      "total_objects": 1000,
+      "stage1_filtered": 45,
+      "stage2_processed": 955,
+      "stage3_validated": 2245,
+      "total_tokens": 33000.0,
+      "total_affordances_detected": 2530,
+      "stage1_filter_rate": 0.045,
+      "stage2_process_rate": 0.955,
+      "stage3_validation_rate": 2.350785340314136,
+      "avg_token_cost": 33.0,
+      "avg_affordances_per_object": 2.53
+    },
+    "detected_types": [
+      "CLIMBABLE",
+      "GRASPABLE",
+      "PUSHABLE",
+      "SITTABLE",
+      "CONTAINABLE"
+    ]
+  },
+  "sample_results": [
+    {
+      "object_id": "obj_0",
+      "affordances": {
+        "GRASPABLE": 0.8429082096183936,
+        "PUSHABLE": 0.7716954865417449
+      },
+      "token_cost": 41.0,
+      "path": [
+        "Stage1",
+        "Stage2",
+        "Stage3"
+      ]
+    },
+    {
+      "object_id": "obj_1",
+      "affordances": {
+        "GRASPABLE": 0.9807051064992138,
+        "PUSHABLE": 0.7734887292497334,
+        "CONTAINABLE": 0.8121766034194622
+      },
+      "token_cost": 31.0,
+      "path": [
+        "Stage1",
+        "Stage2",
+        "Stage3"
+      ]
+    },
+    {
+      "object_id": "obj_2",
+      "affordances": {
+        "GRASPABLE": 0.973351803768028,
+        "PUSHABLE": 0.7286081110174226,
+        "CONTAINABLE": 0.7856686672523009
+      },
+      "token_cost": 31.0,
+      "path": [
+        "Stage1",
+        "Stage2",
+        "Stage3"
+      ]
+    },
+    {
+      "object_id": "obj_3",
+      "affordances": {},
+      "token_cost": 1.0,
+      "path": [
+        "Stage1"
+      ]
+    },
+    {
+      "object_id": "obj_4",
+      "affordances": {
+        "GRASPABLE": 0.9336923906869117,
+        "PUSHABLE": 0.6678142225520094,
+        "CONTAINABLE": 0.6947500493086051
+      },
+      "token_cost": 31.0,
+      "path": [
+        "Stage1",
+        "Stage2",
+        "Stage3"
+      ]
+    },
+    {
+      "object_id": "obj_5",
+      "affordances": {
+        "GRASPABLE": 0.97390545622129,
+        "PUSHABLE": 0.9325230032871794,
+        "CONTAINABLE": 0.7874786817069036
+      },
+      "token_cost": 31.0,
+      "path": [
+        "Stage1",
+        "Stage2",
+        "Stage3"
+      ]
+    },
+    {
+      "object_id": "obj_6",
+      "affordances": {
+        "PUSHABLE": 0.8167317606039581
+      },
+      "token_cost": 51.0,
+      "path": [
+        "Stage1",
+        "Stage2",
+        "Stage3"
+      ]
+    },
+    {
+      "object_id": "obj_7",
+      "affordances": {
+        "GRASPABLE": 0.8161523721082563,
+        "PUSHABLE": 0.7124978060652949
+      },
+      "token_cost": 41.0,
+      "path": [
+        "Stage1",
+        "Stage2",
+        "Stage3"
+      ]
+    },
+    {
+      "object_id": "obj_8",
+      "affordances": {
+        "GRASPABLE": 0.9123128727006768,
+        "PUSHABLE": 0.923505214830698,
+        "CONTAINABLE": 0.6617503064076232
+      },
+      "token_cost": 31.0,
+      "path": [
+        "Stage1",
+        "Stage2",
+        "Stage3"
+      ]
+    },
+    {
+      "object_id": "obj_9",
+      "affordances": {
+        "GRASPABLE": 0.951008376840477,
+        "PUSHABLE": 0.7521342797317535,
+        "CONTAINABLE": 0.7276905472250835
+      },
+      "token_cost": 31.0,
+      "path": [
+        "Stage1",
+        "Stage2",
+        "Stage3"
+      ]
+    }
+  ]
+}

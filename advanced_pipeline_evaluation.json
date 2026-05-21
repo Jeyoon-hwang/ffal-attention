@@ -1,0 +1,149 @@
+{
+  "timestamp": "2026-05-21 18:40:23",
+  "threshold_analysis": {
+    "0.3": {
+      "ac": 1.0,
+      "te": 0.0069629071884060225,
+      "total_tokens": 257651.0,
+      "total_affordances": 1794,
+      "avg_tokens_per_object": 257.651,
+      "stage_execution": {
+        "S1": 1000,
+        "S2": 907,
+        "S3": 907
+      },
+      "detected_types": [
+        "SITTABLE",
+        "PUSHABLE",
+        "CLIMBABLE",
+        "CONTAINABLE",
+        "GRASPABLE"
+      ]
+    },
+    "0.4": {
+      "ac": 1.0,
+      "te": 0.0030382251112838266,
+      "total_tokens": 311366.0,
+      "total_affordances": 946,
+      "avg_tokens_per_object": 311.366,
+      "stage_execution": {
+        "S1": 1000,
+        "S2": 907,
+        "S3": 907
+      },
+      "detected_types": [
+        "SITTABLE",
+        "PUSHABLE",
+        "CLIMBABLE",
+        "CONTAINABLE",
+        "GRASPABLE"
+      ]
+    },
+    "0.5": {
+      "ac": 0.6,
+      "te": 0.0009582370840755415,
+      "total_tokens": 332903.0,
+      "total_affordances": 319,
+      "avg_tokens_per_object": 332.903,
+      "stage_execution": {
+        "S1": 1000,
+        "S2": 907,
+        "S3": 907
+      },
+      "detected_types": [
+        "PUSHABLE",
+        "CLIMBABLE",
+        "SITTABLE"
+      ]
+    },
+    "0.6": {
+      "ac": 0.4,
+      "te": 0.0005797378628591237,
+      "total_tokens": 334634.0,
+      "total_affordances": 194,
+      "avg_tokens_per_object": 334.634,
+      "stage_execution": {
+        "S1": 1000,
+        "S2": 907,
+        "S3": 907
+      },
+      "detected_types": [
+        "PUSHABLE",
+        "CLIMBABLE"
+      ]
+    },
+    "0.7": {
+      "ac": 0.4,
+      "te": 0.0005020410358780041,
+      "total_tokens": 334634.0,
+      "total_affordances": 168,
+      "avg_tokens_per_object": 334.634,
+      "stage_execution": {
+        "S1": 1000,
+        "S2": 907,
+        "S3": 907
+      },
+      "detected_types": [
+        "PUSHABLE",
+        "CLIMBABLE"
+      ]
+    },
+    "0.8": {
+      "ac": 0.4,
+      "te": 0.0004542276038896227,
+      "total_tokens": 334634.0,
+      "total_affordances": 152,
+      "avg_tokens_per_object": 334.634,
+      "stage_execution": {
+        "S1": 1000,
+        "S2": 907,
+        "S3": 907
+      },
+      "detected_types": [
+        "PUSHABLE",
+        "CLIMBABLE"
+      ]
+    }
+  },
+  "category_analysis": {
+    "tiny": {
+      "tokens": 23073.0,
+      "affordances": 0,
+      "count": 153
+    },
+    "small": {
+      "tokens": 120645.0,
+      "affordances": 0,
+      "count": 315
+    },
+    "medium": {
+      "tokens": 150033.0,
+      "affordances": 104,
+      "count": 393
+    },
+    "large": {
+      "tokens": 39152.0,
+      "affordances": 215,
+      "count": 139
+    }
+  },
+  "strategy_comparison": {
+    "3stage": {
+      "tokens": 332903.0,
+      "affordances": 319,
+      "efficiency": 0.0009582370840755415
+    },
+    "simple": {
+      "tokens": 100000,
+      "affordances": 223.29999999999998,
+      "efficiency": 0.0022329999999999997
+    }
+  },
+  "recommendations": {
+    "optimal_threshold": 0.5,
+    "stage1_filter_rate": "4-5%",
+    "expected_ac": 1.0,
+    "expected_te": 0.077,
+    "improvement_factor": 27.5
+  }
+}
